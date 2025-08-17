@@ -6,7 +6,7 @@ export default function StatsSection() {
   const stats = [
     { value: '$1M+', label: 'Total Donations Raised' },
     { value: '500+', label: 'Children Supported' },
-    { value: '100%', label: 'Transparency Rate' }
+    { value: '100%', label: 'Transpar77ency Rate' }
   ]
 
   return (
@@ -40,3 +40,5 @@ export default function StatsSection() {
     </section>
   )
 }
+
+

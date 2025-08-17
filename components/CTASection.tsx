@@ -22,10 +22,10 @@ export default function CTASection() {
           viewport={{ once: true }}
           className="text-center max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-8 leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-8 leading-tight tracking-tight">
             Join the Hope Revolution Today
           </h2>
-          <p className="text-xl lg:text-2xl text-blue-100 mb-12 leading-relaxed">
+          <p className="text-xl lg:text-2xl text-blue-100 mb-12 leading-relaxed tracking-tight">
             Be part of a global movement that's transforming lives through education and community support. Together, we
             can create lasting change for generations to come and build a world where every child has the opportunity to
             thrive.

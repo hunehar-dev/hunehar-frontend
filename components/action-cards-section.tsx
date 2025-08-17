@@ -49,7 +49,7 @@ export default function ActionCardsSection() {
     <section className="py-20 lg:py-32 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Make a Difference Today</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-6 leading-tighter">Make a Difference Today</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">

@@ -33,10 +33,10 @@ export default function DonateCards() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Make a Difference Today</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-6 leading-tighter tracking-tighter">Make a Difference Today</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-full mx-auto">
           {cards.map((card, index) => (
             <motion.div
               key={index}
@@ -49,7 +49,7 @@ export default function DonateCards() {
               <div className={`w-16 h-16 ${card.iconBg} rounded-2xl flex items-center justify-center mb-6`}>
                 {card.icon}
               </div>
-              <h3 className="text-2xl text-gray-900 font-bold mb-4">{card.title}</h3>
+              <h3 className="text-2xl text-gray-900 font-semibold tracking-tight mb-4">{card.title}</h3>
               <p className="text-gray-600 mb-8 leading-relaxed text-lg">{card.description}</p>
               <button className={`${card.buttonStyle} px-8 py-4 font-semibold rounded-md transition-colors`}>
                 {card.buttonText}

@@ -37,7 +37,7 @@ export default function FAQAccordion() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-6 leading-tighter">Frequently Asked Questions</h2>
         </motion.div>
 
         <motion.div
@@ -45,7 +45,7 @@ export default function FAQAccordion() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
+          className="max-w-7xl mx-auto"
         >
           <Accordion type="single" collapsible className="w-full space-y-6">
             {faqs.map((faq, index) => (
@@ -54,7 +54,7 @@ export default function FAQAccordion() {
                 value={`item-${index}`}
                 className="bg-white border border-gray-200 rounded-2xl px-8 shadow-lg"
               >
-                <AccordionTrigger className="text-left font-bold text-gray-900 hover:text-blue-600 text-lg py-6">
+                <AccordionTrigger className="text-left font-semibold text-gray-900  text-lg py-6">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed text-lg pb-6">
