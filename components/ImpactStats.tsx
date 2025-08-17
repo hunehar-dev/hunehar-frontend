@@ -1,57 +1,63 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import React from 'react'
 
 export default function ImpactStats() {
   const stats = [
-    { value: '85%', label: 'Graduation Rate', description: 'Students completing our programs successfully' },
-    { value: '1000+', label: 'Lives Changed', description: 'Children and families supported annually' },
-    { value: '95%', label: 'Community Satisfaction', description: 'Positive feedback from local communities' },
-    { value: '200+', label: 'Partner Organizations', description: 'Global network of collaborative partners' }
-  ]
+    { value: '$1M+', label: 'Fund Raised' },
+    { value: '500+', label: 'Dedicated Volunteers' },
+    { value: '100%', label: 'Delivered Donations' },
+    { value: '250K', label: 'Charity Participation' },
+  ];
 
   return (
-    <section className="py-20 lg:py-32 bg-gray-50">
+    <section className="bg-white py-20 lg:py-28">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-6 leading-tighter">Our Impact</h2>
-        </motion.div>
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tighter text-[#1E4E6A]">
+            Our Impact
+          </h2>
+          <p className="mt-4 text-lg text-gray-500">
+            Every contribution creates lasting change
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12 max-w-6xl mx-auto mb-16">
+        <div className="mt-16 flex flex-col items-center gap-y-8 md:flex-row md:justify-center md:gap-x-4 lg:gap-x-12">
           {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-blue-600 mb-4">{stat.value}</div>
-              <div className="text-xl font-bold text-gray-900 mb-3">{stat.label}</div>
-              <div className="text-gray-600">{stat.description}</div>
-            </motion.div>
+            <React.Fragment key={stat.label}>
+              <div className="text-center px-4 py-2 md:px-6 lg:px-8">
+                <p className="text-4xl font-semibold text-[#1E4E6A]">
+                  {stat.value}
+                </p>
+                <p className="mt-2 text-base text-gray-500">
+                  {stat.label}
+                </p>
+              </div>
+              {index < stats.length - 1 && (
+                <span className="hidden md:block text-3xl font-light text-[#1E4E6A]">
+                  •
+                </span>
+              )}
+            </React.Fragment>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-md transition-colors">
-            View Full Report
-          </button>
-        </motion.div>
+        <div className="mt-16 text-center">
+          <p className="text-lg text-gray-500">
+            Contribute to our Impact! Every rupee counts!
+          </p>
+          <div className="mt-8 flex items-center justify-center gap-x-6">
+            <button
+              className="rounded-lg bg-[#294354] px-8 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-90"
+            >
+              Donate Now
+            </button>
+            <a href="#" className="text-base text-gray-700 underline hover:text-gray-900">
+              Learn More
+            </a>
+          </div>
+        </div>
       </div>
     </section>
-  )
+  );
 }
