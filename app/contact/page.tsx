@@ -1,9 +1,8 @@
-
 "use client"
 
 import Head from 'next/head';
 import React, { useState, ChangeEvent, FormEvent } from 'react';
-import { GraduationCap, HeartHandshake, Globe, MapPin, Mail, Phone, ArrowRight, HandHeart, ChevronDown, Building, Clock } from 'lucide-react';
+import { GraduationCap, HeartHandshake, Globe, MapPin, Mail, Phone, ArrowRight, HandHeart, ChevronDown, Building, Clock, BookOpen, Users, Sparkles, Building2 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -86,7 +85,6 @@ const ContactPage = () => {
 
   return (
     <>
-
       <Head>
         <title>Contact Us | Hunehar - Empowering Futures Through Education</title>
         <meta name="description" content="Connect with Hunehar to support our mission of providing quality education and fostering community development for children worldwide. Ask questions, volunteer, or partner with us." />
@@ -94,10 +92,8 @@ const ContactPage = () => {
       </Head>
 
       <main className="bg-gray-50 font-sans antialiased text-gray-700">
-
-
-    <Navbar/>
-
+        <Navbar/>
+        
         <section className="relative bg-cover bg-center h-[70vh]" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop')" }}>
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
           <div className="relative z-10 container mx-auto flex flex-col items-center justify-center h-full text-white text-center px-6">
@@ -148,6 +144,73 @@ const ContactPage = () => {
               </div>
             </div>
           </div>
+        </section>
+
+        <section className="py-24 bg-blue-50/50">
+          <div className="container mx-auto px-6 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">Our Impact in Numbers</h2>
+            <p className="text-lg text-gray-600 mt-4 max-w-3xl mx-auto mb-16">
+              Our commitment translates into tangible results, transforming lives and communities across the globe.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+              <div className="text-center">
+                <BookOpen className="h-12 w-12 mx-auto text-blue-600 mb-4" strokeWidth={1.5}/>
+                <span className="block text-5xl font-extrabold text-blue-600">50,000+</span>
+                <h4 className="text-xl font-semibold text-gray-800 mt-2">Children Educated</h4>
+              </div>
+              <div className="text-center">
+                <Users className="h-12 w-12 mx-auto text-blue-600 mb-4" strokeWidth={1.5}/>
+                <span className="block text-5xl font-extrabold text-blue-600">300+</span>
+                <h4 className="text-xl font-semibold text-gray-800 mt-2">Communities Served</h4>
+              </div>
+              <div className="text-center">
+                <Sparkles className="h-12 w-12 mx-auto text-blue-600 mb-4" strokeWidth={1.5}/>
+                <span className="block text-5xl font-extrabold text-blue-600">5,000+</span>
+                <h4 className="text-xl font-semibold text-gray-800 mt-2">Volunteers Engaged</h4>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section className="py-24 bg-white">
+            <div className="container mx-auto px-6">
+                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                    <div className="order-2 lg:order-1">
+                        <span className="text-blue-600 font-semibold uppercase tracking-wider">Collaboration for Change</span>
+                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mt-3 mb-6">Partner With Hunehar</h2>
+                        <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                          We believe in the power of collaboration to amplify impact. By partnering with corporations, foundations, and local organizations, we can create scalable and sustainable solutions to educational challenges worldwide.
+                        </p>
+                        <div className="space-y-4 mb-10">
+                            <div className="flex items-start">
+                                <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-green-100 text-green-600 mr-4 mt-1">
+                                    <Building2 className="h-5 w-5"/>
+                                </div>
+                                <div>
+                                    <h4 className="text-lg font-semibold text-gray-800">Corporate Partnerships</h4>
+                                    <p className="text-gray-600">Align your brand with a noble cause, engage your employees, and contribute to meaningful change.</p>
+                                </div>
+                            </div>
+                             <div className="flex items-start">
+                                <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-green-100 text-green-600 mr-4 mt-1">
+                                    <HandHeart className="h-5 w-5"/>
+                                </div>
+                                <div>
+                                    <h4 className="text-lg font-semibold text-gray-800">Foundation Grants</h4>
+                                    <p className="text-gray-600">Work with us to fund innovative projects that have a lasting impact on children's futures.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button className="group inline-flex items-center justify-center py-3 px-8 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 ease-in-out">
+                            Explore Partnerships
+                            <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                        </button>
+                    </div>
+                    <div className="order-1 lg:order-2">
+                        <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?q=80&w=2070&auto=format&fit=crop" alt="Team collaborating" className="rounded-2xl shadow-2xl w-full h-full object-cover"/>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section className="py-24 bg-gray-50">
@@ -269,7 +332,6 @@ const ContactPage = () => {
         </section>
 
         <Footer />
-
       </main>
     </>
   );
