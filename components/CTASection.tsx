@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function CTASection() {
@@ -39,12 +39,16 @@ export default function CTASection() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="bg-white text-blue-900 hover:bg-gray-100 px-10 py-4 text-lg font-bold rounded-md transition-colors">
-              Make a Donation
-            </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-blue-900 bg-transparent px-10 py-4 text-lg font-bold rounded-md transition-colors">
-              Become a Volunteer
-            </button>
+            <Link href="/donate">
+              <p className="bg-white text-blue-900 hover:bg-green-300 px-10 py-4 text-lg font-bold rounded-md transition-colors">
+                Make a Donation
+              </p>
+            </Link>
+            <Link href="/get-involved/volunteer">
+              <p className="border-2 border-white text-white hover:bg-pink-300 hover:text-blue-900 hover:border-blue-900 bg-transparent px-10 py-4 text-lg font-bold rounded-md transition-colors">
+                Become a Volunteer
+              </p>
+            </Link>
           </div>
         </motion.div>
       </div>
