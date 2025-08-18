@@ -1,15 +1,10 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+import { motion } from "framer-motion";
 
 export default function CTASection() {
   return (
-    <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-800 via-blue-900 to-slate-900 text-white relative overflow-hidden">
-      <div className="absolute inset-0 opacity-20">
-        <Image src="/placeholder.svg?height=600&width=1200" alt="Background" fill className="object-cover" />
-      </div>
-
+    <section className="py-20 lg:py-32 bg-gradient-to-br from-[#1a2c44] via-[#4074AD] to-[#0d1b2a] text-white relative overflow-hidden">
       <div className="absolute top-10 right-10 w-24 h-24 border-2 border-white/20 rounded-full"></div>
       <div className="absolute bottom-20 left-20 w-20 h-20 bg-orange-500/20 rounded-full"></div>
       <div className="absolute top-1/2 right-1/4 w-16 h-16 border border-white/30 rounded-full"></div>
@@ -23,12 +18,11 @@ export default function CTASection() {
           className="text-center max-w-4xl mx-auto"
         >
           <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-8 leading-tight tracking-tight">
-            Join the Hope Revolution Today
+            Subscribe to our Newsletter!
           </h2>
           <p className="text-xl lg:text-2xl text-blue-100 mb-12 leading-relaxed tracking-tight">
-            Be part of a global movement that's transforming lives through education and community support. Together, we
-            can create lasting change for generations to come and build a world where every child has the opportunity to
-            thrive.
+            Stay updated with our latest news, impact stories, and ways to get
+            involved in our mission.
           </p>
 
           <div className="max-w-lg mx-auto mb-12">
@@ -55,5 +49,5 @@ export default function CTASection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
