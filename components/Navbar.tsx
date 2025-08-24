@@ -89,7 +89,7 @@ export default function Navbar() {
           <div className="flex items-center space-x-4">
             <Link
               href="/donate"
-              className="hidden md:inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+              className="hidden md:inline-flex items-center space-x-2 bg-[#206FAC] hover:bg-red-400 text-white px-6 py-2.5 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
             >
               <Heart className="h-4 w-4" />
               <span>Donate Now</span>

@@ -1,17 +1,16 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
 export default function StatsSection() {
   const stats = [
-    { value: '$1M+', label: 'Total Donations Raised' },
-    { value: '500+', label: 'Children Supported' },
-    { value: '100%', label: 'Transpar77ency Rate' }
-  ]
+    { value: "Rs. 5M+", label: "Total Donations Raised" },
+    { value: "500+", label: "Children Supported" },
+    { value: "100%", label: "Transparency Rate" },
+  ];
 
   return (
     <section className="py-16 bg-white relative">
-      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-br from-slate-800 via-blue-900 to-slate-900"></div>
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -30,15 +29,17 @@ export default function StatsSection() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-blue-600 mb-3">{stat.value}</div>
-                <div className="text-gray-700 font-semibold text-lg">{stat.label}</div>
+                <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#206FAC] mb-3">
+                  {stat.value}
+                </div>
+                <div className="text-gray-700 font-semibold text-lg">
+                  {stat.label}
+                </div>
               </motion.div>
             ))}
           </div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
-
-
