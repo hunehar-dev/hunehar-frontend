@@ -52,7 +52,7 @@ export default function IntroductionSection() {
               futures are transformed.
             </p>
             <Link href="/about">
-              <button className="bg-red-400 hover:bg-red-600 text-white px-8 py-4 text-lg font-semibold rounded-md transition-colors">
+              <button className="bg-red-400 hover:bg-red-600 hover:cursor-pointer text-white px-8 py-4 text-lg font-semibold rounded-md transition-colors">
                 Learn More
               </button>
             </Link>

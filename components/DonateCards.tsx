@@ -11,7 +11,8 @@ export default function DonateCards() {
       description:
         "Sponsor a student for only Rs. 3,000/month. Ensuring education, mentorship, and a brighter future.",
       buttonText: "Sponsor a Student",
-      buttonStyle: "bg-[#E5533D] hover:bg-[#c9442f] text-white",
+      buttonStyle:
+        "bg-[#E5533D] hover:bg-[#c9442f] text-white hover:cursor-pointer",
       iconBg: "bg-[#E5533D]/10",
     },
     {
@@ -21,7 +22,7 @@ export default function DonateCards() {
         "Help us train and support dedicated teachers to create lasting educational impact in their communities.",
       buttonText: "Support a Teacher",
       buttonStyle:
-        "border-2 border-[#E5533D] text-[#E5533D] hover:bg-[#E5533D] hover:text-white bg-transparent",
+        "border-2 border-[#E5533D] text-[#E5533D] hover:bg-[#E5533D] hover:text-white bg-transparent hover:cursor-pointer",
       iconBg: "bg-[#E5533D]/10",
     },
   ];

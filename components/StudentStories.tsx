@@ -1,98 +1,106 @@
-'use client'
+"use client";
 
-import { motion, useMotionValue, useSpring, animate, AnimatePresence } from 'framer-motion'
-import { useEffect, useRef, useState } from 'react'
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  animate,
+  AnimatePresence,
+} from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 export default function StudentStories() {
   const reels = Array.from({ length: 13 }, (_, i) => ({
     id: i,
-    src: 'https://videos.pexels.com/video-files/6010489/6010489-uhd_1440_2560_25fps.mp4',
+    src: "https://videos.pexels.com/video-files/6010489/6010489-uhd_1440_2560_25fps.mp4",
     alt: `Student Story ${i + 1}`,
-  }))
+  }));
 
-  const duplicatedReels = [...reels, ...reels]
+  const duplicatedReels = [...reels, ...reels];
 
-  const videoRefs = useRef([])
-  const [hoveredVideoIndex, setHoveredVideoIndex] = useState(null)
-  const [selectedReel, setSelectedReel] = useState(null)
+  const videoRefs = useRef([]);
+  const [hoveredVideoIndex, setHoveredVideoIndex] = useState(null);
+  const [selectedReel, setSelectedReel] = useState(null);
 
-  const reelWidth = 300
-  const reelGap = 24
-  const totalWidthOfOneSet = reels.length * (reelWidth + reelGap)
+  const reelWidth = 300;
+  const reelGap = 24;
+  const totalWidthOfOneSet = reels.length * (reelWidth + reelGap);
 
-  const x = useMotionValue(0)
+  const x = useMotionValue(0);
   const xSpring = useSpring(x, {
     stiffness: 150,
     damping: 25,
     mass: 0.5,
-  })
+  });
 
-  const animationControls = useRef(null)
+  const animationControls = useRef(null);
 
   useEffect(() => {
-    videoRefs.current = videoRefs.current.slice(0, duplicatedReels.length)
+    videoRefs.current = videoRefs.current.slice(0, duplicatedReels.length);
 
     const animation = animate(x, -totalWidthOfOneSet, {
-      ease: 'linear',
+      ease: "linear",
       duration: 60,
       repeat: Infinity,
-    })
+    });
 
-    animationControls.current = animation
+    animationControls.current = animation;
 
     return () => {
-      animationControls.current?.stop()
-    }
-  }, [x, totalWidthOfOneSet, duplicatedReels.length])
+      animationControls.current?.stop();
+    };
+  }, [x, totalWidthOfOneSet, duplicatedReels.length]);
 
   useEffect(() => {
     if (selectedReel) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = ''
+      document.body.style.overflow = "";
     }
     return () => {
-      document.body.style.overflow = ''
-    }
-  }, [selectedReel])
+      document.body.style.overflow = "";
+    };
+  }, [selectedReel]);
 
   const handleContainerHoverStart = () => {
     if (!selectedReel) {
-      animationControls.current?.pause()
+      animationControls.current?.pause();
     }
-  }
+  };
 
   const handleContainerHoverEnd = () => {
     if (!selectedReel) {
-      animationControls.current?.resume()
+      animationControls.current?.resume();
     }
-  }
+  };
 
   const handleVideoHoverStart = (index) => {
-    setHoveredVideoIndex(index)
-    const videoElement = videoRefs.current[index]
+    setHoveredVideoIndex(index);
+    const videoElement = videoRefs.current[index];
     if (videoElement) {
-      videoElement.play().catch((error) => console.log('Video play error:', error))
+      videoElement
+        .play()
+        .catch((error) => console.log("Video play error:", error));
     }
-  }
+  };
 
   const handleVideoHoverEnd = (index) => {
-    setHoveredVideoIndex(null)
-    const videoElement = videoRefs.current[index]
+    setHoveredVideoIndex(null);
+    const videoElement = videoRefs.current[index];
     if (videoElement) {
-      videoElement.pause()
+      videoElement.pause();
     }
-  }
+  };
 
   const handleReelClick = (reel) => {
-    animationControls.current?.pause()
-    setSelectedReel(reel)
-  }
+    animationControls.current?.pause();
+    setSelectedReel(reel);
+  };
 
   const handleCloseModal = () => {
-    setSelectedReel(null)
-    animationControls.current?.resume()
-  }
+    setSelectedReel(null);
+    animationControls.current?.resume();
+  };
 
   return (
     <section className="py-20 lg:py-32 bg-gray-50">
@@ -102,7 +110,7 @@ export default function StudentStories() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tighter text-gray-900 text-center mb-16"
+          className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tighter text-[#206FAC] text-center mb-16"
         >
           Student Stories
         </motion.h2>
@@ -118,7 +126,7 @@ export default function StudentStories() {
                 key={`${reel.id}-${index}`}
                 onClick={() => handleReelClick(reel)}
                 // whileHover={{ scale: 1.05, y: -10 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="relative flex-shrink-0 w-[300px] h-[480px] rounded-2xl shadow-lg overflow-hidden bg-black cursor-pointer"
                 onMouseEnter={() => handleVideoHoverStart(index)}
                 onMouseLeave={() => handleVideoHoverEnd(index)}
@@ -145,7 +153,7 @@ export default function StudentStories() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
           >
             <motion.button
@@ -182,5 +190,5 @@ export default function StudentStories() {
         )}
       </AnimatePresence>
     </section>
-  )
+  );
 }
