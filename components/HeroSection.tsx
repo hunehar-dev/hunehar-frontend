@@ -43,7 +43,8 @@ export default function HeroSection() {
               </h3>
               <p className="text-gray-600 text-lg mb-8">
                 Your one-time gift can help provide quality education and
-                brighter futures for children in need.
+                brighter futures for children in need. <br />
+                Every contribution counts!
               </p>
 
               <div className="grid grid-cols-2 gap-3 text-lg mb-8">

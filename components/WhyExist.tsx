@@ -7,7 +7,7 @@ export default function WhyExist() {
   return (
     <section className="py-24 bg-gray-50">
       <div className="container mx-auto px-6 lg:px-12">
-        <h2 className="text-4xl lg:text-5xl font-bold text-[#206FAC] text-center mb-16">
+        <h2 className="text-3xl lg:text-5xl font-bold text-[#206FAC] text-center mb-16">
           Why We Exist
         </h2>
 
@@ -29,7 +29,7 @@ export default function WhyExist() {
               />
             </div>
             <div className="bg-white border-l-4 border-red-500 p-8 rounded-xl shadow-sm">
-              <p className="text-xl leading-relaxed text-gray-800 font-semibold">
+              <p className="text-lg leading-relaxed text-gray-800 font-semibold">
                 “Pakistan has the world’s{" "}
                 <span className="text-red-600">
                   second-highest number of out-of-school children
@@ -39,7 +39,7 @@ export default function WhyExist() {
               <a
                 href="https://www.unicef.org/pakistan/education"
                 target="_blank"
-                className="text-xl text-blue-600 underline block mt-3"
+                className="text-lg text-blue-600 underline block mt-3"
               >
                 — UNICEF Report
               </a>
@@ -57,16 +57,16 @@ export default function WhyExist() {
               <h2 className="text-3xl font-bold text-[#206FAC] mb-4">
                 Our Solution: Hunehar
               </h2>
-              <p className="text-xl text-gray-700 leading-relaxed mb-6">
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Hunehar provides{" "}
                 <strong className="text-[#206FAC]">
                   free, quality education
                 </strong>{" "}
                 and holistic support to children from underprivileged
-                backgrounds — giving them the tools to learn, grow, and thrive.
+                backgrounds, giving them the tools to learn, grow, and thrive.
               </p>
 
-              <ul className="text-xl space-y-4">
+              <ul className="text-lg space-y-4">
                 <li className="flex items-start space-x-3">
                   <span className="w-2.5 h-2.5 bg-[#206FAC] rounded-full mt-2"></span>
                   <span className="text-gray-700">

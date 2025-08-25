@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function IntroductionSection() {
   return (
@@ -50,9 +51,11 @@ export default function IntroductionSection() {
               volunteers, we create an environment where potential thrives and
               futures are transformed.
             </p>
-            <button className="bg-red-400 hover:bg-red-600 text-white px-8 py-4 text-lg font-semibold rounded-md transition-colors">
-              Learn More
-            </button>
+            <Link href="/about">
+              <button className="bg-red-400 hover:bg-red-600 text-white px-8 py-4 text-lg font-semibold rounded-md transition-colors">
+                Learn More
+              </button>
+            </Link>
           </motion.div>
         </div>
       </div>
