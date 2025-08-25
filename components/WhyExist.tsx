@@ -1,68 +1,108 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function WhyExist() {
   return (
-    <section className="py-20 lg:py-32 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section className="py-24 bg-gray-50">
+      <div className="container mx-auto px-6 lg:px-12">
+        <h2 className="text-4xl lg:text-5xl font-bold text-[#206FAC] text-center mb-16">
+          Why We Exist
+        </h2>
+
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="max-w-2xl"
+            className="space-y-6"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8">Why We Exist?</h2>
-
-            <div className="bg-orange-50 border-l-4 border-orange-500 p-8 mb-8 rounded-r-xl shadow-lg">
-              <p className="text-gray-800 leading-relaxed font-medium text-lg">
-                "Millions of children around the world lack access to basic education and opportunities. We exist to
-                bridge this gap and create pathways to success for every child, regardless of their circumstances."
-              </p>
+            <div className="relative overflow-hidden rounded-2xl shadow-xl">
+              <Image
+                src="/images/Pakistan-OOC-Infographic.jpg"
+                alt="Out-of-school children in Pakistan"
+                width={600}
+                height={450}
+                className="w-full max-w mx-auto"
+              />
             </div>
-
-            <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              Through innovative programs, community partnerships, and dedicated volunteers, we work tirelessly to
-              ensure every child has the chance to learn, grow, and thrive. Our approach focuses on sustainable
-              development and creating long-term positive impact in communities worldwide.
-            </p>
-
-            <div className="space-y-4">
-              <div className="flex items-center space-x-4">
-                <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
-                <span className="text-gray-700 font-semibold text-lg">Quality Education Access</span>
-              </div>
-              <div className="flex items-center space-x-4">
-                <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
-                <span className="text-gray-700 font-semibold text-lg">Community Development</span>
-              </div>
-              <div className="flex items-center space-x-4">
-                <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
-                <span className="text-gray-700 font-semibold text-lg">Sustainable Impact</span>
-              </div>
+            <div className="bg-white border-l-4 border-red-500 p-8 rounded-xl shadow-sm">
+              <p className="text-xl leading-relaxed text-gray-800 font-semibold">
+                “Pakistan has the world’s{" "}
+                <span className="text-red-600">
+                  second-highest number of out-of-school children
+                </span>{" "}
+                — over 22.8 million aged 5–16 are deprived of education.”
+              </p>
+              <a
+                href="https://www.unicef.org/pakistan/education"
+                target="_blank"
+                className="text-xl text-blue-600 underline block mt-3"
+              >
+                — UNICEF Report
+              </a>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="relative"
+            className="space-y-10"
           >
-            <Image
-              src="/placeholder.svg?height=400&width=500"
-              alt="Global impact map showing our reach"
-              width={500}
-              height={400}
-              className="w-full h-auto rounded-2xl shadow-2xl"
-            />
+            <div>
+              <h2 className="text-3xl font-bold text-[#206FAC] mb-4">
+                Our Solution: Hunehar
+              </h2>
+              <p className="text-xl text-gray-700 leading-relaxed mb-6">
+                Hunehar provides{" "}
+                <strong className="text-[#206FAC]">
+                  free, quality education
+                </strong>{" "}
+                and holistic support to children from underprivileged
+                backgrounds — giving them the tools to learn, grow, and thrive.
+              </p>
+
+              <ul className="text-xl space-y-4">
+                <li className="flex items-start space-x-3">
+                  <span className="w-2.5 h-2.5 bg-[#206FAC] rounded-full mt-2"></span>
+                  <span className="text-gray-700">
+                    Free primary & secondary education
+                  </span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <span className="w-2.5 h-2.5 bg-[#206FAC] rounded-full mt-2"></span>
+                  <span className="text-gray-700">
+                    Books, uniforms & learning materials
+                  </span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <span className="w-2.5 h-2.5 bg-[#206FAC] rounded-full mt-2"></span>
+                  <span className="text-gray-700">
+                    Mentorship & life skills programs
+                  </span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <span className="w-2.5 h-2.5 bg-[#206FAC] rounded-full mt-2"></span>
+                  <span className="text-gray-700">Community-driven change</span>
+                </li>
+              </ul>
+            </div>
+            <div className="relative overflow-hidden rounded-2xl shadow-xl">
+              <Image
+                src="/images/Hunehar-children2.jpg"
+                alt="Out-of-school children in Pakistan"
+                width={500}
+                height={300}
+                className="w-full max-w mx-auto"
+              />
+            </div>
           </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }
