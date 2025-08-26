@@ -47,6 +47,26 @@ function LifeAtHunehar() {
       src: "/images/Hunehar-Cricket.jpg",
       alt: "Professionals walking and talking in an office hallway",
     },
+    {
+      id: 9,
+      src: "/images/Hunehar-student-studying.jpg",
+      alt: "Professionals walking and talking in an office hallway",
+    },
+    {
+      id: 10,
+      src: "/images/Hunehar-students-studying2.png",
+      alt: "Professionals walking and talking in an office hallway",
+    },
+    {
+      id: 11,
+      src: "/images/Hunehar-classroom.png",
+      alt: "Professionals walking and talking in an office hallway",
+    },
+    {
+      id: 12,
+      src: "/images/Hunehar-student-reading.jpg",
+      alt: "Professionals walking and talking in an office hallway",
+    },
   ];
 
   const openModal = (image) => setSelectedImage(image);
