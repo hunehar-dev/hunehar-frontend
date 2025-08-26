@@ -7,8 +7,8 @@ export default function Footer() {
     <footer className="bg-slate-900 text-white py-20">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          <div>
-            <div className="flex items-center space-x-3 mb-10">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="flex items-center space-x-3 mb-6">
               <Link href="/" className="flex items-center space-x-3">
                 <Image
                   src="https://www.hunehar.org/wp-content/uploads/2020/05/cropped-10380131_310573749097898_1415088628236221935_o-203x72.jpg"
@@ -23,7 +23,7 @@ export default function Footer() {
             <p className="text-gray-400 leading-relaxed mb-6 text-lg">
               Eradicating illiteracy, one step at a time.
             </p>
-            <div className="flex space-x-6 text-gray-400">
+            <div className="flex space-x-6 text-gray-400 justify-center md:justify-start">
               <Link
                 href="https://linkedin.com"
                 target="_blank"
@@ -61,28 +61,30 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-          <div className="space-y-6">
-            <Link href="tel:+923410510902">
-              <span className="text-xl text-gray-100 font-bold hover:text-white transition-colors leading-relaxed">
-                Call:
-              </span>
-            </Link>
 
-            <p className="text-gray-400 leading-relaxed text-lg">
-              0341 0510902, <br />
-              0336 5426276
-            </p>
-            <Link href="mailto:info@hunehar.org">
-              <span className="text-xl font-bold text-gray-100 font-bold hover:text-white transition-colors leading-relaxed">
-                Email:
-              </span>
-            </Link>
-
-            <p className="text-gray-400 leading-relaxed text-lg">
-              info@hunehar.org
-            </p>
-
+          <div className="grid grid-cols-2 gap-6 md:block space-y-6">
             <div>
+              <Link href="tel:+923410510902">
+                <span className="text-xl text-gray-100 font-bold hover:text-white transition-colors leading-relaxed">
+                  Call:
+                </span>
+              </Link>
+              <p className="text-gray-400 leading-relaxed text-lg">
+                0341 0510902, <br />
+                0336 5426276
+              </p>
+            </div>
+            <div>
+              <Link href="mailto:info@hunehar.org">
+                <span className="text-xl font-bold text-gray-100 hover:text-white transition-colors leading-relaxed">
+                  Email:
+                </span>
+              </Link>
+              <p className="text-gray-400 leading-relaxed text-lg">
+                info@hunehar.org
+              </p>
+            </div>
+            <div className="col-span-2 md:col-span-1">
               <span className="text-xl font-bold">Address:</span>
               <p className="text-gray-400 leading-relaxed text-lg">
                 Hunehar Welfare School, Merabadi <br />
@@ -91,9 +93,9 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="sm:w-1/2 md:w-auto">
             <h3 className="text-xl font-bold mb-6">Quick Links</h3>
-            <ul className="space-y-4">
+            <ul className="grid grid-cols-2 sm:grid-cols-1 gap-4">
               <li>
                 <Link
                   href="/"
@@ -137,9 +139,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="sm:w-1/2 md:w-auto">
             <h3 className="text-xl font-bold mb-6">Support</h3>
-            <ul className="space-y-4">
+            <ul className="grid grid-cols-2 sm:grid-cols-1 gap-4">
               <li>
                 <Link
                   href="/donate"
