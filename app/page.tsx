@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import StatsSection from "@/components/StatsSection";
 import WhyExist from "@/components/WhyExist";
-import MapImpact from "@/components/IntroductionSection";
 import DonateCards from "@/components/DonateCards";
 import StudentStories from "@/components/StudentStories";
 import ImpactStats from "@/components/ImpactStats";
