@@ -20,7 +20,7 @@ const navLinks = [
     ],
   },
   { href: "/stories", label: "Stories & Reports" },
-  { href: "/contact-us", label: "Contact Us" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 export default function Navbar() {
