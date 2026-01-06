@@ -14,49 +14,49 @@ export default function TestimonialsCarousel() {
       name: "Sarah Johnson",
       role: "Parent",
       content:
-        "This organization has completely transformed my daughter's life. The educational support and mentorship she received opened doors we never thought possible. She's now thriving in university and has a bright future ahead.",
+        "This organization has completely transformed my daughter's life. The educational support and mentorship she received opened doors we never thought possible.",
       rating: 5,
-      avatar: "/placeholder.svg?height=60&width=60",
+      avatar: "/placeholder.svg",
     },
     {
       name: "David Chen",
       role: "Teacher",
       content:
-        "Working with Hunehar has been the most rewarding experience of my career. Their commitment to educational excellence and community development is truly inspiring and makes a real, lasting difference in children's lives.",
+        "Working with Hunehar has been the most rewarding experience of my career. Their commitment to education is truly inspiring.",
       rating: 5,
-      avatar: "/placeholder.svg?height=60&width=60",
+      avatar: "/placeholder.svg",
     },
     {
       name: "Maria Rodriguez",
       role: "Community Leader",
       content:
-        "The impact in our community has been remarkable. Children are not just learning, they're thriving and dreaming big. Families are building better futures, and hope has returned to our neighborhood in ways we never imagined.",
+        "Children are not just learning — they’re thriving. Hope has returned to our community in ways we never imagined.",
       rating: 5,
-      avatar: "/placeholder.svg?height=60&width=60",
+      avatar: "/placeholder.svg",
     },
     {
       name: "James Wilson",
       role: "Volunteer",
       content:
-        "Being part of this mission has been life-changing for me too. Seeing the direct impact of our work, watching children grow and succeed, motivates me every single day to do more and give back to these amazing communities.",
+        "Seeing the direct impact of our work motivates me every single day to give more and do better.",
       rating: 5,
-      avatar: "/placeholder.svg?height=60&width=60",
+      avatar: "/placeholder.svg",
     },
     {
       name: "Lisa Thompson",
       role: "Donor",
       content:
-        "I'm constantly amazed by the transparency and effectiveness of this organization. Every dollar I donate truly makes a difference, and I can see the real impact in the regular updates and stories I receive from the field.",
+        "Every dollar truly makes a difference. The transparency and impact are remarkable.",
       rating: 5,
-      avatar: "/placeholder.svg?height=60&width=60",
+      avatar: "/placeholder.svg",
     },
     {
       name: "Ahmed Hassan",
       role: "Program Graduate",
       content:
-        "This program gave me the tools, confidence, and support to pursue my dreams when everything seemed impossible. I'm now studying engineering at university and working to give back to my community. Forever grateful for this opportunity.",
+        "This program gave me the confidence and tools to pursue my dreams when everything felt impossible.",
       rating: 5,
-      avatar: "/placeholder.svg?height=60&width=60",
+      avatar: "/placeholder.svg",
     },
   ];
 
@@ -64,29 +64,26 @@ export default function TestimonialsCarousel() {
     if (!isHovered) {
       const interval = setInterval(() => {
         setCurrentIndex(
-          (prevIndex) => (prevIndex + 1) % Math.ceil(testimonials.length / 3)
+          (prev) => (prev + 1) % Math.ceil(testimonials.length / 3)
         );
-      }, 4000);
+      }, 4500);
       return () => clearInterval(interval);
     }
   }, [isHovered, testimonials.length]);
 
-  const getVisibleTestimonials = () => {
-    const startIndex = currentIndex * 3;
-    return testimonials.slice(startIndex, startIndex + 3);
-  };
+  const visible = testimonials.slice(currentIndex * 3, currentIndex * 3 + 3);
 
   return (
-    <section className="py-20 lg:py-32 bg-white">
+    <section className="py-12 bg-white">
       <div className="container mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#206FAC] mb-6 leading-tighter">
+          <h2 className="text-[clamp(1.75rem,3vw,2.25rem)] font-bold text-[#206FAC]">
             What People Say
           </h2>
         </motion.div>
@@ -99,47 +96,49 @@ export default function TestimonialsCarousel() {
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
-              initial={{ opacity: 0, x: 100 }}
+              initial={{ opacity: 0, x: 60 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.5 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              exit={{ opacity: 0, x: -60 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             >
-              {getVisibleTestimonials().map((testimonial, index) => (
+              {visible.map((t, index) => (
                 <div
                   key={`${currentIndex}-${index}`}
-                  className="border border-gray-200 hover:shadow-xl transition-all duration-300 rounded-2xl p-8"
+                  className="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition"
                 >
-                  <div className="flex items-center mb-6">
+                  <div className="flex mb-4">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className={`w-5 h-5 ${
-                          i < testimonial.rating
+                        className={`w-4 h-4 ${
+                          i < t.rating
                             ? "text-yellow-400 fill-current"
                             : "text-gray-300"
                         }`}
                       />
                     ))}
                   </div>
-                  <p className="text-gray-600 mb-8 leading-relaxed text-lg italic">
-                    "{testimonial.content}"
+
+                  <p className="text-gray-600 text-[0.95rem] leading-relaxed italic mb-6">
+                    “{t.content}”
                   </p>
+
                   <div className="flex items-center">
-                    <div className="w-14 h-14 rounded-full overflow-hidden mr-4">
+                    <div className="w-12 h-12 rounded-full overflow-hidden mr-3">
                       <Image
-                        src={testimonial.avatar || "/placeholder.svg"}
-                        alt={testimonial.name}
-                        width={56}
-                        height={56}
-                        className="w-full h-full object-cover"
+                        src={t.avatar}
+                        alt={t.name}
+                        width={48}
+                        height={48}
+                        className="object-cover"
                       />
                     </div>
                     <div>
-                      <div className="font-bold text-gray-900 text-lg">
-                        {testimonial.name}
+                      <div className="font-semibold text-gray-900 text-sm">
+                        {t.name}
                       </div>
-                      <div className="text-gray-600">{testimonial.role}</div>
+                      <div className="text-gray-500 text-sm">{t.role}</div>
                     </div>
                   </div>
                 </div>
@@ -147,16 +146,15 @@ export default function TestimonialsCarousel() {
             </motion.div>
           </AnimatePresence>
 
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center mt-6 space-x-2">
             {Array.from({ length: Math.ceil(testimonials.length / 3) }).map(
-              (_, index) => (
+              (_, i) => (
                 <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentIndex ? "bg-[#206FAC]" : "bg-gray-300"
+                  key={i}
+                  onClick={() => setCurrentIndex(i)}
+                  className={`w-2.5 h-2.5 rounded-full ${
+                    i === currentIndex ? "bg-[#206FAC]" : "bg-gray-300"
                   }`}
-                  aria-label={`Go to slide ${index + 1}`}
                 />
               )
             )}

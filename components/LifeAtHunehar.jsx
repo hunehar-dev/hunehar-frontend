@@ -10,84 +10,58 @@ function LifeAtHunehar() {
     {
       id: 1,
       src: "/images/Hunehar-children-playing.png",
-      alt: "Team collaborating on laptops",
+      alt: "Children playing",
     },
-    {
-      id: 2,
-      src: "/images/Hunehar-Computer-lab.jpg",
-      alt: "A planning session at a whiteboard",
-    },
+    { id: 2, src: "/images/Hunehar-Computer-lab.jpg", alt: "Computer lab" },
     {
       id: 3,
       src: "/images/Smiling-Hunehar-Children.jpg",
-      alt: "Group discussion in a bright office",
+      alt: "Smiling children",
     },
-    {
-      id: 4,
-      src: "/images/Hunehar-children3.jpg",
-      alt: "Formal meeting in a conference room",
-    },
+    { id: 4, src: "/images/Hunehar-children3.jpg", alt: "Classroom moment" },
     {
       id: 5,
       src: "/images/Smiling-Hunehar-Children2.jpg",
-      alt: "Two colleagues working together",
+      alt: "Happy students",
     },
-    {
-      id: 6,
-      src: "/images/Hunehar-Children-Poster.jpg",
-      alt: "Creative team celebrating a success",
-    },
-    {
-      id: 7,
-      src: "/images/Hunehar-Sports-Day1.jpg",
-      alt: "A relaxed team working outdoors",
-    },
-    {
-      id: 8,
-      src: "/images/Hunehar-Cricket.jpg",
-      alt: "Professionals walking and talking in an office hallway",
-    },
+    { id: 6, src: "/images/Hunehar-Children-Poster.jpg", alt: "Poster" },
+    { id: 7, src: "/images/Hunehar-Sports-Day1.jpg", alt: "Sports day" },
+    { id: 8, src: "/images/Hunehar-Cricket.jpg", alt: "Cricket match" },
     {
       id: 9,
       src: "/images/Hunehar-student-studying.jpg",
-      alt: "Professionals walking and talking in an office hallway",
+      alt: "Student studying",
     },
     {
       id: 10,
       src: "/images/Hunehar-students-studying2.png",
-      alt: "Professionals walking and talking in an office hallway",
+      alt: "Group study",
     },
-    {
-      id: 11,
-      src: "/images/Hunehar-classroom.png",
-      alt: "Professionals walking and talking in an office hallway",
-    },
+    { id: 11, src: "/images/Hunehar-classroom.png", alt: "Classroom" },
     {
       id: 12,
       src: "/images/Hunehar-student-reading.jpg",
-      alt: "Professionals walking and talking in an office hallway",
+      alt: "Reading student",
     },
   ];
 
-  const openModal = (image) => setSelectedImage(image);
-  const closeModal = () => setSelectedImage(null);
-
   return (
     <>
-      <div className="bg-white py-16">
+      <section className="bg-white py-12">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#206FAC] text-center mb-12">
+          <h2 className="text-[clamp(1.75rem,3vw,2.25rem)] font-bold text-[#206FAC] text-center mb-8">
             Life at Hunehar
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {images.map((image) => (
               <motion.div
                 key={image.id}
                 className="aspect-square overflow-hidden rounded-lg cursor-pointer"
-                onClick={() => openModal(image)}
+                onClick={() => setSelectedImage(image)}
                 layoutId={`card-${image.id}`}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
               >
                 <motion.img
                   src={image.src}
@@ -98,40 +72,37 @@ function LifeAtHunehar() {
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
       <AnimatePresence>
         {selectedImage && (
           <motion.div
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex justify-center items-center z-50 p-4"
-            onClick={closeModal}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+            onClick={() => setSelectedImage(null)}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <motion.div
               className="relative"
-              onClick={(e) => e.stopPropagation()}
               layoutId={`card-${selectedImage.id}`}
+              onClick={(e) => e.stopPropagation()}
             >
               <img
                 src={selectedImage.src}
                 alt="Enlarged view"
                 className="rounded-lg object-contain shadow-2xl"
-                style={{ maxHeight: "90vh", maxWidth: "90vw" }}
+                style={{ maxHeight: "85vh", maxWidth: "85vw" }}
               />
             </motion.div>
+
             <motion.button
-              onClick={closeModal}
-              className="absolute top-5 right-5 bg-white/20 text-white rounded-full h-10 w-10 flex items-center justify-center text-2xl font-bold"
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-5 right-5 bg-white/20 text-white rounded-full h-9 w-9 flex items-center justify-center text-xl font-bold"
               aria-label="Close"
               initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1, transition: { delay: 0.3 } }}
+              animate={{ scale: 1, opacity: 1, transition: { delay: 0.2 } }}
               exit={{ scale: 0, opacity: 0 }}
-              whileHover={{
-                scale: 1.1,
-                backgroundColor: "rgba(255, 255, 255, 0.3)",
-              }}
             >
               &times;
             </motion.button>

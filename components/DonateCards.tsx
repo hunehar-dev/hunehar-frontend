@@ -6,21 +6,21 @@ import { Heart, GraduationCap } from "lucide-react";
 export default function DonateCards() {
   const cards = [
     {
-      icon: <Heart className="w-8 h-8 text-[#E5533D]" />,
+      icon: <Heart className="w-6 h-6 text-[#E5533D]" />,
       title: "Sponsor a Student",
       description:
-        "Sponsor a student for only Rs. 3,000/month. Ensuring education, mentorship, and a brighter future.",
+        "Sponsor a student for only Rs. 3,000/month and support their education and future.",
       buttonText: "Sponsor a Student",
       buttonStyle:
         "bg-[#E5533D] hover:bg-[#c9442f] text-white hover:cursor-pointer",
       iconBg: "bg-[#E5533D]/10",
     },
     {
-      icon: <GraduationCap className="w-8 h-8 text-[#E5533D]" />,
-      title: "Support a Teacher",
+      icon: <GraduationCap className="w-6 h-6 text-[#E5533D]" />,
+      title: "One-Time Donation",
       description:
-        "Help us train and support dedicated teachers to create lasting educational impact in their communities.",
-      buttonText: "Support a Teacher",
+        "Support teachers and classrooms to create long-term educational impact.",
+      buttonText: "One-Time Donation",
       buttonStyle:
         "border-2 border-[#E5533D] text-[#E5533D] hover:bg-[#E5533D] hover:text-white bg-transparent hover:cursor-pointer",
       iconBg: "bg-[#E5533D]/10",
@@ -28,46 +28,47 @@ export default function DonateCards() {
   ];
 
   return (
-    <section className="py-20 lg:py-32 bg-gray-50">
+    <section className="py-12 lg:py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#206FAC] mb-4 leading-tight">
+          <h2 className="text-[clamp(1.75rem,3vw,2.25rem)] font-bold text-[#206FAC] text-center mb-8">
             Make a Difference <span className="underline">Today</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Join us in our cause, sponsor and donate today!
+          <p className="text-base text-gray-600 max-w-xl mx-auto">
+            Join us in supporting education and changing lives.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {cards.map((card, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
               viewport={{ once: true }}
-              className="bg-white border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 rounded-2xl p-8 text-center"
+              className="bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all rounded-xl p-6 text-center"
             >
               <div
-                className={`w-16 h-16 ${card.iconBg} rounded-2xl flex items-center justify-center mx-auto mb-6`}
+                className={`w-12 h-12 ${card.iconBg} rounded-xl flex items-center justify-center mx-auto mb-4`}
               >
                 {card.icon}
               </div>
-              <h3 className="text-2xl text-gray-900 font-semibold tracking-tight mb-4">
+
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {card.title}
               </h3>
-              <p className="text-gray-600 mb-8 leading-relaxed text-lg">
-                {card.description}
-              </p>
+
+              <p className="text-gray-600 text-base mb-6">{card.description}</p>
+
               <button
-                className={`${card.buttonStyle} px-8 py-4 font-semibold rounded-md transition-colors`}
+                className={`${card.buttonStyle} px-6 py-2.5 text-sm font-semibold rounded-md transition-colors`}
               >
                 {card.buttonText}
               </button>

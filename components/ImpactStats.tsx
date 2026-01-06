@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function ImpactStats() {
   const stats = [
     { value: "RS. 5M+", label: "Funds Raised" },
-    { value: "500+", label: "Students Sponsored" },
+    { value: "400+", label: "Students Sponsored" },
     { value: "100%", label: "Delivered Donations" },
     { value: "250K", label: "Charity Participation" },
   ];

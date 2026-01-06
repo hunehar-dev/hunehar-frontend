@@ -3,7 +3,6 @@ import HeroSection from "@/components/HeroSection";
 import StatsSection from "@/components/StatsSection";
 import WhyExist from "@/components/WhyExist";
 import DonateCards from "@/components/DonateCards";
-import StudentStories from "@/components/StudentStories";
 import ImpactStats from "@/components/ImpactStats";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import FAQAccordion from "@/components/FAQAccordion";
@@ -21,7 +20,6 @@ export default function Home() {
       <IntroductionSection />
       <WhyExist />
       <DonateCards />
-      <StudentStories />
       <LifeAtHunehar />
       <ImpactStats />
       <TestimonialsCarousel />

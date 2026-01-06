@@ -5,31 +5,34 @@ import Image from "next/image";
 
 export default function WhyExist() {
   return (
-    <section className="py-24 bg-gray-50">
-      <div className="container mx-auto px-6 lg:px-12">
-        <h2 className="text-3xl lg:text-5xl font-bold text-[#206FAC] text-center mb-16">
+    <section className="py-14 bg-gray-50">
+      <div className="container mx-auto px-4 lg:px-8">
+        {/* Section Heading */}
+        <h2 className="text-[clamp(1.75rem,3vw,2.25rem)] font-bold text-[#206FAC] text-center mb-10">
           Why We Exist
         </h2>
 
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
+          {/* Left Column */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-4"
           >
-            <div className="relative overflow-hidden rounded-2xl shadow-xl">
+            <div className="relative overflow-hidden rounded-xl shadow-md max-h-[430px]">
               <Image
                 src="/images/Pakistan-OOC-Infographic.jpg"
                 alt="Out-of-school children in Pakistan"
                 width={600}
-                height={450}
-                className="w-full max-w mx-auto"
+                height={400}
+                className="w-full h-full object-cover"
               />
             </div>
-            <div className="bg-white border-l-4 border-red-500 p-8 rounded-xl shadow-sm">
-              <p className="text-lg leading-relaxed text-gray-800 font-semibold">
+
+            <div className="bg-white border-l-4 border-red-500 p-4 rounded-lg shadow-sm">
+              <p className="text-sm sm:text-base leading-relaxed text-gray-800 font-semibold">
                 “Pakistan has the world’s{" "}
                 <span className="text-red-600">
                   second-highest number of out-of-school children
@@ -39,25 +42,26 @@ export default function WhyExist() {
               <a
                 href="https://www.unicef.org/pakistan/education"
                 target="_blank"
-                className="text-lg text-blue-600 underline block mt-3"
+                className="text-sm text-blue-600 underline block mt-2"
               >
                 — UNICEF Report
               </a>
             </div>
           </motion.div>
 
+          {/* Right Column */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
             viewport={{ once: true }}
-            className="space-y-10"
+            className="space-y-6"
           >
             <div>
-              <h2 className="text-3xl font-bold text-[#206FAC] mb-4">
+              <h3 className="text-[clamp(1.4rem,2.5vw,1.75rem)] font-bold text-[#206FAC] mb-3">
                 Our Solution: Hunehar
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              </h3>
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4">
                 Hunehar provides{" "}
                 <strong className="text-[#206FAC]">
                   free, quality education
@@ -66,38 +70,28 @@ export default function WhyExist() {
                 backgrounds, giving them the tools to learn, grow, and thrive.
               </p>
 
-              <ul className="text-lg space-y-4">
-                <li className="flex items-start space-x-3">
-                  <span className="w-2.5 h-2.5 bg-[#206FAC] rounded-full mt-2"></span>
-                  <span className="text-gray-700">
-                    Free primary & secondary education
-                  </span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <span className="w-2.5 h-2.5 bg-[#206FAC] rounded-full mt-2"></span>
-                  <span className="text-gray-700">
-                    Books, uniforms & learning materials
-                  </span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <span className="w-2.5 h-2.5 bg-[#206FAC] rounded-full mt-2"></span>
-                  <span className="text-gray-700">
-                    Mentorship & life skills programs
-                  </span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <span className="w-2.5 h-2.5 bg-[#206FAC] rounded-full mt-2"></span>
-                  <span className="text-gray-700">Community-driven change</span>
-                </li>
+              <ul className="text-sm sm:text-base space-y-2">
+                {[
+                  "Free primary & secondary education",
+                  "Books, uniforms & learning materials",
+                  "Mentorship & life skills programs",
+                  "Community-driven change",
+                ].map((item) => (
+                  <li key={item} className="flex items-start space-x-3">
+                    <span className="w-2 h-2 bg-[#206FAC] rounded-full mt-2"></span>
+                    <span className="text-gray-700">{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
-            <div className="relative overflow-hidden rounded-2xl shadow-xl">
+
+            <div className="relative overflow-hidden rounded-xl shadow-md max-h-[380px]">
               <Image
                 src="/images/Hunehar-children2.jpg"
-                alt="Out-of-school children in Pakistan"
+                alt="Hunehar children"
                 width={500}
                 height={300}
-                className="w-full max-w mx-auto"
+                className="w-full h-full object-cover"
               />
             </div>
           </motion.div>
