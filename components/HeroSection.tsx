@@ -15,7 +15,7 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-5 gap-[clamp(1rem,2vw,2rem)] items-center">
           <div className="lg:col-span-3">
-            <h2 className="text-orange-400 font-bold text-[clamp(1.5rem,3vw,2rem)] mb-2">
+            <h2 className="text-orange-400 font-bold text-[clamp(1rem,2vw,2rem)] mb-2">
               Sponsor a Child. Empower a Future.
             </h2>
             <h1 className="text-[clamp(2.5rem,5vw,3.5rem)] font-extrabold leading-tight mb-4">
