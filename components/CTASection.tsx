@@ -33,9 +33,9 @@ export default function CTASection() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="bg-white text-gray-900 flex-1 h-11 px-4 text-[0.95rem] rounded-md outline-none"
+                className="bg-white text-gray-900 flex-1 sm:flex-1 h-11 px-4 py-2 text-[0.95rem] rounded-md outline-none w-full"
               />
-              <button className="bg-orange-500 hover:bg-orange-600 text-white h-11 px-6 text-[0.95rem] font-semibold rounded-md transition-colors">
+              <button className="bg-orange-500 hover:bg-orange-600 hover:cursor-pointer text-white h-11 px-6 sm:px-4 text-[0.95rem] sm:text-[0.85rem] font-semibold rounded-md transition-colors w-full sm:w-auto">
                 Subscribe
               </button>
             </div>

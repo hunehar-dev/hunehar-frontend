@@ -2,12 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 
 export default function TestimonialsCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-
   const testimonials = [
     {
       name: "Ahmed Mustapha",
@@ -41,22 +37,45 @@ export default function TestimonialsCarousel() {
     },
   ];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [perSlide, setPerSlide] = useState(3);
+
+  // dynamically set number of testimonials per slide based on screen width
+  useEffect(() => {
+    const updatePerSlide = () => {
+      const w = window.innerWidth;
+      if (w < 768) setPerSlide(1); // mobile
+      else if (w < 1024) setPerSlide(2); // tablet
+      else setPerSlide(3); // desktop
+    };
+
+    updatePerSlide();
+    window.addEventListener("resize", updatePerSlide);
+    return () => window.removeEventListener("resize", updatePerSlide);
+  }, []);
+
+  // automatic rotation
   useEffect(() => {
     if (!isHovered) {
       const interval = setInterval(() => {
         setCurrentIndex(
-          (prev) => (prev + 1) % Math.ceil(testimonials.length / 3)
+          (prev) => (prev + 1) % Math.ceil(testimonials.length / perSlide)
         );
       }, 4500);
       return () => clearInterval(interval);
     }
-  }, [isHovered, testimonials.length]);
+  }, [isHovered, perSlide]);
 
-  const visible = testimonials.slice(currentIndex * 3, currentIndex * 3 + 3);
+  const visible = testimonials.slice(
+    currentIndex * perSlide,
+    currentIndex * perSlide + perSlide
+  );
 
   return (
     <section className="py-12 bg-white">
       <div className="container mx-auto px-4">
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -69,6 +88,7 @@ export default function TestimonialsCarousel() {
           </h2>
         </motion.div>
 
+        {/* Carousel */}
         <div
           className="relative overflow-hidden"
           onMouseEnter={() => setIsHovered(true)}
@@ -76,12 +96,12 @@ export default function TestimonialsCarousel() {
         >
           <AnimatePresence mode="wait">
             <motion.div
-              key={currentIndex}
+              key={`${currentIndex}-${perSlide}`} // important for responsive changes
               initial={{ opacity: 0, x: 60 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -60 }}
               transition={{ duration: 0.4 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              className={`grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6`}
             >
               {visible.map((t, index) => (
                 <div
@@ -91,12 +111,9 @@ export default function TestimonialsCarousel() {
                   <p className="text-gray-600 text-[0.95rem] leading-relaxed italic mb-6">
                     “{t.content}”
                   </p>
-
                   <div className="flex items-center">
-                    <div>
-                      <div className="font-semibold text-gray-900 text-sm">
-                        {t.name}
-                      </div>
+                    <div className="font-semibold text-gray-900 text-sm">
+                      {t.name}
                     </div>
                   </div>
                 </div>
@@ -104,18 +121,19 @@ export default function TestimonialsCarousel() {
             </motion.div>
           </AnimatePresence>
 
+          {/* Dots */}
           <div className="flex justify-center mt-6 space-x-2">
-            {Array.from({ length: Math.ceil(testimonials.length / 3) }).map(
-              (_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrentIndex(i)}
-                  className={`w-2.5 h-2.5 rounded-full ${
-                    i === currentIndex ? "bg-[#206FAC]" : "bg-gray-300"
-                  }`}
-                />
-              )
-            )}
+            {Array.from({
+              length: Math.ceil(testimonials.length / perSlide),
+            }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentIndex(i)}
+                className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                  i === currentIndex ? "bg-[#206FAC]" : "bg-gray-300"
+                }`}
+              />
+            ))}
           </div>
         </div>
       </div>

@@ -107,10 +107,10 @@ export default function DonateCards() {
 
         {/* Donate Cards */}
         <div>
-          <p className="text-[clamp(0.5rem,1.75vw,2rem)] font-bold text-gray-800 mb-4 text-center">
+          <p className="text-[clamp(1rem,1.75vw,2rem)] font-bold text-gray-700 mb-4 text-center">
             Your support directly changes lives. Choose how you’d like to help:
           </p>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto px-2">
             {cards.map((card, index) => (
               <motion.div
                 key={index}
@@ -118,24 +118,22 @@ export default function DonateCards() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
                 viewport={{ once: true }}
-                className="bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all rounded-xl p-6 text-center"
+                className="bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all rounded-xl p-4 sm:p-6 text-center"
               >
                 <div
-                  className={`w-12 h-12 ${card.iconBg} rounded-xl flex items-center justify-center mx-auto mb-4`}
+                  className={`w-10 h-10 sm:w-12 sm:h-12 ${card.iconBg} rounded-xl flex items-center justify-center mx-auto mb-4`}
                 >
                   {card.icon}
                 </div>
 
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">
                   {card.title}
                 </h3>
 
-                <p className="text-gray-600 text-base mb-6">
-                  {card.description}
-                </p>
+                <p className="text-sm sm:text-base mb-6">{card.description}</p>
 
                 <button
-                  className={`${card.buttonStyle} px-6 py-2.5 text-sm font-semibold rounded-md transition-colors`}
+                  className={`${card.buttonStyle} px-4 py-2 sm:px-6 sm:py-2.5 text-sm font-semibold rounded-md transition-colors`}
                 >
                   {card.buttonText}
                 </button>

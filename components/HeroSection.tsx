@@ -5,20 +5,18 @@ import React from "react";
 export default function HeroSection() {
   return (
     <section
-      className="relative bg-center bg-no-repeat text-white py-[clamp(6rem,10vw,8rem)] min-h-[60vh] flex items-center"
-      style={{
-        backgroundImage: "url('/images/Hunehar-students.webp')",
-      }}
+      className="relative bg-center bg-no-repeat text-white py-[clamp(5rem,8vw,8rem)] min-h-[50vh] sm:min-h-[60vh] flex items-center"
+      style={{ backgroundImage: "url('/images/Hunehar-students.webp')" }}
     >
       <div className="absolute inset-0 bg-black/40"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-5 gap-[clamp(1rem,2vw,2rem)] items-center">
-          <div className="lg:col-span-3">
+        <div className="flex flex-col lg:grid lg:grid-cols-5 gap-6 lg:gap-[clamp(1rem,2vw,2rem)] items-center">
+          <div className="lg:col-span-3 space-y-4 sm:space-y-6">
             <h2 className="text-orange-400 font-bold text-[clamp(1rem,2vw,2rem)] mb-2">
               Sponsor a Child. Empower a Future.
             </h2>
-            <h1 className="text-[clamp(2.5rem,5vw,3.5rem)] font-extrabold leading-tight mb-4">
+            <h1 className="text-[clamp(2rem,6vw,3.5rem)] font-extrabold leading-tight">
               Changing Lives Through Education
             </h1>
             <div className="flex items-start">

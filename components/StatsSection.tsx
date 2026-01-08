@@ -17,9 +17,9 @@ export default function StatsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-white rounded-xl shadow-xl p-5 sm:p-6 lg:p-8 -mt-8 border border-gray-100"
+          className="bg-white rounded-xl shadow-xl p-5 sm:p-6 lg:p-8 -mt-4 sm:-mt-6 lg:-mt-8 border border-gray-100"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-3 md:grid-cols-3 gap-8 md:gap-6 max-w-4xl mx-auto">
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
@@ -29,7 +29,7 @@ export default function StatsSection() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-[clamp(2.5rem,4vw,2.5rem)] font-bold text-[#206FAC] mb-1">
+                <div className="text-[clamp(2rem,4vw,2.5rem)] font-bold text-[#206FAC] mb-1">
                   {stat.value}
                 </div>
                 <div className="text-gray-600 font-medium text-sm sm:text-base">

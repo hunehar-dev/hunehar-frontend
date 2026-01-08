@@ -12,7 +12,7 @@ export default function WhyExist() {
           Why We Exist
         </h2>
 
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 items-center">
           {/* Left Column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -21,7 +21,7 @@ export default function WhyExist() {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <div className="relative overflow-hidden rounded-xl shadow-md max-h-[430px]">
+            {/* <div className="relative overflow-hidden rounded-xl shadow-md max-h-[430px]">
               <Image
                 src="/images/Pakistan-OOC-Infographic.webp"
                 alt="Out-of-school children in Pakistan"
@@ -29,10 +29,19 @@ export default function WhyExist() {
                 height={400}
                 className="w-full h-full object-cover"
               />
+            </div> */}
+            <div className="mx-auto w-full sm:w-3/4 md:w-2/3 lg:w-full relative overflow-hidden rounded-2xl shadow-2xl">
+              <Image
+                src="/images/Pakistan-OOC-Infographic.webp"
+                alt="Out-Of-School Children in Pakistan"
+                width={400}
+                height={300}
+                className="w-full h-auto object-contain"
+              />
             </div>
 
             <div className="bg-white border-l-4 border-red-500 p-4 rounded-lg shadow-sm">
-              <p className="text-sm sm:text-base leading-relaxed text-gray-800 font-semibold">
+              <p className="text-[clamp(0.9rem,1.25vw,1rem)] leading-relaxed text-gray-800 font-semibold">
                 "Currently, Pakistan has the world’s{" "}
                 <span className="text-red-600">
                   second-highest number of out-of-school children (OOSC)
@@ -49,7 +58,7 @@ export default function WhyExist() {
               </a>
             </div>
             <div>
-              <p className="text-sm sm:text-base leading-relaxed text-gray-800">
+              <p className="text-[clamp(0.9rem,1.25vw,1rem)] leading-relaxed text-gray-800">
                 Millions of children in Pakistan are denied their basic right to
                 education. Many are forced into labor, early responsibility, or
                 a life with limited choices, simply because access to schooling
@@ -64,13 +73,13 @@ export default function WhyExist() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
           >
             <div>
               <h3 className="text-[clamp(1.4rem,2.5vw,1.75rem)] font-bold text-[#206FAC] mb-3">
                 Our Solution: Hunehar
               </h3>
-              <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4">
+              <p className="text-[clamp(0.9rem,1.25vw,1rem)] text-gray-700 leading-relaxed mb-4">
                 Hunehar provides{" "}
                 <strong className="text-[#206FAC]">
                   free, quality education
@@ -79,7 +88,7 @@ export default function WhyExist() {
                 backgrounds, giving them the tools to learn, grow, and thrive.
               </p>
 
-              <ul className="text-sm sm:text-base space-y-2">
+              <ul className="text-[clamp(0.9rem,1.25vw,1rem)] space-y-2">
                 {[
                   "Free primary & secondary education",
                   "Books, uniforms & learning materials",
@@ -87,20 +96,19 @@ export default function WhyExist() {
                   "Community-driven change",
                 ].map((item) => (
                   <li key={item} className="flex items-start space-x-3">
-                    <span className="w-2 h-2 bg-[#206FAC] rounded-full mt-2"></span>
+                    <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#206FAC] rounded-full mt-2"></span>
                     <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-
-            <div className="relative overflow-hidden rounded-xl shadow-md max-h-[380px]">
+            <div className="mx-auto w-full sm:w-3/4 md:w-2/3 lg:w-full relative overflow-hidden rounded-2xl shadow-2xl">
               <Image
                 src="/images/Hunehar-children2.webp"
                 alt="Hunehar children"
-                width={500}
+                width={400}
                 height={300}
-                className="w-full h-full object-cover"
+                className="w-full h-auto object-contain"
               />
             </div>
           </motion.div>

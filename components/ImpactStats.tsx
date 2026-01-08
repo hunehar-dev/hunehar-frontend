@@ -16,9 +16,9 @@ export default function ImpactStats() {
     <section className="bg-white py-16 lg:py-24">
       <div className="container mx-auto px-4">
         {/* TWO COLUMN WRAPPER */}
-        <div className="flex flex-col lg:flex-row items-center justify-center max-w-6xl mx-auto">
-          {/* LEFT COLUMN - 2/3 */}
-          <div className="lg:w-2/3 flex justify-center lg:justify-center">
+        <div className="flex flex-col sm:flex-row md:flex-row lg:flex-row items-center justify-center max-w-6xl mx-auto gap-8 lg:gap-12">
+          {/* LEFT COLUMN ~1.75/3 */}
+          <div className="lg:flex-[1.75] flex justify-center">
             <div className="max-w-xl">
               <h2 className="text-[clamp(1.75rem,3vw,2.25rem)] font-bold text-[#206FAC] mb-3">
                 Our Impact
@@ -46,7 +46,7 @@ export default function ImpactStats() {
                   Contribute to our impact. Every rupee counts!
                 </p>
 
-                <div className="flex items-center gap-6">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6">
                   <Link href="/donate">
                     <button className="rounded-md bg-[#206FAC] px-6 py-3 text-sm md:text-base font-medium text-white">
                       Donate Now
@@ -64,10 +64,9 @@ export default function ImpactStats() {
             </div>
           </div>
 
-          {/* RIGHT COLUMN - 1/3 */}
-          {/* RIGHT COLUMN - 1/3 */}
-          <div className="lg:w-1/3 flex justify-center lg:justify-start">
-            <div className="relative w-1/2 lg:w-[90%] h-[320px] lg:h-[420px] rounded-2xl overflow-hidden">
+          {/* RIGHT COLUMN ~1.25/3 */}
+          <div className="lg:flex-[1.25] flex justify-center lg:justify-end w-full">
+            <div className="relative w-full max-w-[300px] sm:max-w-[350px] lg:max-w-full aspect-[4/5] rounded-2xl overflow-hidden">
               <Image
                 src="/images/Hunehar-Child-Happy.webp"
                 alt="Hunehar Impact"
