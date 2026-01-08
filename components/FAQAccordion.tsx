@@ -24,12 +24,12 @@ export default function FAQAccordion() {
     {
       question: "Is Hunehar a registered NGO?",
       answer:
-        "Yes, we are a registered charitable public trust under Pakistan's ICT Trust Act 2020 with full transparency in our financial reporting.",
+        "Yes. Hunehar is registered as a Foundation with the Securities and Exchange Commission of Pakistan (SECP). You can find more details in our Terms and Conditions.",
     },
     {
       question: "Do you accept Zakat donations?",
       answer:
-        "Yes, we accept Zakat and ensure it is used strictly in compliance with Islamic guidelines.",
+        "Yes, we accept Zakat. Zakat donations are utilized strictly in accordance with Islamic guidelines. Please refer to our Zakat Policy for details.",
     },
     {
       question: "Can I volunteer?",

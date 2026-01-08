@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star } from "lucide-react";
 import Image from "next/image";
 
 export default function TestimonialsCarousel() {
@@ -11,52 +10,34 @@ export default function TestimonialsCarousel() {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "Parent",
+      name: "Ahmed Mustapha",
       content:
-        "This organization has completely transformed my daughter's life. The educational support and mentorship she received opened doors we never thought possible.",
-      rating: 5,
-      avatar: "/placeholder.svg",
+        "Hunehar is an excellent initiative considering how under-educated most Pakistani children are. We need more of such programs across all cities until the state takes up the responsibility. I also appreciate the fact that they try to engage the students in extra-curricular activities as well, such as the annual sports day event.",
     },
     {
-      name: "David Chen",
-      role: "Teacher",
+      name: "Masooma Ambrin",
       content:
-        "Working with Hunehar has been the most rewarding experience of my career. Their commitment to education is truly inspiring.",
-      rating: 5,
-      avatar: "/placeholder.svg",
+        "Hunehar is truly a beacon of hope for children who might never have the chance to learn and grow. It has empowered so many young minds to believe in themselves, overcome challenges, and dream bigger than they thought possible. I’m inspired by the dedication and heart behind this organization, and I hope its impact continues to expand, reaching more lives in the years ahead.",
     },
     {
-      name: "Maria Rodriguez",
-      role: "Community Leader",
+      name: "Sadaf Farooq",
       content:
-        "Children are not just learning — they’re thriving. Hope has returned to our community in ways we never imagined.",
-      rating: 5,
-      avatar: "/placeholder.svg",
+        "Hunehar is the perfect organization for spreading light of knowledge & awareness in those lives ,who can't even think of it. Hunehar has given these young soul's the power to rise above any situation or struggle & transform into the brightest future . And I wish, may the success that has come it's way today lead it to a bigger achievement in the year's to come.",
     },
     {
-      name: "James Wilson",
-      role: "Volunteer",
+      name: "Zara Sheikh",
       content:
-        "Seeing the direct impact of our work motivates me every single day to give more and do better.",
-      rating: 5,
-      avatar: "/placeholder.svg",
+        "Becoming a part of Hunehar has been one of the most rewarding decisions of my life. Financing a child’s education is perhaps the greatest good you can ever do.",
     },
     {
-      name: "Lisa Thompson",
-      role: "Donor",
+      name: "Samrah Sajid",
       content:
-        "Every dollar truly makes a difference. The transparency and impact are remarkable.",
-      rating: 5,
-      avatar: "/placeholder.svg",
+        "I love that its so transparent and children are getting this level of education through you guys.",
     },
     {
-      name: "Ahmed Hassan",
-      role: "Program Graduate",
+      name: "Moiz Tahir",
       content:
-        "This program gave me the confidence and tools to pursue my dreams when everything felt impossible.",
-      rating: 5,
-      avatar: "/placeholder.svg",
+        "The essence of charity/zakat. I love that it is a totally non profitable organization, helping people in need whether they are teachers or students.",
     },
   ];
 
@@ -107,38 +88,15 @@ export default function TestimonialsCarousel() {
                   key={`${currentIndex}-${index}`}
                   className="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition"
                 >
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`w-4 h-4 ${
-                          i < t.rating
-                            ? "text-yellow-400 fill-current"
-                            : "text-gray-300"
-                        }`}
-                      />
-                    ))}
-                  </div>
-
                   <p className="text-gray-600 text-[0.95rem] leading-relaxed italic mb-6">
                     “{t.content}”
                   </p>
 
                   <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full overflow-hidden mr-3">
-                      <Image
-                        src={t.avatar}
-                        alt={t.name}
-                        width={48}
-                        height={48}
-                        className="object-cover"
-                      />
-                    </div>
                     <div>
                       <div className="font-semibold text-gray-900 text-sm">
                         {t.name}
                       </div>
-                      <div className="text-gray-500 text-sm">{t.role}</div>
                     </div>
                   </div>
                 </div>

@@ -23,7 +23,7 @@ export default function WhyExist() {
           >
             <div className="relative overflow-hidden rounded-xl shadow-md max-h-[430px]">
               <Image
-                src="/images/Pakistan-OOC-Infographic.jpg"
+                src="/images/Pakistan-OOC-Infographic.webp"
                 alt="Out-of-school children in Pakistan"
                 width={600}
                 height={400}
@@ -96,7 +96,7 @@ export default function WhyExist() {
 
             <div className="relative overflow-hidden rounded-xl shadow-md max-h-[380px]">
               <Image
-                src="/images/Hunehar-children2.jpg"
+                src="/images/Hunehar-children2.webp"
                 alt="Hunehar children"
                 width={500}
                 height={300}

@@ -18,7 +18,7 @@ export default function IntroductionSection() {
           >
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
               <Image
-                src="/images/Hunehar-students-studying.jpg"
+                src="/images/Hunehar-students-studying.webp"
                 alt="Children learning in classroom"
                 width={400}
                 height={300}

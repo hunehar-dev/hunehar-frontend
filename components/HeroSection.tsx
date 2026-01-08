@@ -7,7 +7,7 @@ export default function HeroSection() {
     <section
       className="relative bg-center bg-no-repeat text-white py-[clamp(6rem,10vw,8rem)] min-h-[60vh] flex items-center"
       style={{
-        backgroundImage: "url('/images/Hunehar-students.jpg')",
+        backgroundImage: "url('/images/Hunehar-students.webp')",
       }}
     >
       <div className="absolute inset-0 bg-black/40"></div>
