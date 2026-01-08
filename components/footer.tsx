@@ -87,7 +87,7 @@ export default function Footer() {
               <br />
               Hunehar Welfare School, Merabadi
               <br />
-              Islamabad, Pakistan
+              Islamabad, Pakistan-44000
             </p>
           </div>
 

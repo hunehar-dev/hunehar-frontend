@@ -12,7 +12,7 @@ function LifeAtHunehar() {
       src: "/images/Hunehar-children-playing.webp",
       alt: "Children playing",
     },
-    { id: 2, src: "/images/Hunehar-Computer-lab.webp", alt: "Computer lab" },
+    { id: 2, src: "/images/Hunehar-computer-lab.webp", alt: "Computer lab" },
     {
       id: 3,
       src: "/images/Smiling-Hunehar-Children.webp",
