@@ -22,38 +22,6 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
 
-interface FAQItemProps {
-  question: string;
-  answer: string;
-}
-
-const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className="border-b border-gray-200 py-6">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex justify-between items-center w-full text-left"
-      >
-        <h3 className="text-lg font-semibold text-gray-800">{question}</h3>
-        <ChevronDown
-          className={`h-6 w-6 text-blue-600 transform transition-transform duration-300 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        />
-      </button>
-      <div
-        className={`overflow-hidden transition-all duration-500 ease-in-out ${
-          isOpen ? "max-h-96 mt-4" : "max-h-0"
-        }`}
-      >
-        <p className="text-gray-600 leading-relaxed">{answer}</p>
-      </div>
-    </div>
-  );
-};
-
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -83,29 +51,6 @@ const ContactPage = () => {
       message: "",
     });
   };
-
-  const faqs = [
-    {
-      question: "How can I donate to Hunehar?",
-      answer:
-        "You can donate through the 'Donate Now' button on our website. We accept various payment methods including credit/debit cards, PayPal, and bank transfers. Every contribution, no matter the size, makes a significant difference.",
-    },
-    {
-      question: "Where do my donations go?",
-      answer:
-        "85% of every donation goes directly to our programs for educational resources, teacher training, and community development projects. The remaining 15% covers essential administrative costs to ensure our operations run smoothly and efficiently.",
-    },
-    {
-      question: "Can I volunteer for Hunehar?",
-      answer:
-        "Absolutely! We are always looking for passionate volunteers. Please visit our 'Get Involved' page to see current opportunities, or send us a message through this contact form expressing your interest in volunteering.",
-    },
-    {
-      question: "How does Hunehar ensure sustainable impact?",
-      answer:
-        "Our approach focuses on empowering local communities. We partner with local leaders and organizations to build programs that they can eventually manage independently. This includes training local teachers, establishing community-run libraries, and creating self-sustaining agricultural projects.",
-    },
-  ];
 
   return (
     <>
@@ -483,29 +428,6 @@ const ContactPage = () => {
                   ></iframe>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
-                Frequently Asked Questions
-              </h2>
-              <p className="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">
-                Find quick answers to common questions about our work and how
-                you can help.
-              </p>
-            </div>
-            <div className="max-w-4xl mx-auto">
-              {faqs.map((faq, index) => (
-                <FAQItem
-                  key={index}
-                  question={faq.question}
-                  answer={faq.answer}
-                />
-              ))}
             </div>
           </div>
         </section>
