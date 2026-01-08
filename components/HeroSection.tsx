@@ -31,7 +31,7 @@ export default function HeroSection() {
               </p>
             </div>
           </div>
-
+          {/*
           <div className="lg:col-span-2 flex justify-center lg:justify-end lg:mt-8">
             <div className="w-full max-w-lg bg-white rounded-3xl shadow-2xl p-4 sm:p-6">
               <div className="inline-block bg-blue-900 text-white text-[0.7rem] font-semibold rounded-full px-4 py-1 mb-4">
@@ -61,7 +61,8 @@ export default function HeroSection() {
                 All contributions 100% go towards children’s education.
               </p>
             </div>
-          </div>
+          </div>{" "}
+          */}
         </div>
       </div>
     </section>

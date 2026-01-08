@@ -33,11 +33,12 @@ export default function WhyExist() {
 
             <div className="bg-white border-l-4 border-red-500 p-4 rounded-lg shadow-sm">
               <p className="text-sm sm:text-base leading-relaxed text-gray-800 font-semibold">
-                “Pakistan has the world’s{" "}
+                "Currently, Pakistan has the world’s{" "}
                 <span className="text-red-600">
-                  second-highest number of out-of-school children
+                  second-highest number of out-of-school children (OOSC)
                 </span>{" "}
-                — over 22.8 million aged 5–16 are deprived of education.”
+                with an estimated 22.8 million children aged 5-16 not attending
+                school"
               </p>
               <a
                 href="https://www.unicef.org/pakistan/education"
@@ -46,6 +47,14 @@ export default function WhyExist() {
               >
                 — UNICEF Report
               </a>
+            </div>
+            <div>
+              <p className="text-sm sm:text-base leading-relaxed text-gray-800">
+                Millions of children in Pakistan are denied their basic right to
+                education. Many are forced into labor, early responsibility, or
+                a life with limited choices, simply because access to schooling
+                is out of reach.
+              </p>
             </div>
           </motion.div>
 
@@ -74,7 +83,7 @@ export default function WhyExist() {
                 {[
                   "Free primary & secondary education",
                   "Books, uniforms & learning materials",
-                  "Mentorship & life skills programs",
+                  "Mentorship & extracurricular activities",
                   "Community-driven change",
                 ].map((item) => (
                   <li key={item} className="flex items-start space-x-3">
