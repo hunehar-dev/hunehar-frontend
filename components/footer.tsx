@@ -25,7 +25,7 @@ export default function Footer() {
 
             <div className="flex space-x-4 text-gray-400 mt-2 justify-center md:justify-start">
               <Link
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/huneharpk/posts/?feedView=all"
                 target="_blank"
                 className="hover:text-white transition-colors"
               >
