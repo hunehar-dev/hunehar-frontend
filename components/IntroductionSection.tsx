@@ -34,10 +34,10 @@ export default function IntroductionSection() {
             viewport={{ once: true }}
             className="max-w-xl lg:order-2 order-1"
           >
-            <h2 className="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-[#206FAC] mb-4 leading-tight">
+            <h2 className="text-[clamp(1.75rem,3vw,2.25rem)] font-bold text-[#206FAC] mb-4 leading-tight">
               Eradicating Illiteracy, One Step at a Time
             </h2>
-            <p className="text-[clamp(0.9rem,1.5vw,1.125rem)] text-gray-600 leading-relaxed mb-4">
+            <p className="text-[clamp(0.9rem,1.25vw,1rem)] text-gray-600 leading-relaxed mb-4">
               At Hunehar, we believe that{" "}
               <span className="font-bold text-[#206FAC]">
                 every child deserves the right to dream, learn, and succeed
