@@ -43,10 +43,10 @@ export default function Navbar() {
             onClick={() => setIsMenuOpen(false)}
           >
             <Image
-              src="https://www.hunehar.org/wp-content/uploads/2020/05/cropped-10380131_310573749097898_1415088628236221935_o-203x72.jpg"
+              src="/images/logopng.png"
               alt="Hunehar Logo"
               width={150}
-              height={100}
+              height={50}
               priority
             />
           </Link>
