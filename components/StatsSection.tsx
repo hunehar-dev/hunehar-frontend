@@ -17,22 +17,22 @@ export default function StatsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-white rounded-xl shadow-xl p-5 sm:p-6 lg:p-8 -mt-4 sm:-mt-6 lg:-mt-8 border border-gray-100"
+          className="bg-white rounded-xl shadow-xl p-6 sm:p-7 lg:p-8 -mt-4 sm:-mt-6 lg:-mt-8 border border-gray-100"
         >
-          <div className="grid grid-cols-3 md:grid-cols-3 gap-8 md:gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.15 }}
+                transition={{ duration: 0.4, delay: index * 0.12 }}
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-[clamp(2rem,4vw,2.5rem)] font-bold text-[#206FAC] mb-1">
+                <div className="text-[clamp(1.5rem,6vw,2.5rem)] font-semibold text-[#206FAC] mb-2">
                   {stat.value}
                 </div>
-                <div className="text-gray-600 font-medium text-sm sm:text-base">
+                <div className="text-gray-600 font-medium text-sm sm:text-base leading-snug">
                   {stat.label}
                 </div>
               </motion.div>
