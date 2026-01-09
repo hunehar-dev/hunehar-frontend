@@ -7,14 +7,18 @@ export default function Impact() {
       <Navbar />
 
       {/* HERO */}
-      <section className="py-20 px-6 text-center max-w-5xl mx-auto">
+      <section className="py-20 px-6 text-center max-w-5xl mx-auto ">
         <h1 className="text-[clamp(2.2rem,5vw,3.5rem)] font-bold text-[#206FAC] mb-6">
           Our Impact
         </h1>
         <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
-          At Hunehar, our impact goes far beyond classrooms. Through education,
-          health initiatives, community programs, and youth engagement, we work
-          to uplift families and build pathways toward lasting change.
+          For us at Hunehar, a classroom is just the starting point. We’re here
+          to give underprivileged kids in Islamabad a world-class education, but
+          we don’t stop there. We’re working to lift up entire families and
+          spark real change across our neighborhoods. By bringing people
+          together through community programs and local partnerships, we’ve
+          created a network of support that helps our students and their
+          families truly thrive.
         </p>
       </section>
 

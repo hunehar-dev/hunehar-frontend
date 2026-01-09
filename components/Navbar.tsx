@@ -57,10 +57,10 @@ export default function Navbar() {
               <div key={link.label} className="relative group">
                 <Link
                   href={link.href}
-                  className={`flex items-center space-x-1 text-gray-600 hover:text-blue-700 transition-colors duration-300 font-medium pb-1 text-[clamp(0.875rem,1vw,1rem)] ${
+                  className={`flex items-center space-x-1 text-gray-600 hover:text-[#206FAC] transition-colors duration-300 font-medium pb-1 text-[clamp(0.875rem,1vw,1rem)] ${
                     (pathname.startsWith(link.href) && link.href !== "/") ||
                     pathname === link.href
-                      ? "text-blue-700"
+                      ? "text-[#206FAC]"
                       : ""
                   }`}
                 >
@@ -76,7 +76,7 @@ export default function Navbar() {
                         <Link
                           key={sublink.href}
                           href={sublink.href}
-                          className="block px-3 py-1 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-700 transition-colors"
+                          className="block px-3 py-1 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#206FAC] transition-colors"
                         >
                           {sublink.label}
                         </Link>
