@@ -231,7 +231,7 @@ export default function About() {
             <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-sm">
               <div className="relative h-40 sm:h-48 md:h-52 lg:h-56">
                 <img
-                  src="/images/about/Hunehar-library.webp"
+                  src="/images/about/Hunehar-Library.webp"
                   alt="School Library"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
