@@ -17,11 +17,11 @@ export default function About() {
         <div className="absolute inset-0 bg-black/40"></div>{" "}
         {/* 40% opacity black overlay */}
         <div className="relative z-10 container mx-auto flex flex-col items-center justify-center h-full text-white text-center px-6">
-          <h1 className="text-[clamp(2.2rem,5vw,3.5rem)] font-bold mb-4 tracking-tight drop-shadow-lg">
+          <h1 className="text-[clamp(2.2rem,5vw,3.4rem)] font-semibold mb-4 tracking-tight">
             About Us
           </h1>
 
-          <p className="text-sm md:text-base max-w-3xl leading-relaxed drop-shadow-md">
+          <p className="text-sm md:text-base max-w-3xl leading-relaxed">
             Hunehar exists to ensure that no child is denied education because
             of circumstances beyond their control. What began as a small effort
             has grown into a promise we continue to uphold every day.
@@ -33,23 +33,32 @@ export default function About() {
       <section className="py-24">
         <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#206FAC] mb-6">
+            <h2 className="text-[clamp(1.75rem,3.5vw,2.25rem)] font-semibold text-[#206FAC] mb-6">
               Message from the Founder
             </h2>
-            <blockquote className="text-gray-600 leading-relaxed border-l-4 border-[#206FAC] pl-6 italic">
+            <blockquote className="text-sm md:text-base text-gray-600 leading-relaxed border-l-4 border-[#206FAC] pl-6 italic">
               “It’s so heartwarming whenever we receive a donation, sponsorship,
               or volunteering application, allowing us to help those facing
               financial hardships. You are the reason children start school,
               continue their studies, and experience new possibilities in life.
+              <br />
               Thank you for believing in them.”
             </blockquote>
 
             <p className="mt-6 font-semibold text-gray-800">Mian Samiuddin</p>
-            <p className="text-sm text-gray-500">Founder & Chairman</p>
+            <p className="text-sm md:text-base leading-relaxed text-gray-500">
+              Founder & Chairman
+            </p>
           </div>
 
-          <div className="w-full h-80 bg-gray-200 rounded-2xl shadow-inner flex items-center justify-center text-gray-500">
-            Founder Image
+          <div className="flex items-center justify-center overflow-hidden">
+            <img
+              src="/images/about/Sami-ud-Din.webp"
+              alt="Founder of Hunehar"
+              height={300}
+              width={400}
+              className="rounded-2xl object-contain"
+            />
           </div>
         </div>
       </section>
@@ -57,36 +66,39 @@ export default function About() {
       {/* OUR STORY */}
       <section className="bg-gray-50 py-24">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#206FAC] mb-12 text-center">
+          <h2 className="text-[clamp(1.75rem,3.5vw,2.25rem)] font-semibold text-[#206FAC] mb-12 text-center">
             Our Story
           </h2>
 
           <div className="max-w-4xl mx-auto space-y-10 border-l-2 border-[#206FAC] pl-8">
             <div>
-              <h3 className="font-semibold text-lg text-[#206FAC]">
-                2012 — A Beginning
+              <h3 className="text-[clamp(1.4rem,2.4vw,1.5rem)] font-semibold text-[#206FAC]">
+                2012 - Our Beginning
               </h3>
-              <p className="text-gray-600 mt-2">
-                Hunehar began with a simple concern: too many children were
-                being left behind because education was out of reach.
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2">
+                Hunehar began in 2012 with a simple concern: too many children
+                around us were being left behind because education was out of
+                reach.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-lg text-[#206FAC]">
-                Supporting Students
+              <h3 className="text-[clamp(1.4rem,2.4vw,1.5rem)] font-semibold text-[#206FAC]">
+                Early Years
               </h3>
-              <p className="text-gray-600 mt-2">
-                We initially sponsored children already enrolled in schools,
-                covering fees, uniforms, stationery, and learning resources.
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2">
+                In the early years, we supported children already enrolled in
+                local schools by sponsoring their education. We helped with
+                school fees, uniforms, stationery, and learning resources, so
+                they could continue studying without burdening their families.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-lg text-[#206FAC]">
-                2017 — The Hunehar Welfare School
+              <h3 className="text-[clamp(1.4rem,2.4vw,1.5rem)] font-semibold text-[#206FAC]">
+                2017 - The Hunehar Welfare School
               </h3>
-              <p className="text-gray-600 mt-2">
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2">
                 As needs grew, we opened The Hunehar Welfare School in
                 Mehrabadi, Islamabad, providing free, quality education in a
                 safe environment.
@@ -94,8 +106,10 @@ export default function About() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-lg text-[#206FAC]">Today</h3>
-              <p className="text-gray-600 mt-2">
+              <h3 className="text-[clamp(1.4rem,2.4vw,1.5rem)] font-semibold text-[#206FAC]">
+                Today
+              </h3>
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2">
                 We educate children up to Grade 5 and continue supporting them
                 beyond our school by helping secure admissions and sponsorships.
               </p>
@@ -108,10 +122,10 @@ export default function About() {
       <section className="py-24">
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12">
           <div className="p-10 bg-gray-50 rounded-2xl shadow-sm">
-            <h3 className="text-2xl font-bold text-[#206FAC] mb-4">
+            <h2 className="text-[clamp(1.4rem,2.4vw,1.5rem)] font-semibold text-[#206FAC] mb-4">
               Our Mission
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
+            </h2>
+            <p className="text-sm md:text-base text-gray-600 leading-relaxed">
               To ensure that every child, regardless of background, can exercise
               their right to quality education, emotional well-being, and
               economic empowerment.
@@ -119,10 +133,10 @@ export default function About() {
           </div>
 
           <div className="p-10 bg-gray-50 rounded-2xl shadow-sm">
-            <h3 className="text-2xl font-bold text-[#206FAC] mb-4">
+            <h2 className="text-[clamp(1.4rem,2.4vw,1.5rem)] font-semibold text-[#206FAC] mb-4">
               Our Vision
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
+            </h2>
+            <p className="text-sm md:text-base text-gray-600 leading-relaxed">
               A Pakistan where no child is left behind, and where education is
               not a privilege but a promise fulfilled.
             </p>
@@ -132,67 +146,127 @@ export default function About() {
 
       {/* LEGAL STATUS */}
       <section className="bg-gray-50 py-20">
-        <div className="container mx-auto px-6 max-w-4xl text-center">
-          <h3 className="text-2xl font-bold text-[#206FAC] mb-4">
-            Legal Status & Registration
-          </h3>
-          <p className="text-gray-600 leading-relaxed">
-            Hunehar is registered as a Foundation with the Securities and
-            Exchange Commission of Pakistan (SECP) and operates under the ICT
-            Act 2020. Details regarding compliance are available in our Terms &
-            Conditions.
-          </p>
+        <div className="container mx-auto px-6 max-w-5xl">
+          <div className="flex flex-col md:flex-row items-center gap-10">
+            {/* SECP Badge */}
+            <div className="flex-shrink-0">
+              <div className="w-40 h-40 bg-white rounded-2xl shadow-sm flex items-center justify-center overflow-hidden">
+                <img
+                  src="/images/about/SECP.webp"
+                  alt="Registered with SECP Pakistan"
+                  className="w-full h-full object-contain p-4"
+                />
+              </div>
+            </div>
+
+            {/* Text Content */}
+            <div className="text-center md:text-left">
+              <h2 className="text-[clamp(1.75rem,3.5vw,2.25rem)] font-semibold text-[#206FAC] mb-4">
+                Legal Status & Registration
+              </h2>
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl">
+                Hunehar is registered as a Foundation with the Securities and
+                Exchange Commission of Pakistan (SECP) and operates under the
+                ICT Act 2020. Details regarding compliance are available in our
+                Terms & Conditions.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* HUNEHAR WELFARE SCHOOL */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#206FAC] mb-6 text-center">
+          {/* Heading */}
+          <h2 className="text-[clamp(1.75rem,3.5vw,2.25rem)] font-semibold text-[#206FAC] mb-6 text-center">
             Hunehar Welfare School
           </h2>
 
-          <p className="max-w-4xl mx-auto text-center text-gray-600 mb-14">
-            Since 2017, Hunehar Welfare School has enrolled over 300 children
-            from Mehrabadi and surrounding communities, offering education from
-            Play Group to Grade 5, with plans to expand annually.
-          </p>
+          {/* Description */}
+          <div className="max-w-4xl mx-auto text-justify text-sm md:text-base text-gray-600 leading-relaxed space-y-6 mb-16 leading-relaxed">
+            <p>
+              Since 2017, Hunehar Welfare School has enrolled over 200 children
+              from Mehrabadi and surrounding communities, providing them with
+              free, quality education in a safe and nurturing environment.
+            </p>
+
+            <p>
+              We currently offer eight grades: Play Group, Nursery,
+              Kindergarten, and Grades 1 through 5. Each year, we aim to add one
+              grade, with the long-term goal of educating our students through
+              to Matriculation.
+            </p>
+
+            <p>
+              We strongly believe in empowering women through meaningful
+              employment. Our faculty is entirely female and trained under the
+              mentorship of Ms. Saima Rehman, Principal of Roots School System.
+              Teaching follows the guidelines of the National Curriculum Council
+              (NCC), ensuring quality and consistency.
+            </p>
+          </div>
+
+          {/* Campus Includes */}
+          <h3 className="text-[clamp(1.4rem,2.4vw,1.8rem)] font-semibold text-[#206FAC] mb-10 text-center">
+            Our Campus Includes
+          </h3>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Classrooms */}
-            <div className="h-48 bg-gray-200 rounded-2xl flex items-center justify-center shadow-sm overflow-hidden">
-              <img
-                src="/images/about/Hunehar-classroom.webp"
-                alt="Classrooms"
-                className="w-full h-full object-cover rounded-2xl"
-              />
+            <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-sm">
+              <div className="relative h-40 sm:h-48 md:h-52 lg:h-56">
+                <img
+                  src="/images/about/Hunehar-classroom.webp"
+                  alt="Designated Classrooms"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <p className="py-4 text-center font-medium text-gray-700">
+                Designated Classrooms
+              </p>
             </div>
 
             {/* Library */}
-            <div className="h-48 bg-gray-200 rounded-2xl flex items-center justify-center shadow-sm overflow-hidden">
-              <img
-                src="/images/about/Hunehar-Students.webp"
-                alt="Student in a Classroom"
-                className="w-full h-full object-cover rounded-2xl"
-              />
+            <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-sm">
+              <div className="relative h-40 sm:h-48 md:h-52 lg:h-56">
+                <img
+                  src="/images/about/Hunehar-library.webp"
+                  alt="School Library"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <p className="py-4 text-center font-medium text-gray-700">
+                Library
+              </p>
             </div>
 
             {/* Computer Lab */}
-            <div className="h-48 bg-gray-200 rounded-2xl flex items-center justify-center shadow-sm overflow-hidden">
-              <img
-                src="/images/about/Hunehar-computer-lab.webp"
-                alt="Computer Lab"
-                className="w-full h-full object-cover rounded-2xl"
-              />
+            <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-sm">
+              <div className="relative h-40 sm:h-48 md:h-52 lg:h-56">
+                <img
+                  src="/images/about/Hunehar-computer-lab.webp"
+                  alt="Computer Lab"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <p className="py-4 text-center font-medium text-gray-700">
+                Computer Lab
+              </p>
             </div>
 
             {/* Playground */}
-            <div className="h-48 bg-gray-200 rounded-2xl flex items-center justify-center shadow-sm overflow-hidden">
-              <img
-                src="/images/about/Hunehar-children-playing.webp"
-                alt="Playground"
-                className="w-full h-full object-cover rounded-2xl"
-              />
+            <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-sm">
+              <div className="relative h-40 sm:h-48 md:h-52 lg:h-56">
+                <img
+                  src="/images/about/playground.webp"
+                  alt="Hunehar Playground"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <p className="py-4 text-center font-medium text-gray-700">
+                Playground
+              </p>
             </div>
           </div>
         </div>
@@ -202,13 +276,13 @@ export default function About() {
       <section className="bg-gray-50 py-24">
         <div className="container mx-auto px-6">
           {/* SECTION TITLE */}
-          <h2 className="text-3xl md:text-4xl font-bold text-[#206FAC] mb-16 text-center">
+          <h2 className="text-[clamp(1.75rem,3.5vw,2.25rem)] font-semibold text-[#206FAC] mb-16 text-center">
             Meet Our Team
           </h2>
 
           {/* ================= LEADERSHIP ================= */}
           <div className="mb-20">
-            <h3 className="text-xl font-semibold text-center mb-10">
+            <h3 className="text-[clamp(1.4rem,2.4vw,1.5rem)] font-semibold text-[#206FAC] text-center mb-10">
               Leadership
             </h3>
 
@@ -255,7 +329,7 @@ export default function About() {
 
           {/* ================= DIRECTORS ================= */}
           <div className="mb-20">
-            <h3 className="text-xl font-semibold text-center mb-10">
+            <h3 className="text-[clamp(1.4rem,2.4vw,1.5rem)] font-semibold text-[#206FAC] text-center mb-10">
               Department Directors
             </h3>
 
@@ -387,7 +461,7 @@ export default function About() {
 
           {/* ================= ASSISTANT DIRECTORS ================= */}
           <div>
-            <h3 className="text-xl font-semibold text-center mb-10">
+            <h3 className="text-[clamp(1.4rem,2.4vw,1.5rem)] font-semibold text-[#206FAC] text-center mb-10">
               Assistant Directors
             </h3>
 
