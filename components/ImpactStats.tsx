@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function ImpactStats() {
   const stats = [
     { value: "Rs. 5M+", label: "Funds Raised" },
-    { value: "400+", label: "Students Sponsored" },
+    { value: "300+", label: "Students Sponsored" },
     { value: "10+", label: "Years of Continuous Service" },
     { value: "150+", label: "Trusted Sponsors" },
   ];

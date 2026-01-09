@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function StatsSection() {
   const stats = [
     { value: "Rs. 5M+", label: "Total Donations Raised" },
-    { value: "400+", label: "Children Supported" },
+    { value: "300+", label: "Children Supported" },
     { value: "100%", label: "Transparency Rate" },
   ];
 
