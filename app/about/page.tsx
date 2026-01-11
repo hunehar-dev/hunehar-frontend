@@ -110,7 +110,7 @@ export default function About() {
                 Today
               </h3>
               <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2">
-                We educate children up to Grade 5 and continue supporting them
+                We educate children up to Grade 6 and continue supporting them
                 beyond our school by helping secure admissions and sponsorships.
               </p>
             </div>
@@ -193,7 +193,7 @@ export default function About() {
 
             <p>
               We currently offer eight grades: Play Group, Nursery,
-              Kindergarten, and Grades 1 through 5. Each year, we aim to add one
+              Kindergarten, and Grades 1 through 6. Each year, we aim to add one
               grade, with the long-term goal of educating our students through
               to Matriculation.
             </p>

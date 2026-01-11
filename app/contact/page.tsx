@@ -179,7 +179,7 @@ const ContactPage = () => {
             <h3 className="text-[clamp(1.8rem,3vw,2.5rem)] font-semibold text-[#206FAC] mb-10 text-center">
               Our Partners
             </h3>
-
+            {/*add an expandable card for partner using aceternity ui*/}
             <div className="relative overflow-hidden">
               <div className="flex w-max gap-14 animate-marquee">
                 {[
@@ -332,7 +332,7 @@ const ContactPage = () => {
                           Location
                         </h4>
                         <p className="text-sm text-gray-600 leading-relaxed">
-                          Hunehar Welfare School, Merabadi, Islamabad,
+                          Hunehar Welfare School, Mehrabadi, G13-Islamabad,
                           Pakistan-44000
                         </p>
                       </div>
