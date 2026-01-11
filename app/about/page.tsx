@@ -286,19 +286,21 @@ export default function About() {
               Leadership
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-3xl mx-auto flex-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-3xl mx-auto">
               {/* President */}
               <div className="bg-white p-8 rounded-2xl shadow-md text-center">
                 <a
-                  href="https://www.linkedin.com/in/hareem-fatima-9a5434166?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                  href="https://www.linkedin.com/in/hareem-fatima-9a5434166"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
-                    src="/images/team/president.jpg"
-                    alt="Hunehar President - Hareem Fatima"
-                    className="w-full h-48 object-cover rounded-xl mb-6 hover:scale-105 transition-transform duration-300"
-                  />
+                  <div className="w-40 aspect-square mx-auto mb-6 overflow-hidden rounded-full">
+                    <img
+                      src="/images/about/hareem.webp"
+                      alt="Hunehar President - Hareem Fatima"
+                      className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
                 </a>
                 <p className="text-lg font-semibold text-gray-800">
                   Hareem Fatima
@@ -313,11 +315,13 @@ export default function About() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
-                    src="/images/team/vp.jpg"
-                    alt="Hunehar Vice President - Zain Ilyas"
-                    className="w-full h-48 object-cover rounded-xl mb-6 hover:scale-105 transition-transform duration-300"
-                  />
+                  <div className="w-40 aspect-square mx-auto mb-6 overflow-hidden rounded-full">
+                    <img
+                      src="/images/about/zain-ilyas.webp"
+                      alt="Hunehar Vice President - Zain Ilyas"
+                      className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
                 </a>
                 <p className="text-lg font-semibold text-gray-800">
                   Zain Ilyas
@@ -334,128 +338,71 @@ export default function About() {
             </h3>
 
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-              {/* Director 1 */}
-              <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
-                <a
-                  href="https://www.linkedin.com/in/haniya-ali-503722226?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-                  target="_blank"
-                  rel="noopener noreferrer"
+              {[
+                {
+                  name: "Haniya Ali",
+                  role: "Director HR",
+                  img: "/images/about/Haniya.webp",
+                  link: "https://www.linkedin.com/in/haniya-ali-503722226",
+                },
+                {
+                  name: "Bushra Tabassum",
+                  role: "Director Liaison",
+                  img: "/images/about/Bushra.webp",
+                  link: "https://www.linkedin.com/in/dr-bushra-tabbasum-a0a8a0268/",
+                },
+                {
+                  name: "Hania Tahir",
+                  role: "Director Finance",
+                  img: "/images/about/Hania.webp",
+                  link: "https://www.linkedin.com/in/hania-tahir-92572b203/",
+                },
+                {
+                  name: "Muhammad Sanauallah",
+                  role: "Director Publications",
+                  img: "/images/about/Muhammad.webp",
+                  link: "https://www.linkedin.com/in/muhammad-bin-sanaullah/",
+                },
+                {
+                  name: "Wardah Muzammil",
+                  role: "Director Philanthropy",
+                  img: "/images/about/Wardah.webp",
+                  link: "https://linkedin.com/in/director2-link",
+                },
+                {
+                  name: "Sumaima Ilyas",
+                  role: "Director Social Media Relations",
+                  img: "/images/about/Sumaima.webp",
+                  link: "https://www.linkedin.com/in/sumaima-ilyas-1a7618285",
+                },
+                {
+                  name: "Rameen Bajwa",
+                  role: "Director R&D",
+                  img: "/images/about/rameen.webp",
+                  link: "https://www.linkedin.com/in/rameen-bajwa-88135725a/",
+                },
+              ].map((person) => (
+                <div
+                  key={person.name}
+                  className="bg-white p-6 rounded-2xl shadow-sm text-center"
                 >
-                  <img
-                    src="images/about/Haniya.webp"
-                    alt="Hunehar Director HR - Haniya Ali"
-                    className="flex w-3/4 mx-auto object-cover rounded-xl mb-4 hover:scale-105 transition-transform duration-300"
-                  />
-                </a>
-                <p className="font-semibold text-gray-800">Haniya Ali</p>
-                <p className="text-sm text-gray-500">Director HR</p>
-              </div>
-
-              {/* Director 2 */}
-              <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
-                <a
-                  href="https://www.linkedin.com/in/dr-bushra-tabbasum-a0a8a0268/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/images/team/director2.jpg"
-                    alt="Hunehar Director Liaison - Bushra Tabassum"
-                    className="w-full h-40 object-cover rounded-xl mb-4 hover:scale-105 transition-transform duration-300"
-                  />
-                </a>
-                <p className="font-semibold text-gray-800">Bushra Tabassum</p>
-                <p className="text-sm text-gray-500">Director Liaison</p>
-              </div>
-
-              {/* Director 3 */}
-              <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
-                <a
-                  href="https://www.linkedin.com/in/hania-tahir-92572b203/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/images/team/director2.jpg"
-                    alt="Hunehar Director Finance - Hania Tahir"
-                    className="w-full h-40 object-cover rounded-xl mb-4 hover:scale-105 transition-transform duration-300"
-                  />
-                </a>
-                <p className="font-semibold text-gray-800">Hania Tahir</p>
-                <p className="text-sm text-gray-500">Director Finance</p>
-              </div>
-
-              {/* Director 4 */}
-              <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
-                <a
-                  href="https://www.linkedin.com/in/muhammad-bin-sanaullah/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="images/about/Muhammad.webp"
-                    alt="Hunehar Director Publications - Sanauallah"
-                    className="flex w-3/4 mx-auto object-cover rounded-xl mb-4 hover:scale-105 transition-transform duration-300"
-                  />
-                </a>
-                <p className="font-semibold text-gray-800">
-                  Muhammad Sanauallah
-                </p>
-                <p className="text-sm text-gray-500">Director Publications</p>
-              </div>
-
-              {/* Director 5 */}
-              <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
-                <a
-                  href="https://linkedin.com/in/director2-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="images/about/Wardah.webp"
-                    alt="Hunehar Director Philanthropy - Wardah Muzammil"
-                    className="flex w-3/4 mx-auto object-cover rounded-xl mb-4 hover:scale-105 transition-transform duration-300"
-                  />
-                </a>
-                <p className="font-semibold text-gray-800">Wardah Muzammil</p>
-                <p className="text-sm text-gray-500">Director Philanthropy</p>
-              </div>
-
-              {/* Director 6 */}
-              <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
-                <a
-                  href="https://www.linkedin.com/in/sumaima-ilyas-1a7618285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/images/team/director2.jpg"
-                    alt="Hunehar Director SMR - Sumaima Ilyas"
-                    className="w-full h-40 object-cover rounded-xl mb-4 hover:scale-105 transition-transform duration-300"
-                  />
-                </a>
-                <p className="font-semibold text-gray-800">Sumaima Ilyas</p>
-                <p className="text-sm text-gray-500">
-                  Director Social Media Relations
-                </p>
-              </div>
-
-              {/* Director 7 */}
-              <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
-                <a
-                  href="https://www.linkedin.com/in/rameen-bajwa-88135725a/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/images/team/director2.jpg"
-                    alt="Hunehar Director R&D - Rameen Bajwa"
-                    className="w-full h-40 object-cover rounded-xl mb-4 hover:scale-105 transition-transform duration-300"
-                  />
-                </a>
-                <p className="font-semibold text-gray-800">Rameen Bajwa</p>
-                <p className="text-sm text-gray-500">Director R&D</p>
-              </div>
+                  <a
+                    href={person.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="w-32 aspect-square mx-auto mb-4 overflow-hidden rounded-full">
+                      <img
+                        src={person.img}
+                        alt={person.name}
+                        className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105"
+                      />
+                    </div>
+                  </a>
+                  <p className="font-semibold text-gray-800">{person.name}</p>
+                  <p className="text-sm text-gray-500">{person.role}</p>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -466,111 +413,74 @@ export default function About() {
             </h3>
 
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-              {/* Assistant Director 1 */}
-              <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
-                <a
-                  href="www.linkedin.com/in/aqib-irfan-b77b43284"
-                  target="_blank"
-                  rel="noopener noreferrer"
+              {[
+                {
+                  name: "Aqib Irfan",
+                  role: "Assistant Director HR",
+                  img: "/images/about/aqib-irfan.webp",
+                  link: "https://www.linkedin.com/in/aqib-irfan-b77b43284",
+                },
+                {
+                  name: "Fareha Meraj",
+                  role: "Assistant Director Liaison",
+                  img: "/images/about/Fareha.webp",
+                  link: "https://www.linkedin.com/in/fareha-meraj-a00b96216/",
+                },
+                {
+                  name: "Syeda Farheen Masroor",
+                  role: "Assistant Director Publications",
+                  img: "/images/about/Syeda.webp",
+                  link: "https://linkedin.com/in/syeda-farheen-masroor-b9a5b6285",
+                },
+                {
+                  name: "Faqaha Asif",
+                  role: "Assistant Director Philanthropy",
+                  img: "/images/about/faqaha.webp",
+                },
+                {
+                  name: "Malala Khan",
+                  role: "Assistant Director Social Media Relations",
+                  img: "/images/about/Malala.webp",
+                  link: "https://www.linkedin.com/in/malala-khan-4a1138242",
+                },
+                {
+                  name: "Hannia Faisal",
+                  role: "Assistant Director R&D",
+                  img: "/images/about/hannia-malik.webp",
+                  link: "https://www.linkedin.com/in/hannia-malik-98593036b",
+                },
+              ].map((person) => (
+                <div
+                  key={person.name}
+                  className="bg-white p-6 rounded-2xl shadow-sm text-center"
                 >
-                  <img
-                    src="/images/team/assistant1.jpg"
-                    alt="Hunehar AD HR - Aqib Irfan"
-                    className="w-full h-40 object-cover rounded-xl mb-4 hover:scale-105 transition-transform duration-300"
-                  />
-                </a>
-                <p className="font-semibold text-gray-800">Aqib Irfan</p>
-                <p className="text-sm text-gray-500">Assistant Director HR</p>
-              </div>
-
-              {/* Assistant Director 2 */}
-              <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
-                <a
-                  href="https://linkedin.com/in/assistant2-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="images/about/Fareha.webp"
-                    alt="Hunehar AD Liaison - Fareha Meraj"
-                    className="flex w-3/4 mx-auto object-cover rounded-xl mb-4 hover:scale-105 transition-transform duration-300"
-                  />
-                </a>
-                <p className="font-semibold text-gray-800">Fareha Meraj</p>
-                <p className="text-sm text-gray-500">
-                  Assistant Director Liaison
-                </p>
-              </div>
-
-              {/* Assistant Director 3 */}
-              <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
-                <a
-                  href="https://linkedin.com/in/syeda-farheen-masroor-b9a5b6285"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="images/about/Syeda.webp"
-                    alt="Hunehar AD Publications - Farheen"
-                    className="flex w-3/4 mx-auto object-cover rounded-xl mb-4 hover:scale-105 transition-transform duration-300"
-                  />
-                </a>
-                <p className="font-semibold text-gray-800">
-                  Syeda Farheen Masroor
-                </p>
-                <p className="text-sm text-gray-500">
-                  Assistant Director Publications
-                </p>
-              </div>
-
-              {/* Assistant Director 4 */}
-              <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
-                <img
-                  src="/images/team/assistant2.jpg"
-                  alt="Hunehar AD Philanthropy - Faqaha"
-                  className="w-full h-40 object-cover rounded-xl mb-4 hover:scale-105 transition-transform duration-300"
-                />
-                <p className="font-semibold text-gray-800">Faqaha Asif</p>
-                <p className="text-sm text-gray-500">
-                  Assistant Director Philanthropy
-                </p>
-              </div>
-
-              {/* Assistant Director 5 */}
-              <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
-                <a
-                  href="https://www.linkedin.com/in/malala-khan-4a1138242?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/images/team/assistant2.jpg"
-                    alt="Hunehar AD SMR - Malala Khan"
-                    className="w-full h-40 object-cover rounded-xl mb-4 hover:scale-105 transition-transform duration-300"
-                  />
-                </a>
-                <p className="font-semibold text-gray-800">Malala Khan</p>
-                <p className="text-sm text-gray-500">
-                  Assistant Director Social Media Relations
-                </p>
-              </div>
-
-              {/* Assistant Director 6 */}
-              <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
-                <a
-                  href="https://www.linkedin.com/in/hannia-malik-98593036b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/images/team/assistant2.jpg"
-                    alt="Hunehar AD R&D - Hannia Faisal"
-                    className="w-full h-40 object-cover rounded-xl mb-4 hover:scale-105 transition-transform duration-300"
-                  />
-                </a>
-                <p className="font-semibold text-gray-800">Hannia Faisal</p>
-                <p className="text-sm text-gray-500">Assistant Director R&D</p>
-              </div>
+                  {person.link ? (
+                    <a
+                      href={person.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <div className="w-32 aspect-square mx-auto mb-4 overflow-hidden rounded-full">
+                        <img
+                          src={person.img}
+                          alt={person.name}
+                          className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105"
+                        />
+                      </div>
+                    </a>
+                  ) : (
+                    <div className="w-32 aspect-square mx-auto mb-4 overflow-hidden rounded-full">
+                      <img
+                        src={person.img}
+                        alt={person.name}
+                        className="w-full h-full object-cover object-top"
+                      />
+                    </div>
+                  )}
+                  <p className="font-semibold text-gray-800">{person.name}</p>
+                  <p className="text-sm text-gray-500">{person.role}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
