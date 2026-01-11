@@ -213,61 +213,52 @@ export default function About() {
           </h3>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Classrooms */}
-            <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-sm">
-              <div className="relative h-40 sm:h-48 md:h-52 lg:h-56">
-                <img
-                  src="/images/about/Hunehar-classroom.webp"
-                  alt="Designated Classrooms"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-              <p className="py-4 text-center font-medium text-gray-700">
-                Designated Classrooms
-              </p>
-            </div>
+            {/* Card */}
+            {[
+              {
+                src: "/images/about/Hunehar-classroom.webp",
+                alt: "Designated Classrooms",
+                label: "Designated Classrooms",
+              },
+              {
+                src: "/images/about/Hunehar-Library.webp",
+                alt: "School Library",
+                label: "Library",
+              },
+              {
+                src: "/images/about/Hunehar-computer-lab.webp",
+                alt: "Computer Lab",
+                label: "Computer Lab",
+              },
+              {
+                src: "/images/about/playground.webp",
+                alt: "Hunehar Playground",
+                label: "Playground",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-gray-100 rounded-2xl overflow-hidden shadow-sm"
+              >
+                {/* Image wrapper */}
+                <div className="relative w-full aspect-[4/3] bg-gray-200">
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="
+            absolute inset-0 w-full h-full
+            object-contain
+            md:object-cover
+            transition-all duration-300
+          "
+                  />
+                </div>
 
-            {/* Library */}
-            <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-sm">
-              <div className="relative h-40 sm:h-48 md:h-52 lg:h-56">
-                <img
-                  src="/images/about/Hunehar-Library.webp"
-                  alt="School Library"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
+                <p className="py-4 text-center font-medium text-gray-700">
+                  {item.label}
+                </p>
               </div>
-              <p className="py-4 text-center font-medium text-gray-700">
-                Library
-              </p>
-            </div>
-
-            {/* Computer Lab */}
-            <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-sm">
-              <div className="relative h-40 sm:h-48 md:h-52 lg:h-56">
-                <img
-                  src="/images/about/Hunehar-computer-lab.webp"
-                  alt="Computer Lab"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-              <p className="py-4 text-center font-medium text-gray-700">
-                Computer Lab
-              </p>
-            </div>
-
-            {/* Playground */}
-            <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-sm">
-              <div className="relative h-40 sm:h-48 md:h-52 lg:h-56">
-                <img
-                  src="/images/about/playground.webp"
-                  alt="Hunehar Playground"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-              <p className="py-4 text-center font-medium text-gray-700">
-                Playground
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
