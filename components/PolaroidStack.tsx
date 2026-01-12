@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useIsMobile } from "../hooks/use-mobile";
 
 type Props = {
   images: string[];
@@ -9,8 +10,9 @@ type Props = {
 
 export default function PolaroidStack({ images }: Props) {
   const [cards, setCards] = useState(images);
+  const isMobile = useIsMobile();
 
-  const handleClick = () => {
+  const next = () => {
     setCards((prev) => {
       const [first, ...rest] = prev;
       return [...rest, first];
@@ -18,21 +20,24 @@ export default function PolaroidStack({ images }: Props) {
   };
 
   return (
-    <div className="relative w-[240px] h-[320px] mx-auto">
+    <div className="relative w-[290px] h-[350px] mx-auto">
       {cards.map((src, index) => {
+        // Mobile: only show active image
+        if (isMobile && index !== 0) return null;
+
         const isTop = index === 0;
 
         return (
           <motion.div
             key={`${src}-${index}`}
-            onClick={isTop ? handleClick : undefined}
+            onClick={isTop ? next : undefined}
             className="absolute inset-0 cursor-pointer"
             style={{ zIndex: cards.length - index }}
             animate={{
-              rotate: index * 3 - 6,
-              x: index * 5,
-              y: index * 5,
-              scale: isTop ? 1 : 0.96,
+              rotate: isMobile ? 0 : index * 3 - 6,
+              x: isMobile ? 0 : index * 6,
+              y: isMobile ? 0 : index * 6,
+              scale: 1,
             }}
             transition={{
               type: "spring",
@@ -40,10 +45,10 @@ export default function PolaroidStack({ images }: Props) {
               damping: 22,
             }}
           >
-            <div className="bg-white rounded-md shadow-xl p-3 pb-10">
+            <div className="bg-[#bbe0fc] rounded-md shadow-xl p-3 pb-10">
               <img
                 src={src}
-                alt="Activity"
+                alt="Hunehar Impact"
                 className="w-full h-52 object-cover rounded-sm"
                 draggable={false}
               />
@@ -51,6 +56,13 @@ export default function PolaroidStack({ images }: Props) {
           </motion.div>
         );
       })}
+
+      {/* Mobile hint */}
+      {isMobile && (
+        <p className="mt-3 text-sm text-muted-foreground text-center">
+          Tap image to view next →
+        </p>
+      )}
     </div>
   );
 }

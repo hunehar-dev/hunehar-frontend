@@ -67,9 +67,10 @@ export default function Impact() {
             "Hospital exposure visits",
           ],
           images: [
-            "/placeholders/health-1.webp",
-            "/placeholders/health-2.webp",
-            "/placeholders/health-3.webp",
+            "/images/impact/Hunehar-Dental-Camp3.webp",
+            "/images/impact/Hunehar-Handwash.webp",
+            "/images/impact/Covid-vaccination3.webp",
+            "/images/impact/Hunehar-Hospital-Visit.webp",
           ],
         },
         {
@@ -81,9 +82,13 @@ export default function Impact() {
             "Educational trips and exhibitions",
           ],
           images: [
-            "/placeholders/learning-1.webp",
-            "/placeholders/learning-2.webp",
-            "/placeholders/learning-3.webp",
+            "/images/impact/plant-trees-Hunehar.webp",
+            "/images/impact/Hunehar-student-reading.webp",
+            "/images/impact/HuneharSportsDay2.webp",
+            "/images/impact/Hunehar-Activity2.webp",
+            "/images/impact/Hunehar-Face-Paint.webp",
+            "/images/impact/SaveTheEarthHunehar.webp",
+            "/images/impact/Hunehar-Field-Trip.webp",
           ],
         },
         {
@@ -95,9 +100,11 @@ export default function Impact() {
             "Leadership and community service exposure",
           ],
           images: [
-            "/placeholders/youth-1.webp",
-            "/placeholders/youth-2.webp",
-            "/placeholders/youth-3.webp",
+            "/images/impact/Hunehar-Internship1.webp",
+            "/images/impact/Team-WorthAWhile.webp",
+            "/images/impact/Open-guides-1.webp",
+            "/images/impact/virtualinternship.webp",
+            "/images/impact/Internship-speaker.webp",
           ],
         },
         {
@@ -108,9 +115,9 @@ export default function Impact() {
             "Eid clothes and gifts distribution",
           ],
           images: [
-            "/placeholders/ramadan-1.webp",
-            "/placeholders/ramadan-2.webp",
-            "/placeholders/ramadan-3.webp",
+            "/images/impact/Ramadan-Ration-Drive2.webp",
+            "/images/impact/Hunehar-Annual-Iftar-Dinner.webp",
+            "/images/impact/ramadan-iftar.webp",
           ],
         },
         {
@@ -121,9 +128,10 @@ export default function Impact() {
             "Bake sales and community drives",
           ],
           images: [
-            "/placeholders/events-1.webp",
-            "/placeholders/events-2.webp",
-            "/placeholders/events-3.webp",
+            "/images/impact/Hunehar-Drum-Circle.webp",
+            "/images/impact/Hunehar-bake-sale.webp",
+            "/images/impact/matchscreening2.webp",
+            "/images/impact/matchscreening1.webp",
           ],
         },
       ].map((section, i) => {
@@ -135,24 +143,32 @@ export default function Impact() {
             className={`py-20 px-6 ${isReversed ? "bg-secondary" : ""}`}
           >
             <div
-              className={`max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center`}
+              className={`max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center`}
             >
               {/* Image */}
-              <div className={isReversed ? "md:order-2" : ""}>
+              <div className={isReversed ? "md:order-2" : "md:order-1"}>
                 <PolaroidStack images={section.images} />
               </div>
 
               {/* Text */}
-              <div className={isReversed ? "md:order-1" : ""}>
-                <h3 className="text-xl font-semibold text-[#206FAC] mb-4">
-                  {section.title}
-                </h3>
+              <div
+                className={`
+    ${isReversed ? "md:order-1" : "md:order-2"}
+    md:flex
+    ${isReversed ? "md:justify-end" : "md:justify-start"}
+  `}
+              >
+                <div className="max-w-md">
+                  <h3 className="text-xl font-semibold text-[#206FAC] mb-4">
+                    {section.title}
+                  </h3>
 
-                <ul className="space-y-2 text-muted-foreground">
-                  {section.points.map((p, idx) => (
-                    <li key={idx}>• {p}</li>
-                  ))}
-                </ul>
+                  <ul className="space-y-2 text-muted-foreground">
+                    {section.points.map((p, idx) => (
+                      <li key={idx}>• {p}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </section>
