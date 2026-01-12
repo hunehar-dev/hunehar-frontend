@@ -97,7 +97,7 @@ export default function DonatePage() {
       {/* BANK DETAILS */}
       <section className="py-16 sm:py-20 px-4 sm:px-6 bg-[#c1e0f7]">
         <div className="max-w-3xl md:max-w-5xl mx-auto">
-          <h2 className="text-xl sm:text-2xl md:text-2xl font-semibold text-[#206FAC] mb-6 sm:mb-8 text-center">
+          <h2 className="text-[clamp(1.8em,5vw,2.25rem)] font-bold text-[#206FAC] mb-6 sm:mb-8 text-center">
             Bank Details
           </h2>
 
