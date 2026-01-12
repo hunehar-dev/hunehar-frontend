@@ -43,7 +43,7 @@ export default function CTASection() {
 
           {/* Secondary CTAs */}
           <div className="flex flex-wrap gap-3 justify-center">
-            <Link href="/donate">
+            <Link href="/get-involved/donate">
               <span className="inline-block bg-white text-blue-900 hover:bg-green-300 px-6 py-2.5 text-[0.95rem] font-semibold rounded-md transition-colors">
                 Make a Donation
               </span>

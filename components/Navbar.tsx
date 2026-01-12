@@ -13,10 +13,10 @@ const navLinks = [
   { href: "/impact", label: "Our Impact" },
   {
     label: "Get Involved",
-    href: "/get-involved",
+    href: "/get-involved/donate",
     sublinks: [
       { href: "/get-involved/volunteer", label: "Volunteer" },
-      { href: "/donate", label: "Donate" },
+      { href: "/get-involved/donate", label: "Donate" },
     ],
   },
   { href: "/stories", label: "Stories & Reports" },
@@ -91,7 +91,7 @@ export default function Navbar() {
           {/* Donate & Mobile Menu Button */}
           <div className="flex items-center space-x-2">
             <Link
-              href="/donate"
+              href="/get-involved/donate"
               className="hidden md:inline-flex items-center space-x-1 bg-[#206FAC] hover:bg-red-400 text-white px-[clamp(0.75rem,1vw,1rem)] py-[clamp(0.4rem,0.8vw,0.6rem)] rounded-full font-semibold text-[clamp(0.75rem,0.9vw,0.875rem)] transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
             >
               <Heart className="h-3 w-4.5" />

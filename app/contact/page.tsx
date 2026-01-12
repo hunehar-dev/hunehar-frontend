@@ -380,7 +380,7 @@ const ContactPage = () => {
             </div>
           </div>
         </section>
-        <section className="bg-gray-800 text-white">
+        <section className="bg-[#535758] text-white">
           <div className="container mx-auto px-6 py-10 text-center">
             <HandHeart
               className="mx-auto h-16 w-16 text-yellow-300 mb-6"
