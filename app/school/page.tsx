@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
+import SchoolGallery from "@/components/SchoolGallery";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
 const genderData = [
@@ -174,7 +175,8 @@ export default function OurSchoolPage() {
           </div>
         </div>
       </section>
-
+      {/* SCHOOL GALLERY */}
+      <SchoolGallery />
       {/* UMAIMA */}
       <section className="py-24 px-4 sm:px-6 max-w-5xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-semibold text-[#206FAC] mb-10 text-center">
