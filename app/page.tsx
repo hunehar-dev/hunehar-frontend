@@ -1,0 +1,31 @@
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import StatsSection from "@/components/StatsSection";
+import WhyExist from "@/components/WhyExist";
+import DonateCards from "@/components/DonateCards";
+import ImpactStats from "@/components/ImpactStats";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import FAQAccordion from "@/components/FAQAccordion";
+import CTASection from "@/components/CTASection";
+import Footer from "@/components/footer";
+import LifeAtHunehar from "@/components/LifeAtHunehar";
+import IntroductionSection from "@/components/IntroductionSection";
+
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-white">
+      <Navbar />
+      <HeroSection />
+      <StatsSection />
+      <IntroductionSection />
+      <WhyExist />
+      <DonateCards />
+      <LifeAtHunehar />
+      <ImpactStats />
+      <TestimonialsCarousel />
+      <FAQAccordion />
+      <CTASection />
+      <Footer />
+    </main>
+  );
+}
