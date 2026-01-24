@@ -21,7 +21,6 @@ export const article = defineType({
     defineField({
       name: 'image',
       type: 'image',
-      validation: Rule => Rule.required(),
     }),
 
     defineField({
@@ -35,10 +34,12 @@ export const article = defineType({
     }),
 
     defineField({
-      name: 'content',
-      title: 'Article Content',
-      type: 'text',
+    name: 'content',
+    title: 'Article Content',
+    type: 'array',
+    of: [{ type: 'block' }],
     }),
+
 
     defineField({
       name: 'pdf',

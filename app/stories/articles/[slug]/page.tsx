@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
 import Image from "next/image";
+import { PortableText } from '@portabletext/react'
 import { client } from "@/sanity/lib/client";
 
 export default function ArticlePage() {
@@ -70,9 +71,30 @@ export default function ArticlePage() {
         </p>
 
         {/* CONTENT */}
-        <div className="prose max-w-none mb-12">
-          {article.content}
-        </div>
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 mt-10">
+  <div className="font-poppins text-gray-800">
+    <PortableText
+      value={article.content}
+      components={{
+        block: {
+          normal: ({ children }) => <p className="mb-4 leading-relaxed">{children}</p>,
+          h1: ({ children }) => <h1 className="text-3xl font-bold mt-8 mb-4">{children}</h1>,
+          h2: ({ children }) => <h2 className="text-2xl font-semibold mt-6 mb-3">{children}</h2>,
+          h4: ({ children }) => <h4 className="text-xl text-[#206FAC] font-semibold mt-6 mb-3">{children}</h4>,
+        },
+        list: {
+          bullet: ({ children }) => <ul className="list-disc ml-6 mb-4">{children}</ul>,
+          number: ({ children }) => <ol className="list-decimal ml-6 mb-4">{children}</ol>,
+        },
+        listItem: {
+          bullet: ({ children }) => <li className="mb-2">{children}</li>,
+          number: ({ children }) => <li className="mb-2">{children}</li>,
+        },
+      }}
+    />
+  </div>
+</section>
+
 
         {/* DOWNLOAD */}
         {article.pdf?.asset?.url && (
