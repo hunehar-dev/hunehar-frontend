@@ -363,7 +363,7 @@ export default function About() {
                 {
                   name: "Sumaima Ilyas",
                   role: "Director Social Media Relations",
-                  img: "/images/about/Sumaima.webp",
+                  img: "/images/about/sumaima.webp",
                   link: "https://www.linkedin.com/in/sumaima-ilyas-1a7618285",
                 },
                 {
