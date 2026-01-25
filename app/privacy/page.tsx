@@ -1,13 +1,22 @@
-// app/privacy/page.tsx
+'use client';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
+import { useRouter } from "next/navigation";
 
 export default function PrivacyPage() {
+     const router = useRouter();
   return (
     <main className="bg-white text-[#0a0a0a] min-h-screen">
       <Navbar />
 
       <section className="max-w-4xl mx-auto px-6 py-16">
+          {/* Back Button */}
+      <button
+        onClick={() => router.back()}
+        className="mb-6 inline-flex items-center gap-2 border-2 border-[#206FAC] text-white bg-[#206FAC] hover:bg-white hover:text-[#206FAC] hover:cursor-pointer px-2 rounded font-medium"
+      >
+        ← Back
+      </button>
         <h1 className="text-3xl md:text-4xl font-bold mb-6 text-[#206FAC]">
           Privacy Policy
         </h1>
