@@ -20,7 +20,7 @@ export default function PolaroidStack({ images }: Props) {
   };
 
   return (
-    <div className="relative w-[290px] h-[350px] mx-auto">
+    <div className="relative w-[320px] h-[420px] sm:w-[360px] sm:h-[460px] md:w-[420px] md:h-[520px] mx-auto">
       {cards.map((src, index) => {
         // Mobile: only show active image
         if (isMobile && index !== 0) return null;
@@ -49,7 +49,7 @@ export default function PolaroidStack({ images }: Props) {
               <img
                 src={src}
                 alt="Hunehar Impact"
-                className="w-full h-52 object-cover rounded-sm"
+                className="w-full h-58 md:h-68 object-cover rounded-sm"
                 draggable={false}
               />
             </div>
