@@ -158,17 +158,15 @@ export default function Footer() {
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-[0.8rem]">
               {[
-                "Privacy Policy",
-                "Terms of Service",
-                "Service Policy",
-                "Zakat Policy",
+                { name: "Terms & Conditions", href: "/terms" },
+                { name: "Privacy Policy", href: "/privacy" },
               ].map((item) => (
                 <Link
-                  key={item}
-                  href="#"
+                  key={item.name}
+                  href={item.href}
                   className="text-gray-400 hover:text-white"
                 >
-                  {item}
+                  {item.name}
                 </Link>
               ))}
             </div>

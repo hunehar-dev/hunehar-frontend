@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Link from "next/link";
 
 export default function FAQAccordion() {
   const faqs = [
@@ -23,18 +24,35 @@ export default function FAQAccordion() {
     },
     {
       question: "Is Hunehar a registered NGO?",
-      answer:
-        "Yes. Hunehar is registered as a Foundation with the Securities and Exchange Commission of Pakistan (SECP). You can find more details in our Terms and Conditions.",
+      answer: (
+        <>
+          Yes. Hunehar is registered as a Foundation with the Securities and
+          Exchange Commission of Pakistan (SECP). You can find more details in
+          our{" "}
+          <Link href="/terms" className="text-[#206FAC] hover:underline">
+            Terms & Conditions
+          </Link>
+          .
+        </>
+      ),
     },
     {
       question: "Do you accept Zakat donations?",
       answer:
-        "Yes, we accept Zakat. Zakat donations are utilized strictly in accordance with Islamic guidelines. Please refer to our Zakat Policy for details.",
+        "Yes, we accept Zakat. Zakat donations are utilized strictly in accordance with Islamic guidelines.",
     },
     {
       question: "Can I volunteer?",
-      answer:
-        "Absolutely! We welcome volunteers both onsite and remotely. You can learn more and apply through our Volunteer page.",
+      answer: (
+        <>
+          Absolutely! We welcome volunteers both onsite and remotely. You can
+          learn more and apply through our{" "}
+          <Link href="/get-involved/volunteer" className="text-[#206FAC] hover:underline">
+            Volunteer page
+          </Link>
+          .
+        </>
+      ),
     },
   ];
 
