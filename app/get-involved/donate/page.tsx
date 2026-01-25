@@ -3,6 +3,15 @@ import Footer from "@/components/footer";
 import ShareButton from "@/components/ShareButton";
 import Link from "next/link";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Donate",
+  description:
+    "Support Hunehar’s mission to provide free education and community welfare. Your donation helps underprivileged children with schooling, meals, uniforms, and essential support in Pakistan.",
+};
+
+
 const DONATION_FORM =
   "https://docs.google.com/forms/d/e/1FAIpQLSeCWO6Um1U3qPad2phOSCsTT4IymqiLGY4KOmWXwjPkOf0EFA/viewform";
 

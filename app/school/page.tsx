@@ -1,17 +1,26 @@
-"use client";
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
 import SchoolGallery from "@/components/SchoolGallery";
-import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import Image from "next/image";
+import GenderChart from "@/components/GenderChart";
 
-const genderData = [
-  { name: "Girls", value: 75 },
-  { name: "Boys", value: 78 },
-];
+import type { Metadata } from "next";
 
-const COLORS = ["#f79dc6", "#206FAC"];
+export const metadata: Metadata = {
+  title: "Our School",
+  description:
+    "Hunehar Welfare School provides quality education to underprivileged children in Islamabad through a structured curriculum, dedicated teachers, and a nurturing learning environment.",
+
+  openGraph: {
+    title: "Our School | Hunehar Non Profit Charity Organisation",
+    description:
+      "Learn about Hunehar Welfare School, our curriculum, facilities, student impact, and our mission to empower underprivileged children through education in Pakistan.",
+    url: "https://www.hunehar.org/school",
+    siteName: "Hunehar",
+    type: "website",
+  },
+};
+
 
 export default function OurSchoolPage() {
   return (
@@ -118,21 +127,7 @@ export default function OurSchoolPage() {
 
             <div className="flex flex-col items-center">
               <div className="w-full max-w-[250px] h-auto">
-                <ResponsiveContainer width="100%" height={250}>
-                  <PieChart>
-                    <Pie
-                      data={genderData}
-                      dataKey="value"
-                      innerRadius={65}
-                      outerRadius={95}
-                      paddingAngle={2}
-                    >
-                      {genderData.map((_, index) => (
-                        <Cell key={index} fill={COLORS[index]} />
-                      ))}
-                    </Pie>
-                  </PieChart>
-                </ResponsiveContainer>
+                <GenderChart />
               </div>
 
               <div className="flex gap-8 mt-6 text-[clamp(0.9rem,1.25vw,1rem)] text-muted-foreground">

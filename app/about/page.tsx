@@ -1,5 +1,22 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description:
+    "Learn about Hunehar, a non-profit charity organisation founded in 2012 dedicated to empowering underprivileged children through education, welfare initiatives, and community development in Pakistan.",
+
+  openGraph: {
+    title: "About Hunehar | Non Profit Charity Organisation",
+    description:
+      "Since 2012, Hunehar has worked to ensure no child is denied education due to financial hardship. Discover our mission, vision, and journey.",
+    url: "https://www.hunehar.org/about",
+    siteName: "Hunehar",
+    type: "website",
+  },
+};
+
 
 export default function About() {
   return (

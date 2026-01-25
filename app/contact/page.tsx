@@ -1,10 +1,27 @@
 "use client";
 
-import Head from "next/head";
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { MapPin, Mail, Phone, ArrowRight, HandHeart } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
+
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description:
+    "Get in touch with Hunehar, a non-profit charity organisation working to provide education and welfare support for underprivileged children in Pakistan. Contact us for partnerships, donations, or inquiries.",
+
+  openGraph: {
+    title: "Contact Hunehar | Non Profit Charity Organisation",
+    description:
+      "Reach out to Hunehar to collaborate, support our mission, or learn more about our education and welfare initiatives across Pakistan.",
+    url: "https://www.hunehar.org/contact",
+    siteName: "Hunehar",
+    type: "website",
+  },
+};
+
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -61,11 +78,6 @@ const ContactPage = () => {
 
   return (
     <>
-      <Head>
-        <title>
-          Contact Us | Hunehar - Empowering Futures Through Education
-        </title>
-      </Head>
       <main className="bg-gray-50 font-sans antialiased text-gray-700">
         <Navbar />
         {/* HERO */}

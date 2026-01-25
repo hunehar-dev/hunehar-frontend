@@ -3,6 +3,24 @@ import Footer from "@/components/footer";
 import { client } from "@/sanity/lib/client";
 import Link from "next/link";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Stories & Reports",
+  description:
+    "Explore Hunehar’s stories, articles, and annual reports highlighting our impact in providing education and welfare support to underprivileged children across Pakistan.",
+
+  openGraph: {
+    title: "Stories & Reports | Hunehar Non Profit Charity Organisation",
+    description:
+      "Read real stories from Hunehar and access our annual reports showcasing transparency, impact, and our commitment to education for underprivileged children.",
+    url: "https://www.hunehar.org/stories",
+    siteName: "Hunehar",
+    type: "website",
+  },
+};
+
+
 export default async function StoriesReportsPage() {
   const articles = await client.fetch(`
     *[_type == "article"] | order(publishedAt desc){

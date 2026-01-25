@@ -2,6 +2,15 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
 import Link from "next/link";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Volunteer With Us",
+  description:
+    "Join Hunehar as a volunteer and help empower underprivileged children through education, community work, and social impact initiatives across Pakistan.",
+};
+
+
 const VOLUNTEER_FORM =
   "https://docs.google.com/forms/d/1q-mQQ9f4WHZ0JitQ4M3vrRuDs7qx3xSJPG554Lp--wU/viewform";
 

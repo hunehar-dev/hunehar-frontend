@@ -2,6 +2,15 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
 import PolaroidStack from "@/components/PolaroidStack";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Impact",
+  description:
+    "Explore the impact of Hunehar’s education and welfare initiatives. From schooling and youth development to healthcare camps, Ramadan drives, and community programs, see how we work to uplift underprivileged families in Pakistan.",
+};
+
+
 export default function Impact() {
   return (
     <main className="bg-white text-[#0a0a0a]">
@@ -159,9 +168,9 @@ export default function Impact() {
   `}
               >
                 <div className="max-w-md">
-                  <h3 className="text-xl font-semibold text-[#206FAC] mb-4">
+                  <h2 className="text-xl font-semibold text-[#206FAC] mb-4">
                     {section.title}
-                  </h3>
+                  </h2>
 
                   <ul className="space-y-2 text-muted-foreground">
                     {section.points.map((p, idx) => (
