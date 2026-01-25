@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -183,9 +184,11 @@ export default function About() {
               </h2>
               <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl">
                 Hunehar is registered as a Foundation with the Securities and
-                Exchange Commission of Pakistan (SECP) and operates under the
-                ICT Act 2020. Details regarding compliance are available in our
-                Terms & Conditions.
+                Commission of Pakistan (SECP) and operates under the ICT Act 2020. 
+                Details regarding compliance are available in our{" "}
+                <Link href="/terms" className="text-[#206FAC] hover:underline">
+                  Terms & Conditions
+                </Link>.
               </p>
             </div>
           </div>
