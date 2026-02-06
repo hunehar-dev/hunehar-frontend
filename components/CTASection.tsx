@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 export default function CTASection() {
   return (
     <section className="py-12 bg-gradient-to-br from-[#1a2c44] via-[#4074AD] to-[#0d1b2a] text-white relative overflow-hidden">
-      {/* Decorative shapes (smaller + calmer) */}
       <div className="absolute top-8 right-8 w-16 h-16 border border-white/20 rounded-full" />
       <div className="absolute bottom-16 left-16 w-14 h-14 bg-orange-500/20 rounded-full" />
 

@@ -357,10 +357,10 @@ export default function About() {
                   link: "https://www.linkedin.com/in/haniya-ali-503722226",
                 },
                 {
-                  name: "Bushra Tabassum",
+                  name: "Fareha Meraj",
                   role: "Director Liaison",
-                  img: "/images/about/Bushra.webp",
-                  link: "https://www.linkedin.com/in/dr-bushra-tabbasum-a0a8a0268/",
+                  img: "/images/about/Fareha.webp",
+                  link: "https://www.linkedin.com/in/fareha-meraj-a00b96216/",
                 },
                 {
                   name: "Hania Tahir",
@@ -432,10 +432,10 @@ export default function About() {
                   link: "https://www.linkedin.com/in/aqib-irfan-b77b43284",
                 },
                 {
-                  name: "Fareha Meraj",
+                  name: "-",
                   role: "Assistant Director Liaison",
-                  img: "/images/about/Fareha.webp",
-                  link: "https://www.linkedin.com/in/fareha-meraj-a00b96216/",
+                  img: "/",
+                  link: "#",
                 },
                 {
                   name: "Syeda Farheen Masroor",
@@ -455,10 +455,10 @@ export default function About() {
                   link: "https://www.linkedin.com/in/malala-khan-4a1138242",
                 },
                 {
-                  name: "Hannia Faisal",
+                  name: "Ali Kashif",
                   role: "Assistant Director R&D",
-                  img: "/images/about/hannia-malik.webp",
-                  link: "https://www.linkedin.com/in/hannia-malik-98593036b",
+                  img: "/images/about/ali-kashif.webp",
+                  link: "https://www.linkedin.com/in/ali-kashif-262150241/",
                 },
               ].map((person) => (
                 <div
