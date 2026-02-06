@@ -29,16 +29,47 @@ const ContactPage = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch(
+      "https://hunehar-backend-production.up.railway.app/api/v1/sponsors/sponsor-query",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          fullName: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      }
+    );
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      throw new Error(data.message || "Something went wrong");
+    }
+
     alert("Thank you for your message! We will get back to you soon.");
+
     setFormData({
       name: "",
       email: "",
       subject: "",
       message: "",
     });
-  };
+  } catch (error) {
+    console.error("General contact error:", error);
+    alert("Something went wrong. Please try again.");
+  }
+};
+
 
   const handlePartnershipChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -47,9 +78,36 @@ const ContactPage = () => {
     setPartnershipForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handlePartnershipSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    alert("Thank you! Our team will reach out to discuss collaboration.");
+  const handlePartnershipSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch(
+      "https://hunehar-backend-production.up.railway.app/api/v1/partners/partner-with-us",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          fullName: partnershipForm.name,
+          email: partnershipForm.email,
+          organizationName: partnershipForm.organization,
+          partnershipType: partnershipForm.partnershipType,
+          message: partnershipForm.message,
+        }),
+      }
+    );
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      throw new Error(data.message || "Something went wrong");
+    }
+
+    alert("Thank you! Our team will reach out to you to discuss collaborations.");
+
     setPartnershipForm({
       name: "",
       email: "",
@@ -57,7 +115,12 @@ const ContactPage = () => {
       partnershipType: "",
       message: "",
     });
-  };
+  } catch (error) {
+    console.error("Partnership error:", error);
+    alert("Something went wrong. Please try again.");
+  }
+};
+
 
   return (
     <>

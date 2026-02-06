@@ -1,14 +1,49 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function CTASection() {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubscribe = async () => {
+    if (!email) {
+      alert("Please enter your email");
+      return;
+    }
+
+    try {
+      setLoading(true);
+     const res = await fetch("https://hunehar-backend-production.up.railway.app/api/v1/newsletter/subscribe", {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json"
+      },
+       body: JSON.stringify({ email }),
+    });
+
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Subscribed successfully!");
+        setEmail("");
+      } else {
+        alert(data.message || "Subscription failed");
+      }
+    } catch (error) {
+      console.error("Newsletter error:", error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="py-12 bg-gradient-to-br from-[#1a2c44] via-[#4074AD] to-[#0d1b2a] text-white relative overflow-hidden">
-      <div className="absolute top-8 right-8 w-16 h-16 border border-white/20 rounded-full" />
-      <div className="absolute bottom-16 left-16 w-14 h-14 bg-orange-500/20 rounded-full" />
-
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -32,10 +67,17 @@ export default function CTASection() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="bg-white text-gray-900 flex-1 sm:flex-1 h-11 px-4 py-2 text-[0.95rem] rounded-md outline-none w-full"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="bg-white text-gray-900 flex-1 h-11 px-4 py-2 text-[0.95rem] rounded-md outline-none w-full"
               />
-              <button className="bg-orange-500 hover:bg-orange-600 hover:cursor-pointer text-white h-11 px-6 sm:px-4 text-[0.95rem] sm:text-[0.85rem] font-semibold rounded-md transition-colors w-full sm:w-auto">
-                Subscribe
+
+              <button
+                onClick={handleSubscribe}
+                disabled={loading}
+                className="bg-orange-500 hover:bg-orange-600 disabled:opacity-60 text-white h-11 px-6 sm:px-4 text-[0.95rem] sm:text-[0.85rem] font-semibold rounded-md transition-colors w-full sm:w-auto hover:cursor-pointer"
+              >
+                {loading ? "Subscribing..." : "Subscribe"}
               </button>
             </div>
           </div>
