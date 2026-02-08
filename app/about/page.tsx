@@ -432,10 +432,10 @@ export default function About() {
                   link: "https://www.linkedin.com/in/aqib-irfan-b77b43284",
                 },
                 {
-                  name: "-",
+                  name: "Alina Khan",
                   role: "Assistant Director Liaison",
-                  img: "/",
-                  link: "#",
+                  img: "/images/about/Alina-Khan.webp",
+                  link: "http://www.linkedin.com/in/alina-khan-67b9952b1",
                 },
                 {
                   name: "Syeda Farheen Masroor",
