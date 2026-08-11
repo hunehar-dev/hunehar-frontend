@@ -2,9 +2,17 @@
 
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { ArrowRight } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-export default function ShareButton() {
+interface ShareButtonProps {
+  /** "button" renders the original filled pill button. "link" renders an
+   * inline text link with an arrow, matching the donate page's action-link
+   * style. */
+  variant?: "button" | "link";
+}
+
+export default function ShareButton({ variant = "button" }: ShareButtonProps) {
   const isMobile = useIsMobile();
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -52,12 +60,22 @@ https://hunehar.org`;
 
   return (
     <>
-      <button
-        onClick={handleShare}
-        className="text-sm font-medium text-white bg-[#206FAC] px-5 py-2 rounded-full hover:opacity-90 transition"
-      >
-        Share Our Mission
-      </button>
+      {variant === "link" ? (
+        <button
+          onClick={handleShare}
+          className="mt-auto self-start inline-flex items-center gap-2 text-[0.9375rem] font-semibold text-[#206FAC] hover:text-[#144A73] transition-colors"
+        >
+          Share our mission
+          <ArrowRight className="w-4 h-4" aria-hidden="true" />
+        </button>
+      ) : (
+        <button
+          onClick={handleShare}
+          className="text-sm font-medium text-white bg-[#206FAC] px-5 py-2 rounded-full hover:opacity-90 transition"
+        >
+          Share Our Mission
+        </button>
+      )}
 
       {open &&
         createPortal(
