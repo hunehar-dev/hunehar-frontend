@@ -1,66 +1,41 @@
 "use client";
 
-import React from "react";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
     <section
-      className="relative bg-center bg-no-repeat text-white py-[clamp(5rem,8vw,8rem)] min-h-[50vh] sm:min-h-[60vh] flex items-center"
+      className="relative bg-cover bg-center text-white"
       style={{ backgroundImage: "url('/images/Hunehar-students.webp')" }}
     >
-      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0E2433]/90 via-[#0E2433]/60 to-[#0E2433]/40" />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col lg:grid lg:grid-cols-5 gap-6 lg:gap-[clamp(1rem,2vw,2rem)] items-center">
-          <div className="lg:col-span-3 space-y-4 sm:space-y-6">
-            <h2 className="text-orange-400 font-bold text-[clamp(1rem,2vw,2rem)] mb-2">
-              Sponsor a Child. Empower a Future.
-            </h2>
-            <h1 className="text-[clamp(2rem,6vw,3.5rem)] font-extrabold leading-tight">
-              Changing Lives Through Education
-            </h1>
-            <div className="flex items-start">
-              <div className="w-1 bg-orange-400 self-stretch mr-3 mt-1 mb-1"></div>
-              <p className="text-[clamp(0.9rem,1.5vw,1rem)] text-white-200">
-                Hunehar is a registered non-profit organization running a
-                community school in Mehrabadi, Islamabad, dedicated to
-                empowering underprivileged children through free, quality
-                education and holistic support.
-              </p>
-            </div>
-          </div>
-          {/*
-          <div className="lg:col-span-2 flex justify-center lg:justify-end lg:mt-8">
-            <div className="w-full max-w-lg bg-white rounded-3xl shadow-2xl p-4 sm:p-6">
-              <div className="inline-block bg-blue-900 text-white text-[0.7rem] font-semibold rounded-full px-4 py-1 mb-4">
-                Education
-              </div>
-
-              <h3 className="text-[clamp(1.25rem,2.5vw,1.5rem)] font-semibold text-slate-700 leading-snug mb-2">
-                Make a Difference Today
-              </h3>
-              <p className="text-[clamp(0.875rem,1.3vw,1rem)] text-gray-600 mb-4">
-                Your one-time gift can help provide quality education and
-                brighter futures for children in need. Every contribution
-                counts!
-              </p>
-
-              <div className="grid grid-cols-2 gap-2 text-sm mb-4">
-                {["1000", "3000", "5000", "10000"].map((amount) => (
-                  <button
-                    key={amount}
-                    className="border border-gray-300 rounded-lg py-2 font-semibold text-slate-700 hover:bg-blue-50 hover:border-blue-400 transition-colors"
-                  >
-                    Rs. {amount}
-                  </button>
-                ))}
-              </div>
-              <p className="text-[0.75rem] text-gray-500">
-                All contributions 100% go towards children’s education.
-              </p>
-            </div>
-          </div>{" "}
-          */}
+      <div className="relative z-10 max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-10 pt-28 sm:pt-36 lg:pt-44 pb-16 sm:pb-20 lg:pb-28">
+        <p className="text-[#E5533D] font-semibold text-[0.9375rem] sm:text-base mb-4 tracking-tight">
+          Sponsor a child. Empower a future.
+        </p>
+        <h1 className="text-[clamp(2.2rem,8vw,3.1rem)] lg:text-[clamp(3.2rem,5vw,4.6rem)] font-bold leading-[1.05] tracking-tight mb-6 max-w-[18em] text-balance">
+          Changing lives through education
+        </h1>
+        <p className="text-[1.0625rem] lg:text-[1.1875rem] leading-[1.7] text-[#D7E1E8] max-w-[36em] mb-10 text-pretty">
+          Hunehar is a registered non-profit organization running a community
+          school in Mehrabadi, Islamabad, dedicated to empowering
+          underprivileged children through free, quality education and
+          holistic support.
+        </p>
+        <div className="flex flex-wrap gap-3.5">
+          <Link
+            href="/get-involved/donate"
+            className="inline-flex items-center bg-[#E5533D] hover:bg-[#C6462C] text-white px-8 py-[17px] rounded-full font-semibold text-[1.0625rem] transition-colors"
+          >
+            Sponsor a child
+          </Link>
+          <Link
+            href="/impact"
+            className="inline-flex items-center bg-white/10 hover:bg-white/20 text-white px-[30px] py-[17px] rounded-full font-semibold text-[1.0625rem] transition-colors ring-1 ring-white/25"
+          >
+            See our impact
+          </Link>
         </div>
       </div>
     </section>

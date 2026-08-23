@@ -47,9 +47,9 @@ function LifeAtHunehar() {
 
   return (
     <>
-      <section className="bg-white py-12">
-        <div className="container mx-auto px-4">
-          <h2 className="text-[clamp(1.75rem,3vw,2.25rem)] font-bold text-[#206FAC] text-center mb-8">
+      <section className="bg-[#F4F7F9] py-16 sm:py-20 lg:py-28">
+        <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-10">
+          <h2 className="text-[clamp(1.7rem,6vw,2.2rem)] lg:text-[clamp(2.1rem,3.2vw,2.9rem)] font-bold leading-[1.1] tracking-tight text-[#152A38] text-center mb-12 sm:mb-16">
             Life at Hunehar
           </h2>
 
@@ -57,7 +57,7 @@ function LifeAtHunehar() {
             {images.map((image) => (
               <motion.div
                 key={image.id}
-                className="aspect-square overflow-hidden rounded-lg cursor-pointer"
+                className="aspect-square overflow-hidden rounded-2xl cursor-pointer bg-white"
                 onClick={() => setSelectedImage(image)}
                 layoutId={`card-${image.id}`}
                 whileHover={{ scale: 1.03 }}

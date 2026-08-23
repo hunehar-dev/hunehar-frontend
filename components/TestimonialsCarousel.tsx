@@ -73,18 +73,18 @@ export default function TestimonialsCarousel() {
   );
 
   return (
-    <section className="py-12 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-16 sm:py-20 lg:py-28 bg-white">
+      <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-10">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-8"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-[clamp(1.75rem,3vw,2.25rem)] font-bold text-[#206FAC]">
-            What People Say
+          <h2 className="text-[clamp(1.7rem,6vw,2.2rem)] lg:text-[clamp(2.1rem,3.2vw,2.9rem)] font-bold leading-[1.1] tracking-tight text-[#152A38]">
+            What people say
           </h2>
         </motion.div>
 
@@ -101,18 +101,18 @@ export default function TestimonialsCarousel() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -60 }}
               transition={{ duration: 0.4 }}
-              className={`grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6`}
+              className={`grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7`}
             >
               {visible.map((t, index) => (
                 <div
                   key={`${currentIndex}-${index}`}
-                  className="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition"
+                  className="bg-[#F4F7F9] rounded-2xl p-6 sm:p-7"
                 >
-                  <p className="text-gray-600 text-[0.95rem] leading-relaxed italic mb-6">
+                  <p className="text-[#3F5563] text-[0.9375rem] leading-[1.7] mb-6">
                     “{t.content}”
                   </p>
                   <div className="flex items-center">
-                    <div className="font-semibold text-gray-900 text-sm">
+                    <div className="font-semibold text-[#152A38] text-sm">
                       {t.name}
                     </div>
                   </div>
@@ -122,15 +122,16 @@ export default function TestimonialsCarousel() {
           </AnimatePresence>
 
           {/* Dots */}
-          <div className="flex justify-center mt-6 space-x-2">
+          <div className="flex justify-center mt-8 space-x-2">
             {Array.from({
               length: Math.ceil(testimonials.length / perSlide),
             }).map((_, i) => (
               <button
                 key={i}
                 onClick={() => setCurrentIndex(i)}
+                aria-label={`Go to testimonial slide ${i + 1}`}
                 className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                  i === currentIndex ? "bg-[#206FAC]" : "bg-gray-300"
+                  i === currentIndex ? "bg-[#206FAC]" : "bg-[#E7EDF1]"
                 }`}
               />
             ))}
