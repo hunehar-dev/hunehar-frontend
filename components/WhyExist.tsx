@@ -5,9 +5,9 @@ import Image from "next/image";
 
 export default function WhyExist() {
   return (
-    <section className="py-16 sm:py-20 lg:py-28 bg-[#F4F7F9]">
-      <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-10">
-        <h2 className="text-[clamp(1.7rem,6vw,2.2rem)] lg:text-[clamp(2.1rem,3.2vw,2.9rem)] font-bold leading-[1.1] tracking-tight text-[#152A38] text-center mb-12 sm:mb-16 text-balance">
+    <section className="py-16 sm:py-20 lg:py-28 bg-brand-bg">
+      <div className="container-brand">
+        <h2 className="text-heading-2 text-center mb-12 sm:mb-16 text-balance">
           Why we exist
         </h2>
 
@@ -30,10 +30,10 @@ export default function WhyExist() {
               />
             </figure>
 
-            <div className="bg-white border-l-4 border-[#E5533D] p-5 rounded-2xl">
-              <p className="text-[1.0625rem] leading-[1.6] text-[#152A38] font-semibold">
+            <div className="bg-white border-l-4 border-brand-orange p-5 rounded-2xl">
+              <p className="text-[1.0625rem] leading-[1.6] text-brand-navy font-semibold">
                 "Currently, Pakistan has the world's{" "}
-                <span className="text-[#E5533D]">
+                <span className="text-brand-orange">
                   second-highest number of out-of-school children (OOSC)
                 </span>{" "}
                 with an estimated 22.8 million children aged 5-16 not
@@ -43,13 +43,13 @@ export default function WhyExist() {
                 href="https://www.unicef.org/pakistan/education"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-[#206FAC] hover:underline block mt-3 font-medium"
+                className="text-sm text-brand-blue hover:underline block mt-3 font-medium"
               >
                 — UNICEF Report
               </a>
             </div>
 
-            <p className="text-[1.0625rem] leading-[1.7] text-[#5A6E7B]">
+            <p className="text-[1.0625rem] leading-[1.7] text-brand-muted">
               Millions of children in Pakistan are denied their basic right to
               education. Many are forced into labor, early responsibility, or
               a life with limited choices, simply because access to schooling
@@ -66,12 +66,12 @@ export default function WhyExist() {
             className="space-y-6"
           >
             <div>
-              <h3 className="text-2xl lg:text-[2rem] font-bold leading-[1.12] tracking-tight text-[#152A38] mb-4">
+              <h3 className="text-2xl lg:text-[2rem] font-bold leading-[1.12] tracking-tight text-brand-navy mb-4">
                 Our solution: Hunehar
               </h3>
-              <p className="text-[1.0625rem] leading-[1.7] text-[#5A6E7B] mb-6">
+              <p className="text-[1.0625rem] leading-[1.7] text-brand-muted mb-6">
                 Hunehar provides{" "}
-                <strong className="text-[#152A38] font-semibold">
+                <strong className="text-brand-navy font-semibold">
                   free, quality education
                 </strong>{" "}
                 and holistic support to children from underprivileged
@@ -87,9 +87,9 @@ export default function WhyExist() {
                 ].map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-3.5 text-[1.0625rem] leading-[1.6] text-[#5A6E7B]"
+                    className="flex items-start gap-3.5 text-[1.0625rem] leading-[1.6] text-brand-muted"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#E5533D] mt-2.5 flex-none" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-orange mt-2.5 flex-none" />
                     <span>{item}</span>
                   </li>
                 ))}

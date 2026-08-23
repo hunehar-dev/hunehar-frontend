@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 import type { Metadata } from "next";
 
@@ -16,25 +17,25 @@ const VOLUNTEER_FORM =
 
 export default function VolunteerPage() {
   return (
-    <main className="bg-white text-[#0a0a0a]">
+    <main className="bg-white text-brand-navy">
       <Navbar />
 
       {/* HERO */}
       <section
-        className="relative py-24 sm:py-32 px-4 sm:px-6 text-center bg-cover bg-center"
+        className="relative bg-cover bg-center text-center"
         style={{
           backgroundImage: "url('/images/impact/Hunehar-Activity2.webp')",
         }}
       >
-        <div className="absolute inset-0 bg-black/50" />
-        <h1 className="relative z-10 text-[clamp(1.8rem,5vw,3rem)] sm:text-[clamp(2.2rem,5vw,3.5rem)] font-bold text-white">
-          Volunteer With Us
-        </h1>
+        <div className="absolute inset-0 bg-brand-navy-soft/60" />
+        <div className="relative z-10 container-brand py-24 sm:py-32">
+          <h1 className="text-heading-1">Volunteer With Us</h1>
+        </div>
       </section>
 
       {/* INTRO */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 max-w-3xl md:max-w-5xl mx-auto text-center">
-        <p className="text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
+      <section className="section-y px-4 sm:px-6 max-w-3xl md:max-w-5xl mx-auto text-center">
+        <p className="text-sm sm:text-base md:text-lg leading-relaxed text-brand-muted">
           Hunehar’s team is powered by passionate students from institutions
           like NUST, FAST, Roots, Beaconhouse, and many more. We welcome
           individuals who want to be part of something meaningful while gaining
@@ -43,8 +44,8 @@ export default function VolunteerPage() {
       </section>
 
       {/* DEPARTMENTS */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 max-w-6xl mx-auto">
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#206FAC] mb-8 sm:mb-12 text-center">
+      <section className="section-y px-4 sm:px-6 max-w-6xl mx-auto">
+        <h2 className="text-heading-3 mb-8 sm:mb-12 text-center">
           Volunteer Departments & Responsibilities
         </h2>
 
@@ -77,12 +78,12 @@ export default function VolunteerPage() {
           ].map(([title, desc], i) => (
             <div
               key={i}
-              className="p-4 sm:p-6 border border-border rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-[#206FAC]/40 hover:bg-[#e4eff7]"
+              className="p-4 sm:p-6 border border-brand-border rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-brand-blue/40 hover:bg-brand-bg"
             >
-              <h3 className="text-base sm:text-lg font-semibold text-[#206FAC] mb-1 sm:mb-2">
+              <h3 className="text-base sm:text-lg font-semibold text-brand-blue mb-1 sm:mb-2">
                 {title}
               </h3>
-              <p className="text-xs sm:text-sm md:text-base text-muted-foreground">
+              <p className="text-xs sm:text-sm md:text-base text-brand-muted">
                 {desc}
               </p>
             </div>
@@ -91,17 +92,13 @@ export default function VolunteerPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 text-center bg-secondary">
-        <h2 className="text-xl sm:text-2xl md:text-2xl font-semibold text-[#206FAC] mb-6">
-          Ready to Make a Difference?
-        </h2>
-        <Link
-          href={VOLUNTEER_FORM}
-          target="_blank"
-          className="inline-block bg-gradient-to-r from-[#1a6aa0] to-[#3a8fd1] text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-medium text-sm sm:text-base md:text-base transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:brightness-110"
-        >
-          Apply to Volunteer
-        </Link>
+      <section className="section-y px-4 sm:px-6 text-center bg-brand-bg">
+        <h2 className="text-heading-4 mb-6">Ready to Make a Difference?</h2>
+        <Button asChild variant="brand" size="brand-lg">
+          <Link href={VOLUNTEER_FORM} target="_blank">
+            Apply to Volunteer
+          </Link>
+        </Button>
       </section>
 
       <Footer />

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 export default function CTASection() {
   const [email, setEmail] = useState("");
@@ -45,8 +46,8 @@ export default function CTASection() {
   };
 
   return (
-    <section className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-10 py-16 sm:py-20 lg:py-28">
-      <div className="rounded-2xl lg:rounded-[28px] bg-[#0E2433] px-6 py-16 sm:px-10 sm:py-20 lg:px-14 lg:py-24 text-white">
+    <section className="container-brand py-16 sm:py-20 lg:py-28">
+      <div className="rounded-2xl lg:rounded-[28px] bg-brand-navy-soft px-6 py-16 sm:px-10 sm:py-20 lg:px-14 lg:py-24 text-white">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +59,7 @@ export default function CTASection() {
             Subscribe to our newsletter
           </h2>
 
-          <p className="text-[1.0625rem] leading-[1.7] text-[#B9CBD6] mb-8 sm:mb-10">
+          <p className="text-[1.0625rem] leading-[1.7] text-brand-mist mb-8 sm:mb-10">
             Stay updated with our latest news, impact stories, and ways to get
             involved in our mission.
           </p>
@@ -71,33 +72,28 @@ export default function CTASection() {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-white text-[#152A38] flex-1 h-[52px] px-5 text-[0.9375rem] rounded-full outline-none w-full placeholder:text-[#8095A3]"
+                className="bg-white text-brand-navy flex-1 h-[52px] px-5 text-[0.9375rem] rounded-full outline-none w-full placeholder:text-[#8095A3]"
               />
 
-              <button
+              <Button
+                variant="brand"
                 onClick={handleSubscribe}
                 disabled={loading}
-                className="bg-[#E5533D] hover:bg-[#C6462C] disabled:opacity-60 text-white h-[52px] px-7 text-[0.9375rem] font-semibold rounded-full transition-colors w-full sm:w-auto"
+                className="h-[52px] px-7 text-[0.9375rem] w-full sm:w-auto"
               >
                 {loading ? "Subscribing…" : "Subscribe"}
-              </button>
+              </Button>
             </div>
           </div>
 
           {/* Secondary CTAs */}
           <div className="flex flex-wrap gap-3.5 justify-center">
-            <Link
-              href="/get-involved/donate"
-              className="inline-flex items-center bg-white text-[#152A38] px-8 py-[17px] rounded-full font-semibold text-[1.0625rem] hover:bg-[#E7EDF1] transition-colors"
-            >
-              Make a donation
-            </Link>
-            <Link
-              href="/get-involved/volunteer"
-              className="inline-flex items-center bg-white/10 hover:bg-white/20 text-white px-8 py-[17px] rounded-full font-semibold text-[1.0625rem] transition-colors ring-1 ring-white/25"
-            >
-              Become a volunteer
-            </Link>
+            <Button asChild variant="brand-light" size="brand-lg">
+              <Link href="/get-involved/donate">Make a donation</Link>
+            </Button>
+            <Button asChild variant="brand-ghost" size="brand-lg">
+              <Link href="/get-involved/volunteer">Become a volunteer</Link>
+            </Button>
           </div>
         </motion.div>
       </div>

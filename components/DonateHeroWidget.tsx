@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const DONATION_FORM =
   "https://docs.google.com/forms/d/e/1FAIpQLSeCWO6Um1U3qPad2phOSCsTT4IymqiLGY4KOmWXwjPkOf0EFA/viewform";
@@ -67,11 +68,11 @@ export default function DonateHeroWidget() {
   };
 
   return (
-    <div className="bg-[#F4F7F9] rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:sticky lg:top-24">
+    <div className="bg-brand-bg rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:sticky lg:top-24">
       <div
         role="tablist"
         aria-label="Donation frequency"
-        className="grid grid-cols-4 gap-1 bg-[#E7EDF1] p-1 rounded-full mb-6"
+        className="grid grid-cols-4 gap-1 bg-brand-border p-1 rounded-full mb-6"
       >
         {FREQUENCIES.map((f) => (
           <button
@@ -81,8 +82,8 @@ export default function DonateHeroWidget() {
             onClick={() => setFreq(f.id)}
             className={`py-2.5 px-1 rounded-full font-semibold text-[12px] sm:text-[13px] transition-colors ${
               freq === f.id
-                ? "bg-white text-[#206FAC]"
-                : "text-[#5A6E7B] hover:text-[#206FAC]"
+                ? "bg-white text-brand-blue"
+                : "text-brand-muted hover:text-brand-blue"
             }`}
           >
             {f.label}
@@ -90,13 +91,13 @@ export default function DonateHeroWidget() {
         ))}
       </div>
 
-      <p className="text-[13px] font-semibold tracking-wider uppercase text-[#5A6E7B] mb-2">
+      <p className="text-[13px] font-semibold tracking-wider uppercase text-brand-muted mb-2">
         {isCustom ? "One-time gift" : "Your gift"}
       </p>
-      <p className="text-4xl sm:text-5xl font-bold text-[#152A38] tracking-tight leading-tight mb-1.5">
+      <p className="text-4xl sm:text-5xl font-bold text-brand-navy tracking-tight leading-tight mb-1.5">
         {amountDisplay}
       </p>
-      <p className="text-sm text-[#5A6E7B] mb-6 min-h-[1.3em]">
+      <p className="text-sm text-brand-muted mb-6 min-h-[1.3em]">
         {current.note}
       </p>
 
@@ -104,7 +105,7 @@ export default function DonateHeroWidget() {
         <div className="mb-6">
           <label
             htmlFor="custom-amount"
-            className="block mb-2.5 text-sm font-medium text-[#3F5563]"
+            className="block mb-2.5 text-sm font-medium text-brand-muted-soft"
           >
             Enter an amount in PKR
           </label>
@@ -115,36 +116,38 @@ export default function DonateHeroWidget() {
             placeholder="5,000"
             value={customAmount}
             onChange={handleCustomAmount}
-            className="w-full h-14 px-[18px] rounded-2xl border-0 bg-white text-[#152A38] text-lg font-semibold outline-none ring-1 ring-inset ring-[#DDE5EA] focus:ring-2 focus:ring-[#206FAC] transition-shadow"
+            className="w-full h-14 px-[18px] rounded-2xl border-0 bg-white text-brand-navy text-lg font-semibold outline-none ring-1 ring-inset ring-[#DDE5EA] focus:ring-2 focus:ring-brand-blue transition-shadow"
           />
         </div>
       )}
 
-      <p className="text-sm font-medium text-[#3F5563] mb-3">
+      <p className="text-sm font-medium text-brand-muted-soft mb-3">
         {isCustom ? "Where it goes" : "What it covers"}
       </p>
       <ul className="flex flex-wrap gap-2 mb-6 list-none p-0 m-0">
         {(isCustom ? ONCE_COVERS : COVERS).map((c) => (
           <li
             key={c}
-            className="bg-white rounded-full px-3.5 py-2 text-[13px] text-[#3F5563]"
+            className="bg-white rounded-full px-3.5 py-2 text-[13px] text-brand-muted-soft"
           >
             {c}
           </li>
         ))}
       </ul>
 
-      <Link
-        href={DONATION_FORM}
-        target="_blank"
-        className="flex items-center justify-center gap-2.5 bg-[#E5533D] hover:bg-[#C6462C] text-white py-[18px] rounded-2xl font-semibold text-[17px] transition-colors"
+      <Button
+        asChild
+        variant="brand"
+        className="w-full rounded-2xl py-[18px] text-[17px] gap-2.5"
       >
-        {current.cta}
-        <ArrowRight className="w-[18px] h-[18px]" aria-hidden="true" />
-      </Link>
-      <p className="mt-3.5 text-center text-[13px] text-[#5A6E7B]">
+        <Link href={DONATION_FORM} target="_blank">
+          {current.cta}
+          <ArrowRight className="w-[18px] h-[18px]" aria-hidden="true" />
+        </Link>
+      </Button>
+      <p className="mt-3.5 text-center text-[13px] text-brand-muted">
         Or{" "}
-        <a href="#bank" className="text-[#206FAC] font-medium hover:underline">
+        <a href="#bank" className="text-brand-blue font-medium hover:underline">
           transfer directly to our bank account
         </a>
       </p>

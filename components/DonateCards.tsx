@@ -29,11 +29,11 @@ export default function DonateCards() {
         <>
           Choose a sponsorship plan that works for you:
           <span className="block mt-2">
-            • Monthly: <strong className="text-[#152A38]">Rs. 3,000</strong>
+            • Monthly: <strong className="text-brand-navy">Rs. 3,000</strong>
             <br />• Quarterly:{" "}
-            <strong className="text-[#152A38]">Rs. 12,000</strong>
+            <strong className="text-brand-navy">Rs. 12,000</strong>
             <br />• Annually:{" "}
-            <strong className="text-[#152A38]">Rs. 36,000</strong>
+            <strong className="text-brand-navy">Rs. 36,000</strong>
           </span>
         </>
       ),
@@ -54,7 +54,7 @@ export default function DonateCards() {
 
   return (
     <section className="py-16 sm:py-20 lg:py-28 bg-white">
-      <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="container-brand">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ export default function DonateCards() {
           viewport={{ once: true }}
           className="text-center mb-10 sm:mb-12"
         >
-          <h2 className="text-[clamp(1.7rem,6vw,2.2rem)] lg:text-[clamp(2.1rem,3.2vw,2.9rem)] font-bold leading-[1.1] tracking-tight text-[#152A38]">
+          <h2 className="text-heading-2">
             How sponsorship works
           </h2>
         </motion.div>
@@ -73,15 +73,15 @@ export default function DonateCards() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-[#F4F7F9] rounded-2xl lg:rounded-[28px] p-6 sm:p-8 lg:p-10 mb-12 sm:mb-16 max-w-4xl mx-auto"
+          className="bg-brand-bg rounded-2xl lg:rounded-[28px] p-6 sm:p-8 lg:p-10 mb-12 sm:mb-16 max-w-4xl mx-auto"
         >
           <div className="grid sm:grid-cols-2 gap-8">
             {steps.map((step) => (
               <div key={step.title}>
-                <h3 className="font-semibold text-[#206FAC] mb-2 text-[1.0625rem]">
+                <h3 className="font-semibold text-brand-blue mb-2 text-[1.0625rem]">
                   {step.title}
                 </h3>
-                <p className="text-[0.9375rem] leading-[1.7] text-[#5A6E7B]">
+                <p className="text-[0.9375rem] leading-[1.7] text-brand-muted">
                   {step.body}
                 </p>
               </div>
@@ -91,7 +91,7 @@ export default function DonateCards() {
 
         {/* Donate Cards */}
         <div>
-          <p className="text-[1.125rem] sm:text-xl font-semibold text-[#152A38] mb-8 text-center">
+          <p className="text-[1.125rem] sm:text-xl font-semibold text-brand-navy mb-8 text-center">
             Your support directly changes lives. Choose how you'd like to
             help:
           </p>
@@ -112,15 +112,15 @@ export default function DonateCards() {
                 >
                   {card.icon}
                 </div>
-                <h3 className="text-[1.125rem] font-semibold text-[#152A38] mb-3">
+                <h3 className="text-[1.125rem] font-semibold text-brand-navy mb-3">
                   {card.title}
                 </h3>
-                <p className="text-[0.9375rem] leading-[1.7] text-[#5A6E7B] mb-6">
+                <p className="text-[0.9375rem] leading-[1.7] text-brand-muted mb-6">
                   {card.description}
                 </p>
                 <Link
                   href="/get-involved/donate"
-                  className="mt-auto self-start inline-flex items-center gap-2 text-[0.9375rem] font-semibold text-[#206FAC] hover:text-[#144A73] transition-colors"
+                  className="mt-auto self-start inline-flex items-center gap-2 text-[0.9375rem] font-semibold text-brand-blue hover:text-brand-blue-dark transition-colors"
                 >
                   {card.title}
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />

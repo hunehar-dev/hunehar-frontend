@@ -7,6 +7,7 @@ import Footer from "@/components/footer";
 import Image from "next/image";
 import { PortableText } from '@portabletext/react'
 import { client } from "@/sanity/lib/client";
+import { Button } from "@/components/ui/button";
 
 export default function ArticlePage() {
   const params = useParams();
@@ -34,9 +35,13 @@ export default function ArticlePage() {
 
   if (!article) {
     return (
-      <div className="py-20 text-center text-gray-500">
-        Loading article...
-      </div>
+      <>
+        <Navbar />
+        <div className="py-20 text-center text-brand-muted">
+          Loading article...
+        </div>
+        <Footer />
+      </>
     );
   }
 
@@ -59,12 +64,12 @@ export default function ArticlePage() {
         )}
 
         {/* TITLE */}
-        <h1 className="text-3xl md:text-4xl font-bold text-[#206FAC] mb-2">
+        <h1 className="text-3xl md:text-4xl font-bold text-brand-blue mb-2">
           {article.title}
         </h1>
 
         {/* META */}
-        <p className="text-sm text-gray-500 mb-8">
+        <p className="text-sm text-brand-muted mb-8">
           Written by {article.author}
           {article.publishedAt &&
             ` • ${new Date(article.publishedAt).toLocaleDateString()}`}
@@ -72,7 +77,7 @@ export default function ArticlePage() {
 
         {/* CONTENT */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 mt-10">
-  <div className="font-poppins text-gray-800">
+  <div className="font-poppins text-brand-navy">
     <PortableText
       value={article.content}
       components={{
@@ -80,7 +85,7 @@ export default function ArticlePage() {
           normal: ({ children }) => <p className="mb-4 leading-relaxed">{children}</p>,
           h1: ({ children }) => <h1 className="text-3xl font-bold mt-8 mb-4">{children}</h1>,
           h2: ({ children }) => <h2 className="text-2xl font-semibold mt-6 mb-3">{children}</h2>,
-          h4: ({ children }) => <h4 className="text-xl text-[#206FAC] font-semibold mt-6 mb-3">{children}</h4>,
+          h4: ({ children }) => <h4 className="text-xl text-brand-blue font-semibold mt-6 mb-3">{children}</h4>,
         },
         list: {
           bullet: ({ children }) => <ul className="list-disc ml-6 mb-4">{children}</ul>,
@@ -98,13 +103,11 @@ export default function ArticlePage() {
 
         {/* DOWNLOAD */}
         {article.pdf?.asset?.url && (
-          <a
-            href={article.pdf.asset.url}
-            download
-            className="inline-block px-6 py-3 bg-[#206FAC] text-white rounded-lg hover:bg-[#185a8f]"
-          >
-            Download PDF
-          </a>
+          <Button asChild variant="brand-blue">
+            <a href={article.pdf.asset.url} download>
+              Download PDF
+            </a>
+          </Button>
         )}
 
       </main>

@@ -47,9 +47,9 @@ function LifeAtHunehar() {
 
   return (
     <>
-      <section className="bg-[#F4F7F9] py-16 sm:py-20 lg:py-28">
+      <section className="bg-brand-bg py-16 sm:py-20 lg:py-28">
         <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-10">
-          <h2 className="text-[clamp(1.7rem,6vw,2.2rem)] lg:text-[clamp(2.1rem,3.2vw,2.9rem)] font-bold leading-[1.1] tracking-tight text-[#152A38] text-center mb-12 sm:mb-16">
+          <h2 className="text-[clamp(1.7rem,6vw,2.2rem)] lg:text-[clamp(2.1rem,3.2vw,2.9rem)] font-bold leading-[1.1] tracking-tight text-brand-navy text-center mb-12 sm:mb-16">
             Life at Hunehar
           </h2>
 

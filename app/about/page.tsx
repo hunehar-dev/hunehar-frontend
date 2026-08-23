@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <main className="bg-white text-gray-700">
+    <main className="bg-white text-brand-navy">
       <Navbar />
 
       {/* HERO */}
@@ -32,12 +32,9 @@ export default function About() {
         }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40"></div>{" "}
-        {/* 40% opacity black overlay */}
-        <div className="relative z-10 container mx-auto flex flex-col items-center justify-center h-full text-white text-center px-6">
-          <h1 className="text-[clamp(2.2rem,5vw,3.4rem)] font-semibold mb-4 tracking-tight">
-            About Us
-          </h1>
+        <div className="absolute inset-0 bg-brand-navy-soft/60"></div>
+        <div className="relative z-10 container-brand flex flex-col items-center justify-center h-full text-white text-center">
+          <h1 className="text-heading-1 mb-4">About Us</h1>
 
           <p className="text-sm md:text-base max-w-3xl leading-relaxed">
             Hunehar exists to ensure that no child is denied education because
@@ -48,13 +45,13 @@ export default function About() {
       </section>
 
       {/* FOUNDER MESSAGE */}
-      <section className="py-24">
-        <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <section className="section-y-lg">
+        <div className="container-brand grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-[clamp(1.75rem,3.5vw,2.25rem)] font-semibold text-[#206FAC] mb-6">
+            <h2 className="text-heading-3 mb-6">
               Message from the Founder
             </h2>
-            <blockquote className="text-sm md:text-base text-gray-600 leading-relaxed border-l-4 border-[#206FAC] pl-6 italic">
+            <blockquote className="text-sm md:text-base text-brand-muted leading-relaxed border-l-4 border-brand-blue pl-6 italic">
               “It’s so heartwarming whenever we receive a donation, sponsorship,
               or volunteering application, allowing us to help those facing
               financial hardships. You are the reason children start school,
@@ -63,8 +60,8 @@ export default function About() {
               Thank you for believing in them.”
             </blockquote>
 
-            <p className="mt-6 font-semibold text-gray-800">Mian Samiuddin</p>
-            <p className="text-sm md:text-base leading-relaxed text-gray-500">
+            <p className="mt-6 font-semibold text-brand-navy">Mian Samiuddin</p>
+            <p className="text-sm md:text-base leading-relaxed text-brand-muted">
               Founder & Chairman
             </p>
           </div>
@@ -82,18 +79,18 @@ export default function About() {
       </section>
 
       {/* OUR STORY */}
-      <section className="bg-gray-50 py-24">
-        <div className="container mx-auto px-6">
-          <h2 className="text-[clamp(1.75rem,3.5vw,2.25rem)] font-semibold text-[#206FAC] mb-12 text-center">
+      <section className="bg-brand-bg section-y-lg">
+        <div className="container-brand">
+          <h2 className="text-heading-3 mb-12 text-center">
             Our Story
           </h2>
 
-          <div className="max-w-4xl mx-auto space-y-10 border-l-2 border-[#206FAC] pl-8">
+          <div className="max-w-4xl mx-auto space-y-10 border-l-2 border-brand-blue pl-8">
             <div>
-              <h3 className="text-[clamp(1.4rem,2.4vw,1.5rem)] font-semibold text-[#206FAC]">
+              <h3 className="text-heading-4">
                 2012 - Our Beginning
               </h3>
-              <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2">
+              <p className="text-sm md:text-base text-brand-muted leading-relaxed mt-2">
                 Hunehar began in 2012 with a simple concern: too many children
                 around us were being left behind because education was out of
                 reach.
@@ -101,10 +98,10 @@ export default function About() {
             </div>
 
             <div>
-              <h3 className="text-[clamp(1.4rem,2.4vw,1.5rem)] font-semibold text-[#206FAC]">
+              <h3 className="text-heading-4">
                 Early Years
               </h3>
-              <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2">
+              <p className="text-sm md:text-base text-brand-muted leading-relaxed mt-2">
                 In the early years, we supported children already enrolled in
                 local schools by sponsoring their education. We helped with
                 school fees, uniforms, stationery, and learning resources, so
@@ -113,10 +110,10 @@ export default function About() {
             </div>
 
             <div>
-              <h3 className="text-[clamp(1.4rem,2.4vw,1.5rem)] font-semibold text-[#206FAC]">
+              <h3 className="text-heading-4">
                 2017 - The Hunehar Welfare School
               </h3>
-              <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2">
+              <p className="text-sm md:text-base text-brand-muted leading-relaxed mt-2">
                 As needs grew, we opened The Hunehar Welfare School in
                 Mehrabadi, Islamabad, providing free, quality education in a
                 safe environment.
@@ -124,10 +121,10 @@ export default function About() {
             </div>
 
             <div>
-              <h3 className="text-[clamp(1.4rem,2.4vw,1.5rem)] font-semibold text-[#206FAC]">
+              <h3 className="text-heading-4">
                 Today
               </h3>
-              <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-2">
+              <p className="text-sm md:text-base text-brand-muted leading-relaxed mt-2">
                 We educate children up to Grade 6 and continue supporting them
                 beyond our school by helping secure admissions and sponsorships.
               </p>
@@ -137,24 +134,24 @@ export default function About() {
       </section>
 
       {/* MISSION & VISION */}
-      <section className="py-24">
-        <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12">
-          <div className="p-10 bg-gray-50 rounded-2xl shadow-sm">
-            <h2 className="text-[clamp(1.4rem,2.4vw,1.5rem)] font-semibold text-[#206FAC] mb-4">
+      <section className="section-y-lg">
+        <div className="container-brand grid md:grid-cols-2 gap-12">
+          <div className="p-10 bg-brand-bg rounded-2xl shadow-sm">
+            <h2 className="text-heading-4 mb-4">
               Our Mission
             </h2>
-            <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+            <p className="text-sm md:text-base text-brand-muted leading-relaxed">
               To ensure that every child, regardless of background, can exercise
               their right to quality education, emotional well-being, and
               economic empowerment.
             </p>
           </div>
 
-          <div className="p-10 bg-gray-50 rounded-2xl shadow-sm">
-            <h2 className="text-[clamp(1.4rem,2.4vw,1.5rem)] font-semibold text-[#206FAC] mb-4">
+          <div className="p-10 bg-brand-bg rounded-2xl shadow-sm">
+            <h2 className="text-heading-4 mb-4">
               Our Vision
             </h2>
-            <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+            <p className="text-sm md:text-base text-brand-muted leading-relaxed">
               A Pakistan where no child is left behind, and where education is
               not a privilege but a promise fulfilled.
             </p>
@@ -163,8 +160,8 @@ export default function About() {
       </section>
 
       {/* LEGAL STATUS */}
-      <section className="bg-gray-50 py-20">
-        <div className="container mx-auto px-6 max-w-5xl">
+      <section className="bg-brand-bg section-y-lg">
+        <div className="container-brand max-w-5xl">
           <div className="flex flex-col md:flex-row items-center gap-10">
             {/* SECP Badge */}
             <div className="flex-shrink-0">
@@ -179,14 +176,14 @@ export default function About() {
 
             {/* Text Content */}
             <div className="text-center md:text-left">
-              <h2 className="text-[clamp(1.75rem,3.5vw,2.25rem)] font-semibold text-[#206FAC] mb-4">
+              <h2 className="text-heading-3 mb-4">
                 Legal Status & Registration
               </h2>
-              <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl">
+              <p className="text-sm md:text-base text-brand-muted leading-relaxed max-w-xl">
                 Hunehar is registered as a Foundation with the Securities and
                 Commission of Pakistan (SECP) and operates under the ICT Act 2020. 
                 Details regarding compliance are available in our{" "}
-                <Link href="/terms" className="text-[#206FAC] hover:underline">
+                <Link href="/terms" className="text-brand-blue hover:underline">
                   Terms & Conditions
                 </Link>.
               </p>
@@ -196,15 +193,15 @@ export default function About() {
       </section>
 
       {/* HUNEHAR WELFARE SCHOOL */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="section-y-lg bg-white">
+        <div className="container-brand">
           {/* Heading */}
-          <h2 className="text-[clamp(1.75rem,3.5vw,2.25rem)] font-semibold text-[#206FAC] mb-6 text-center">
+          <h2 className="text-heading-3 mb-6 text-center">
             Hunehar Welfare School
           </h2>
 
           {/* Description */}
-          <div className="max-w-4xl mx-auto text-justify text-sm md:text-base text-gray-600 leading-relaxed space-y-6 mb-16 leading-relaxed">
+          <div className="max-w-4xl mx-auto text-justify text-sm md:text-base text-brand-muted leading-relaxed space-y-6 mb-16 leading-relaxed">
             <p>
               Since 2017, Hunehar Welfare School has enrolled over 200 children
               from Mehrabadi and surrounding communities, providing them with
@@ -228,7 +225,7 @@ export default function About() {
           </div>
 
           {/* Campus Includes */}
-          <h3 className="text-[clamp(1.4rem,2.4vw,1.8rem)] font-semibold text-[#206FAC] mb-10 text-center">
+          <h3 className="text-[clamp(1.4rem,2.4vw,1.8rem)] font-semibold text-brand-blue mb-10 text-center">
             Our Campus Includes
           </h3>
 
@@ -258,10 +255,10 @@ export default function About() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-gray-100 rounded-2xl overflow-hidden shadow-sm"
+                className="bg-brand-bg rounded-2xl overflow-hidden shadow-sm"
               >
                 {/* Image wrapper */}
-                <div className="relative w-full aspect-[4/3] bg-gray-200">
+                <div className="relative w-full aspect-[4/3] bg-brand-border">
                   <img
                     src={item.src}
                     alt={item.alt}
@@ -274,7 +271,7 @@ export default function About() {
                   />
                 </div>
 
-                <p className="py-4 text-center font-medium text-gray-700">
+                <p className="py-4 text-center font-medium text-brand-navy">
                   {item.label}
                 </p>
               </div>
@@ -284,16 +281,16 @@ export default function About() {
       </section>
 
       {/* TEAM */}
-      <section className="bg-gray-50 py-24">
-        <div className="container mx-auto px-6">
+      <section className="bg-brand-bg section-y-lg">
+        <div className="container-brand">
           {/* SECTION TITLE */}
-          <h2 className="text-[clamp(1.75rem,3.5vw,2.25rem)] font-semibold text-[#206FAC] mb-16 text-center">
+          <h2 className="text-heading-3 mb-16 text-center">
             Meet Our Team
           </h2>
 
           {/* ================= LEADERSHIP ================= */}
           <div className="mb-20">
-            <h3 className="text-[clamp(1.4rem,2.4vw,1.5rem)] font-semibold text-[#206FAC] text-center mb-10">
+            <h3 className="text-heading-4 text-center mb-10">
               Leadership
             </h3>
 
@@ -313,10 +310,10 @@ export default function About() {
                     />
                   </div>
                 </a>
-                <p className="text-lg font-semibold text-gray-800">
+                <p className="text-lg font-semibold text-brand-navy">
                   Hareem Fatima
                 </p>
-                <p className="text-sm text-gray-500">President</p>
+                <p className="text-sm text-brand-muted">President</p>
               </div>
 
               {/* Vice President */}
@@ -334,17 +331,17 @@ export default function About() {
                     />
                   </div>
                 </a>
-                <p className="text-lg font-semibold text-gray-800">
+                <p className="text-lg font-semibold text-brand-navy">
                   Zain Ilyas
                 </p>
-                <p className="text-sm text-gray-500">Vice President</p>
+                <p className="text-sm text-brand-muted">Vice President</p>
               </div>
             </div>
           </div>
 
           {/* ================= DIRECTORS ================= */}
           <div className="mb-20">
-            <h3 className="text-[clamp(1.4rem,2.4vw,1.5rem)] font-semibold text-[#206FAC] text-center mb-10">
+            <h3 className="text-heading-4 text-center mb-10">
               Department Directors
             </h3>
 
@@ -410,8 +407,8 @@ export default function About() {
                       />
                     </div>
                   </a>
-                  <p className="font-semibold text-gray-800">{person.name}</p>
-                  <p className="text-sm text-gray-500">{person.role}</p>
+                  <p className="font-semibold text-brand-navy">{person.name}</p>
+                  <p className="text-sm text-brand-muted">{person.role}</p>
                 </div>
               ))}
             </div>
@@ -419,7 +416,7 @@ export default function About() {
 
           {/* ================= ASSISTANT DIRECTORS ================= */}
           <div>
-            <h3 className="text-[clamp(1.4rem,2.4vw,1.5rem)] font-semibold text-[#206FAC] text-center mb-10">
+            <h3 className="text-heading-4 text-center mb-10">
               Assistant Directors
             </h3>
 
@@ -488,8 +485,8 @@ export default function About() {
                       />
                     </div>
                   )}
-                  <p className="font-semibold text-gray-800">{person.name}</p>
-                  <p className="text-sm text-gray-500">{person.role}</p>
+                  <p className="font-semibold text-brand-navy">{person.name}</p>
+                  <p className="text-sm text-brand-muted">{person.role}</p>
                 </div>
               ))}
             </div>

@@ -2,8 +2,10 @@
 
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { MapPin, Mail, Phone, ArrowRight, HandHeart } from "lucide-react";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
+import { Button } from "@/components/ui/button";
 
 
 const ContactPage = () => {
@@ -124,7 +126,7 @@ const ContactPage = () => {
 
   return (
     <>
-      <main className="bg-gray-50 font-sans antialiased text-gray-700">
+      <main className="bg-brand-bg font-sans antialiased text-brand-navy">
         <Navbar />
         {/* HERO */}
         <section
@@ -133,11 +135,9 @@ const ContactPage = () => {
             backgroundImage: "url('/images/contact/Students-Writing.webp')",
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
-          <div className="relative z-10 container mx-auto flex flex-col items-center justify-center h-full text-white text-center px-6">
-            <h1 className="text-[clamp(2.2rem,5vw,3.5rem)] font-bold mb-4 tracking-tight">
-              Contact Us
-            </h1>
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy-soft/90 via-brand-navy-soft/60 to-transparent"></div>
+          <div className="relative z-10 container-brand flex flex-col items-center justify-center h-full text-white text-center">
+            <h1 className="text-heading-1 mb-4">Contact Us</h1>
 
             <p className="text-sm md:text-base max-w-3xl leading-relaxed">
               Your voice matters. Reach out to learn more, collaborate, or
@@ -147,14 +147,14 @@ const ContactPage = () => {
           </div>
         </section>
         {/* PARTNER WITH HUNEHAR */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-6">
+        <section className="section-y-lg bg-white">
+          <div className="container-brand">
             <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
               <div>
-                <h2 className="text-[clamp(1.75rem,3.5vw,2.25rem)] font-semibold text-[#206FAC] mb-5">
+                <h2 className="text-heading-3 mb-5">
                   Partner With Hunehar
                 </h2>
-                <p className="text-sm md:text-base text-gray-600 mb-6 leading-relaxed">
+                <p className="text-sm md:text-base text-brand-muted mb-6 leading-relaxed">
                   We believe partnerships amplify impact. By collaborating with
                   organizations, we create sustainable solutions that transform
                   children’s futures.
@@ -162,42 +162,62 @@ const ContactPage = () => {
 
                 <form onSubmit={handlePartnershipSubmit} className="space-y-4">
                   <div className="grid md:grid-cols-2 gap-4">
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Full Name"
-                      value={partnershipForm.name}
-                      onChange={handlePartnershipChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg border text-sm md:text-base"
-                    />
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Email Address"
-                      value={partnershipForm.email}
-                      onChange={handlePartnershipChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg border text-sm md:text-base"
-                    />
+                    <div>
+                      <label htmlFor="partner-name" className="sr-only">
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        id="partner-name"
+                        name="name"
+                        placeholder="Full Name"
+                        value={partnershipForm.name}
+                        onChange={handlePartnershipChange}
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-brand-border text-sm md:text-base outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="partner-email" className="sr-only">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        id="partner-email"
+                        name="email"
+                        placeholder="Email Address"
+                        value={partnershipForm.email}
+                        onChange={handlePartnershipChange}
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-brand-border text-sm md:text-base outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue"
+                      />
+                    </div>
                   </div>
 
+                  <label htmlFor="partner-org" className="sr-only">
+                    Organization Name
+                  </label>
                   <input
                     type="text"
+                    id="partner-org"
                     name="organization"
                     placeholder="Organization Name"
                     value={partnershipForm.organization}
                     onChange={handlePartnershipChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border text-sm md:text-base"
+                    className="w-full px-4 py-3 rounded-lg border border-brand-border text-sm md:text-base outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue"
                   />
 
+                  <label htmlFor="partner-type" className="sr-only">
+                    Type of Partnership
+                  </label>
                   <select
+                    id="partner-type"
                     name="partnershipType"
                     value={partnershipForm.partnershipType}
                     onChange={handlePartnershipChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border text-sm md:text-base"
+                    className="w-full px-4 py-3 rounded-lg border border-brand-border text-sm md:text-base outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue"
                   >
                     <option value="">Type of Partnership</option>
                     <option value="Corporate">Corporate</option>
@@ -206,23 +226,24 @@ const ContactPage = () => {
                     <option value="Other">Other</option>
                   </select>
 
+                  <label htmlFor="partner-message" className="sr-only">
+                    Message / Inquiry
+                  </label>
                   <textarea
+                    id="partner-message"
                     name="message"
                     rows={4}
                     placeholder="Message / Inquiry"
                     value={partnershipForm.message}
                     onChange={handlePartnershipChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border text-sm md:text-base"
+                    className="w-full px-4 py-3 rounded-lg border border-brand-border text-sm md:text-base outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue"
                   />
 
-                  <button
-                    type="submit"
-                    className="inline-flex items-center px-6 py-3 bg-[#206FAC] text-white rounded-md text-sm md:text-base font-medium"
-                  >
+                  <Button type="submit" variant="brand-blue" size="lg">
                     Connect With Us
                     <ArrowRight className="ml-2 w-5 h-5" />
-                  </button>
+                  </Button>
                 </form>
               </div>
 
@@ -234,7 +255,7 @@ const ContactPage = () => {
             </div>
 
             {/* OUR PARTNERS */}
-            <h3 className="text-[clamp(1.75rem,3.5vw,2.25rem)] font-semibold text-[#206FAC] mb-10 text-center">
+            <h3 className="text-heading-3 mb-10 text-center">
               Our Partners
             </h3>
             {/*add an expandable card for partner using aceternity ui*/}
@@ -274,19 +295,19 @@ const ContactPage = () => {
           </div>
         </section>
 
-        <section className="py-24 bg-gray-50">
-          <div className="container mx-auto px-6">
+        <section className="section-y-lg bg-brand-bg">
+          <div className="container-brand">
             <div className="text-center mb-20">
-              <h2 className="text-[clamp(1.75rem,3.5vw,2.25rem)] font-semibold text-[#206FAC] tracking-tight">
+              <h2 className="text-heading-3 tracking-tight">
                 Get In Touch With Us
               </h2>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-sm text-brand-muted leading-relaxed">
                 Have questions, ideas, or want to get involved?
               </p>
             </div>
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl">
-                <h3 className="text-[clamp(1.4rem,2.4vw,1.5rem)] font-semibold text-[#206FAC] mb-6">
+                <h3 className="text-heading-4 mb-6">
                   Send a Message
                 </h3>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -294,7 +315,7 @@ const ContactPage = () => {
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-xs md:text-sm font-medium text-gray-700 mb-2"
+                        className="block text-xs md:text-sm font-medium text-brand-muted-soft mb-2"
                       >
                         Full Name
                       </label>
@@ -305,14 +326,14 @@ const ContactPage = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 rounded-lg border text-sm md:text-base"
+                        className="w-full px-4 py-3 rounded-lg border border-brand-border text-sm md:text-base outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue"
                         placeholder="John Doe"
                       />
                     </div>
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-xs md:text-sm font-medium text-gray-700 mb-2"
+                        className="block text-xs md:text-sm font-medium text-brand-muted-soft mb-2"
                       >
                         Email Address
                       </label>
@@ -323,7 +344,7 @@ const ContactPage = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 rounded-lg border text-sm md:text-base"
+                        className="w-full px-4 py-3 rounded-lg border border-brand-border text-sm md:text-base outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue"
                         placeholder="you@example.com"
                       />
                     </div>
@@ -331,7 +352,7 @@ const ContactPage = () => {
                   <div>
                     <label
                       htmlFor="subject"
-                      className="block text-xs md:text-sm font-medium text-gray-700 mb-2"
+                      className="block text-xs md:text-sm font-medium text-brand-muted-soft mb-2"
                     >
                       Subject
                     </label>
@@ -342,14 +363,14 @@ const ContactPage = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg border text-sm md:text-base"
+                      className="w-full px-4 py-3 rounded-lg border border-brand-border text-sm md:text-base outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue"
                       placeholder="Sponsorship Inquiry"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-xs md:text-sm font-medium text-gray-700 mb-2"
+                      className="block text-xs md:text-sm font-medium text-brand-muted-soft mb-2"
                     >
                       Message
                     </label>
@@ -360,63 +381,60 @@ const ContactPage = () => {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg border text-sm md:text-base"
+                      className="w-full px-4 py-3 rounded-lg border border-brand-border text-sm md:text-base outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue"
                       placeholder="I would like to discuss..."
                     ></textarea>
                   </div>
                   <div>
-                    <button
-                      type="submit"
-                      className="inline-flex items-center px-6 py-3 bg-[#206FAC] text-white rounded-md text-sm md:text-base font-medium"
-                    >
+                    <Button type="submit" variant="brand-blue" size="lg">
                       Send Message
-                      <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />{" "}
-                    </button>
+                      <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                    </Button>
                   </div>
                 </form>
               </div>
               <div className="space-y-8">
                 <div className="bg-white p-8 rounded-2xl shadow-xl">
-                  <h3 className="text-[clamp(1.4rem,2.4vw,1.5rem)] font-semibold text-[#206FAC] mb-6">
+                  <h3 className="text-heading-4 mb-6">
                     Our Contact Details
                   </h3>
                   <div className="space-y-6">
                     <div className="flex items-start space-x-4">
-                      <div className="mt-1 p-2 bg-[#DBEAFE] rounded-full">
-                        <MapPin className="h-5 w-5 text-[#206FAC]" />
+                      <div className="mt-1 p-2 bg-brand-blue-tint rounded-full">
+                        <MapPin className="h-5 w-5 text-brand-blue" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-sm md:text-base text-[#206FAC]">
+                        <h4 className="font-semibold text-sm md:text-base text-brand-blue">
                           Location
                         </h4>
-                        <p className="text-sm text-gray-600 leading-relaxed">
+                        <p className="text-sm text-brand-muted leading-relaxed">
                           Hunehar Welfare School, Mehrabadi, G13-Islamabad,
                           Pakistan-44000
                         </p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">
-                      <div className="mt-1 p-2 bg-[#DBEAFE] rounded-full">
-                        <Mail className="h-5 w-5 text-[#206FAC]" />
+                      <div className="mt-1 p-2 bg-brand-blue-tint rounded-full">
+                        <Mail className="h-5 w-5 text-brand-blue" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-sm md:text-base text-[#206FAC]">
+                        <h4 className="font-semibold text-sm md:text-base text-brand-blue">
                           General Inquiries
                         </h4>
-                        <p className="text-sm text-gray-600 leading-relaxed hover:text-[#206FAC] transition-colors">
+                        <p className="text-sm text-brand-muted leading-relaxed hover:text-brand-blue transition-colors">
                           <a href="mailto:info@hunehar.org">info@hunehar.org</a>
                         </p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">
-                      <div className="mt-1 p-2 bg-[#DBEAFE] rounded-full">
-                        <Phone className="h-5 w-5 text-[#206FAC]" />
+                      <div className="mt-1 p-2 bg-brand-blue-tint rounded-full">
+                        <Phone className="h-5 w-5 text-brand-blue" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-sm md:text-base text-[#206FAC]">
+                        <h4 className="font-semibold text-sm md:text-base text-brand-blue">
                           Call Us
                         </h4>
-                        <p className="text-sm text-gray-600 leading-relaxed">
+                        <p className="text-sm text-brand-muted leading-relaxed">
                           0341 0510902, 0336 5426276
                         </p>
                       </div>
@@ -438,23 +456,25 @@ const ContactPage = () => {
             </div>
           </div>
         </section>
-        <section className="bg-[#535758] text-white">
-          <div className="container mx-auto px-6 py-10 text-center">
+        <section className="bg-brand-navy-soft text-white">
+          <div className="container-brand py-16 sm:py-20 text-center">
             <HandHeart
-              className="mx-auto h-16 w-16 text-yellow-300 mb-6"
+              className="mx-auto h-16 w-16 text-brand-orange mb-6"
               strokeWidth={1.5}
             />
             <h2 className="text-[clamp(1.75rem,3.5vw,2.25rem)] font-bold mb-4 tracking-tight">
               Make a Difference Today!
             </h2>
-            <p className="max-w-3xl mx-auto mb-10 text-sm md:text-base text-gray-300 leading-relaxed">
+            <p className="max-w-3xl mx-auto mb-10 text-sm md:text-base text-brand-mist leading-relaxed">
               Your contribution breaks the cycle of poverty and empowers
               children to dream, learn, and thrive. Every donation, no matter
               the size, can change a child’s life.
             </p>
-            <button className="inline-flex items-center py-3 px-8 bg-yellow-400 text-gray-900 font-semibold rounded-full text-sm md:text-base hover:bg-yellow-300 hover:cursor-pointer transition">
-              Donate Now and Make a Child Smile
-            </button>
+            <Button asChild variant="brand" size="brand-lg">
+              <Link href="/get-involved/donate">
+                Donate Now and Make a Child Smile
+              </Link>
+            </Button>
           </div>
         </section>
         <Footer />

@@ -85,9 +85,9 @@ const cards = [
 
 export default function SchoolGallery() {
   return (
-    <section className="py-24 px-4 sm:px-6 bg-white">
+    <section className="section-y-lg px-4 sm:px-6 bg-white">
       <div className="max-w-7xl mx-auto text-center mb-12">
-        <h2 className="text-2xl md:text-3xl font-semibold text-[#206FAC]">
+        <h2 className="text-2xl md:text-3xl font-semibold text-brand-blue">
           Life at Hunehar
         </h2>
         <p className="text-muted-foreground mt-4 max-w-3xl mx-auto">

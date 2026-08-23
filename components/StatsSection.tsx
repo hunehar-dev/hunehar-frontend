@@ -11,7 +11,7 @@ export default function StatsSection() {
 
   return (
     <section className="bg-white relative">
-      <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
+      <div className="container-brand relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -29,10 +29,10 @@ export default function StatsSection() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-[clamp(1.75rem,6vw,2.5rem)] font-bold tracking-tight text-[#206FAC] mb-1.5">
+                <div className="text-[clamp(1.75rem,6vw,2.5rem)] font-bold tracking-tight text-brand-blue mb-1.5">
                   {stat.value}
                 </div>
-                <div className="text-[#5A6E7B] font-medium text-sm sm:text-base leading-snug">
+                <div className="text-brand-muted font-medium text-sm sm:text-base leading-snug">
                   {stat.label}
                 </div>
               </motion.div>

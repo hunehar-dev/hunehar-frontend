@@ -33,7 +33,7 @@ export default function DonateFAQAccordion() {
           Yes. Hunehar is registered as a Foundation with the Securities and
           Exchange Commission of Pakistan (SECP). You can find more details in
           our{" "}
-          <Link href="/terms" className="text-[#206FAC] hover:underline">
+          <Link href="/terms" className="text-brand-blue hover:underline">
             Terms & Conditions
           </Link>
           .
@@ -48,12 +48,12 @@ export default function DonateFAQAccordion() {
         <AccordionItem
           key={index}
           value={`item-${index}`}
-          className="bg-white border border-[#E7EDF1] rounded-xl px-5"
+          className="bg-white border border-brand-border rounded-xl px-5"
         >
-          <AccordionTrigger className="text-left text-[#152A38] text-[1.0625rem] font-semibold py-4 sm:py-5">
+          <AccordionTrigger className="text-left text-brand-navy text-[1.0625rem] font-semibold py-4 sm:py-5">
             {faq.question}
           </AccordionTrigger>
-          <AccordionContent className="text-[#5A6E7B] text-[0.95rem] leading-relaxed pb-4 sm:pb-5">
+          <AccordionContent className="text-brand-muted text-[0.95rem] leading-relaxed pb-4 sm:pb-5">
             {faq.answer}
           </AccordionContent>
         </AccordionItem>

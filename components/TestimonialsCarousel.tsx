@@ -74,7 +74,7 @@ export default function TestimonialsCarousel() {
 
   return (
     <section className="py-16 sm:py-20 lg:py-28 bg-white">
-      <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="container-brand">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -83,7 +83,7 @@ export default function TestimonialsCarousel() {
           viewport={{ once: true }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-[clamp(1.7rem,6vw,2.2rem)] lg:text-[clamp(2.1rem,3.2vw,2.9rem)] font-bold leading-[1.1] tracking-tight text-[#152A38]">
+          <h2 className="text-heading-2">
             What people say
           </h2>
         </motion.div>
@@ -106,13 +106,13 @@ export default function TestimonialsCarousel() {
               {visible.map((t, index) => (
                 <div
                   key={`${currentIndex}-${index}`}
-                  className="bg-[#F4F7F9] rounded-2xl p-6 sm:p-7"
+                  className="bg-brand-bg rounded-2xl p-6 sm:p-7"
                 >
-                  <p className="text-[#3F5563] text-[0.9375rem] leading-[1.7] mb-6">
+                  <p className="text-brand-muted-soft text-[0.9375rem] leading-[1.7] mb-6">
                     “{t.content}”
                   </p>
                   <div className="flex items-center">
-                    <div className="font-semibold text-[#152A38] text-sm">
+                    <div className="font-semibold text-brand-navy text-sm">
                       {t.name}
                     </div>
                   </div>
@@ -131,7 +131,7 @@ export default function TestimonialsCarousel() {
                 onClick={() => setCurrentIndex(i)}
                 aria-label={`Go to testimonial slide ${i + 1}`}
                 className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                  i === currentIndex ? "bg-[#206FAC]" : "bg-[#E7EDF1]"
+                  i === currentIndex ? "bg-brand-blue" : "bg-brand-border"
                 }`}
               />
             ))}

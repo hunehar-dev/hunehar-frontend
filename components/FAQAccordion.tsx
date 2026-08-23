@@ -29,7 +29,7 @@ export default function FAQAccordion() {
           Yes. Hunehar is registered as a Foundation with the Securities and
           Exchange Commission of Pakistan (SECP). You can find more details in
           our{" "}
-          <Link href="/terms" className="text-[#206FAC] hover:underline">
+          <Link href="/terms" className="text-brand-blue hover:underline">
             Terms & Conditions
           </Link>
           .
@@ -49,7 +49,7 @@ export default function FAQAccordion() {
           learn more and apply through our{" "}
           <Link
             href="/get-involved/volunteer"
-            className="text-[#206FAC] hover:underline"
+            className="text-brand-blue hover:underline"
           >
             Volunteer page
           </Link>
@@ -60,7 +60,7 @@ export default function FAQAccordion() {
   ];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-28 bg-[#F4F7F9]">
+    <section className="py-16 sm:py-20 lg:py-28 bg-brand-bg">
       <div className="max-w-[820px] mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -69,7 +69,7 @@ export default function FAQAccordion() {
           viewport={{ once: true }}
           className="text-center mb-10 sm:mb-12"
         >
-          <h2 className="text-[clamp(1.7rem,6vw,2.2rem)] lg:text-[clamp(2.1rem,3.2vw,2.9rem)] font-bold leading-[1.1] tracking-tight text-[#152A38]">
+          <h2 className="text-heading-2">
             Frequently asked questions
           </h2>
         </motion.div>
@@ -87,10 +87,10 @@ export default function FAQAccordion() {
                 value={`item-${index}`}
                 className="bg-white border-0 rounded-2xl px-5 sm:px-6"
               >
-                <AccordionTrigger className="text-left text-[#152A38] text-[1rem] font-semibold py-4 sm:py-5">
+                <AccordionTrigger className="text-left text-brand-navy text-[1rem] font-semibold py-4 sm:py-5">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-[#5A6E7B] text-[0.9375rem] leading-[1.7] pb-4 sm:pb-5">
+                <AccordionContent className="text-brand-muted text-[0.9375rem] leading-[1.7] pb-4 sm:pb-5">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

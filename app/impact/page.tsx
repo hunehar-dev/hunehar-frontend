@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 import type { Metadata } from "next";
 
@@ -86,15 +87,15 @@ const PROGRAMS = [
 
 export default function Impact() {
   return (
-    <main className="bg-white text-[#152A38]">
+    <main className="bg-white text-brand-navy">
       <Navbar />
 
       {/* HERO */}
-      <section className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-10 pt-12 sm:pt-16 lg:pt-24 pb-10 sm:pb-14 lg:pb-16">
+      <section className="container-brand pt-12 sm:pt-16 lg:pt-24 pb-10 sm:pb-14 lg:pb-16">
         <h1 className="text-[clamp(2.2rem,8vw,3.1rem)] lg:text-[clamp(3.2rem,5vw,4.6rem)] font-bold leading-[1.05] tracking-tight mb-6">
           Bigger than the classroom
         </h1>
-        <p className="text-[1.0625rem] lg:text-[1.1875rem] leading-[1.75] text-[#5A6E7B] max-w-[38em] text-pretty">
+        <p className="text-[1.0625rem] lg:text-[1.1875rem] leading-[1.75] text-brand-muted max-w-[38em] text-pretty">
           We started Hunehar because we believe quality education shouldn’t
           have a price tag, especially for the kids here in Islamabad. But as
           we grew, we realized our mission was bigger than the classroom.
@@ -104,8 +105,8 @@ export default function Impact() {
       </section>
 
       {/* HERO IMAGE */}
-      <section className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-10 pb-16 sm:pb-20 lg:pb-28">
-        <figure className="m-0 rounded-2xl lg:rounded-[28px] overflow-hidden aspect-[4/3] lg:aspect-[21/9] bg-[#F4F7F9]">
+      <section className="container-brand pb-16 sm:pb-20 lg:pb-28">
+        <figure className="m-0 rounded-2xl lg:rounded-[28px] overflow-hidden aspect-[4/3] lg:aspect-[21/9] bg-brand-bg">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/impact/Hunehar-Students.webp"
@@ -122,9 +123,9 @@ export default function Impact() {
         return (
           <section
             key={program.title}
-            className={isReversed ? "bg-[#F4F7F9]" : "bg-white"}
+            className={isReversed ? "bg-brand-bg" : "bg-white"}
           >
-            <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-10 py-14 sm:py-16 lg:py-24">
+            <div className="container-brand section-y-lg">
               <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                 <div className={isReversed ? "lg:order-1" : "lg:order-2"}>
                   <h2 className="text-2xl lg:text-[2rem] font-bold leading-[1.12] tracking-tight mb-6">
@@ -134,9 +135,9 @@ export default function Impact() {
                     {program.points.map((point) => (
                       <li
                         key={point}
-                        className="flex items-start gap-3.5 text-[1.0625rem] leading-[1.6] text-[#5A6E7B]"
+                        className="flex items-start gap-3.5 text-[1.0625rem] leading-[1.6] text-brand-muted"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#E5533D] mt-2.5 flex-none" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-orange mt-2.5 flex-none" />
                         <span>{point}</span>
                       </li>
                     ))}
@@ -150,7 +151,7 @@ export default function Impact() {
                   {program.images.map((image) => (
                     <figure
                       key={image.src}
-                      className={`m-0 overflow-hidden rounded-[20px] aspect-square bg-[#E7EDF1] ${
+                      className={`m-0 overflow-hidden rounded-[20px] aspect-square bg-brand-border ${
                         image.span ? "col-span-2" : ""
                       }`}
                     >
@@ -171,23 +172,22 @@ export default function Impact() {
       })}
 
       {/* CTA */}
-      <section className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-10 py-16 sm:py-20 lg:py-28 text-center">
-        <h2 className="text-[clamp(1.7rem,6vw,2.2rem)] lg:text-[clamp(2.1rem,3.2vw,2.9rem)] font-bold leading-[1.1] tracking-tight max-w-[24em] mx-auto mb-8 text-balance">
+      <section className="container-brand py-16 sm:py-20 lg:py-28 text-center">
+        <h2 className="text-heading-2 max-w-[24em] mx-auto mb-8 text-balance">
           Contribute to our impact. Every rupee counts.
         </h2>
         <div className="flex flex-wrap gap-3.5 justify-center">
-          <Link
-            href="/get-involved/donate"
-            className="inline-flex items-center bg-[#E5533D] hover:bg-[#C6462C] text-white px-8 py-[17px] rounded-full font-semibold text-[1.0625rem] transition-colors"
+          <Button asChild variant="brand" size="brand-lg">
+            <Link href="/get-involved/donate">Sponsor a child</Link>
+          </Button>
+          <Button
+            asChild
+            variant="brand-light"
+            size="brand-lg"
+            className="bg-brand-bg hover:bg-brand-border"
           >
-            Sponsor a child
-          </Link>
-          <Link
-            href="/get-involved/volunteer"
-            className="inline-flex items-center bg-[#F4F7F9] hover:bg-[#E7EDF1] text-[#152A38] px-[30px] py-[17px] rounded-full font-semibold text-[1.0625rem] transition-colors"
-          >
-            Volunteer
-          </Link>
+            <Link href="/get-involved/volunteer">Volunteer</Link>
+          </Button>
         </div>
       </section>
 
