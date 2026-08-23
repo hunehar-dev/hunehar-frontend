@@ -2,89 +2,96 @@ import { Facebook, Twitter, Youtube, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
+const QUICK_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Our School", href: "/school" },
+  { label: "Our Impact", href: "/impact" },
+  { label: "Stories & Reports", href: "/stories" },
+];
+
+const SUPPORT_LINKS = [
+  { label: "Donate", href: "/get-involved/donate" },
+  { label: "Volunteer", href: "/get-involved/volunteer" },
+  { label: "Sponsor a Child", href: "/get-involved/donate" },
+  { label: "Contact Us", href: "/contact" },
+];
+
+const SOCIAL_LINKS = [
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/huneharpk/posts/?feedView=all",
+    Icon: Linkedin,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/hunehar/",
+    Icon: Instagram,
+  },
+  { label: "Facebook", href: "https://www.facebook.com/hunehar", Icon: Facebook },
+  { label: "Twitter", href: "https://x.com/hunehar_", Icon: Twitter },
+  {
+    label: "YouTube",
+    href: "http://www.youtube.com/@huneharwelfareschool6752",
+    Icon: Youtube,
+  },
+];
+
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-white py-16">
-      <div className="container mx-auto px-4">
+    <footer className="bg-brand-bg border-t border-brand-border">
+      <div className="container-brand section-y">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Logo + tagline */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-4">
-            <Link href="/" className="flex items-center mb-4">
+            <Link href="/" className="flex-none">
               <Image
-                src="https://www.hunehar.org/wp-content/uploads/2020/05/cropped-10380131_310573749097898_1415088628236221935_o-203x72.jpg"
-                alt="Hunehar Logo"
-                width={180}
-                height={52}
-                priority
+                src="/images/logopng.png"
+                alt="Hunehar"
+                width={130}
+                height={44}
+                className="w-[130px] h-auto"
               />
             </Link>
 
-            <p className="text-gray-400 text-[0.85rem] leading-relaxed max-w-xs">
+            <p className="text-brand-muted text-sm leading-relaxed max-w-xs">
               Eradicating illiteracy, one step at a time.
             </p>
 
-            <div className="flex space-x-4 text-gray-400 mt-2 justify-center md:justify-start">
-              <Link
-                href="https://www.linkedin.com/company/huneharpk/posts/?feedView=all"
-                target="_blank"
-                className="hover:text-white transition-colors"
-              >
-                <Linkedin className="w-5 h-5" />
-              </Link>
-              <Link
-                href="https://www.instagram.com/hunehar/"
-                target="_blank"
-                className="hover:text-white transition-colors"
-              >
-                <Instagram className="w-5 h-5" />
-              </Link>
-              <Link
-                href="https://www.facebook.com/hunehar"
-                target="_blank"
-                className="hover:text-white transition-colors"
-              >
-                <Facebook className="w-5 h-5" />
-              </Link>
-              <Link
-                href="https://x.com/hunehar_"
-                target="_blank"
-                className="hover:text-white transition-colors"
-              >
-                <Twitter className="w-5 h-5" />
-              </Link>
-              <Link
-                href="http://www.youtube.com/@huneharwelfareschool6752"
-                target="_blank"
-                className="hover:text-white transition-colors"
-              >
-                <Youtube className="w-5 h-5" />
-              </Link>
+            <div className="flex space-x-4 text-brand-muted mt-2 justify-center md:justify-start">
+              {SOCIAL_LINKS.map(({ label, href, Icon }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  aria-label={label}
+                  className="hover:text-brand-blue transition-colors"
+                >
+                  <Icon className="w-5 h-5" />
+                </Link>
+              ))}
             </div>
           </div>
 
           {/* Contact */}
           <div className="grid grid-cols-2 gap-6 md:block space-y-4">
             <div>
-              <span className="text-gray-200 font-medium text-[0.9rem]">
-                Call:
-              </span>
-              <p className="text-gray-400 text-[0.85rem] leading-relaxed">
+              <span className="text-brand-navy font-medium text-sm">Call:</span>
+              <p className="text-brand-muted text-sm leading-relaxed">
                 0341 0510902 <br /> 0336 5426276
               </p>
             </div>
             <div>
-              <span className="text-gray-200 font-medium text-[0.9rem]">
-                Email:
-              </span>
-              <p className="text-gray-400 text-[0.85rem] leading-relaxed">
+              <span className="text-brand-navy font-medium text-sm">Email:</span>
+              <p className="text-brand-muted text-sm leading-relaxed">
                 info@hunehar.org
               </p>
             </div>
             <div className="col-span-2 md:col-span-1">
-              <span className="text-gray-200 font-medium text-[0.9rem]">
+              <span className="text-brand-navy font-medium text-sm">
                 Address:
               </span>
-              <p className="text-gray-400 text-[0.85rem] leading-relaxed">
+              <p className="text-brand-muted text-sm leading-relaxed">
                 Hunehar Welfare School, Merabadi <br />
                 Islamabad, Pakistan-44000
               </p>
@@ -93,27 +100,17 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-gray-200 font-semibold uppercase mb-4 text-[0.95rem]">
+            <h3 className="text-brand-navy font-semibold uppercase mb-4 text-sm tracking-wide">
               Quick Links
             </h3>
             <ul className="grid grid-cols-2 sm:grid-cols-1 gap-2">
-              {[
-                "Home",
-                "About Us",
-                "Our School",
-                "Our Impact",
-                "Stories & Reports",
-              ].map((item) => (
-                <li key={item}>
+              {QUICK_LINKS.map((item) => (
+                <li key={item.label}>
                   <Link
-                    href={`/${
-                      item === "Home"
-                        ? ""
-                        : item.toLowerCase().replace(/ /g, "-")
-                    }`}
-                    className="text-gray-400 hover:text-white text-[0.85rem]"
+                    href={item.href}
+                    className="text-brand-muted hover:text-brand-blue text-sm transition-colors"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -122,41 +119,31 @@ export default function Footer() {
 
           {/* Support */}
           <div>
-            <h3 className="text-gray-200 font-semibold uppercase mb-4 text-[0.95rem]">
+            <h3 className="text-brand-navy font-semibold uppercase mb-4 text-sm tracking-wide">
               Support
             </h3>
             <ul className="grid grid-cols-2 sm:grid-cols-1 gap-2">
-              {["Donate", "Volunteer", "Sponsor a Child", "Contact Us"].map(
-                (item) => (
-                  <li key={item}>
-                    <Link
-                      href={`/${
-                        item === "Donate"
-                          ? "donate"
-                          : item === "Volunteer"
-                          ? "get-involved/volunteer"
-                          : item === "Contact Us"
-                          ? "contact"
-                          : "#"
-                      }`}
-                      className="text-gray-400 hover:text-white text-[0.85rem]"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                )
-              )}
+              {SUPPORT_LINKS.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className="text-brand-muted hover:text-brand-blue text-sm transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-gray-800 pt-6">
+        <div className="border-t border-brand-border pt-6">
           <div className="flex flex-col items-center text-center space-y-2">
-            <p className="text-gray-400 text-[0.8rem]">
+            <p className="text-brand-muted text-xs">
               Built with Love 💙 © Hunehar {new Date().getFullYear()}
             </p>
-            <div className="flex flex-wrap justify-center gap-4 text-[0.8rem]">
+            <div className="flex flex-wrap justify-center gap-4 text-xs">
               {[
                 { name: "Terms & Conditions", href: "/terms" },
                 { name: "Privacy Policy", href: "/privacy" },
@@ -164,7 +151,7 @@ export default function Footer() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-400 hover:text-white"
+                  className="text-brand-muted hover:text-brand-blue transition-colors"
                 >
                   {item.name}
                 </Link>

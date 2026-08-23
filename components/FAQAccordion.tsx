@@ -29,7 +29,7 @@ export default function FAQAccordion() {
           Yes. Hunehar is registered as a Foundation with the Securities and
           Exchange Commission of Pakistan (SECP). You can find more details in
           our{" "}
-          <Link href="/terms" className="text-[#206FAC] hover:underline">
+          <Link href="/terms" className="text-brand-blue hover:underline">
             Terms & Conditions
           </Link>
           .
@@ -47,7 +47,10 @@ export default function FAQAccordion() {
         <>
           Absolutely! We welcome volunteers both onsite and remotely. You can
           learn more and apply through our{" "}
-          <Link href="/get-involved/volunteer" className="text-[#206FAC] hover:underline">
+          <Link
+            href="/get-involved/volunteer"
+            className="text-brand-blue hover:underline"
+          >
             Volunteer page
           </Link>
           .
@@ -57,17 +60,17 @@ export default function FAQAccordion() {
   ];
 
   return (
-    <section className="py-12 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 sm:py-20 lg:py-28 bg-brand-bg">
+      <div className="max-w-[820px] mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-8"
+          className="text-center mb-10 sm:mb-12"
         >
-          <h2 className="text-[clamp(1.75rem,3vw,2.25rem)] font-bold text-[#206FAC]">
-            Frequently Asked Questions
+          <h2 className="text-heading-2">
+            Frequently asked questions
           </h2>
         </motion.div>
 
@@ -76,19 +79,18 @@ export default function FAQAccordion() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
         >
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-white border border-gray-200 rounded-xl px-5"
+                className="bg-white border-0 rounded-2xl px-5 sm:px-6"
               >
-                <AccordionTrigger className="text-left text-[#206FAC] text-[1rem] font-semibold py-4">
+                <AccordionTrigger className="text-left text-brand-navy text-[1rem] font-semibold py-4 sm:py-5">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-600 text-[0.95rem] leading-relaxed pb-4">
+                <AccordionContent className="text-brand-muted text-[0.9375rem] leading-[1.7] pb-4 sm:pb-5">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

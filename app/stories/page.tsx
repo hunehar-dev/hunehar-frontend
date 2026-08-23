@@ -42,7 +42,7 @@ export default async function StoriesReportsPage() {
   `);
 
   return (
-    <main className="bg-white text-[#0a0a0a]">
+    <main className="bg-white text-brand-navy">
       <Navbar />
 
       {/* HERO */}
@@ -53,14 +53,14 @@ export default async function StoriesReportsPage() {
         }}
       >
         <div className="absolute inset-0 bg-black/50" />
-        <h1 className="relative z-10 text-[clamp(2rem,5vw,3.5rem)] font-bold text-white">
+        <h1 className="relative z-10 text-heading-1">
           Stories & Reports
         </h1>
       </section>
 
       {/* ARTICLES */}
-      <section className="max-w-5xl mx-auto py-16 px-4 sm:px-6">
-        <h2 className="text-[clamp(1.4rem,2.5vw,1.75rem)] font-semibold text-[#206FAC] mb-6">
+      <section className="max-w-5xl mx-auto section-y-lg px-4 sm:px-6">
+        <h2 className="text-heading-3 mb-6">
           Articles
         </h2>
 
@@ -74,7 +74,7 @@ export default async function StoriesReportsPage() {
               <Link
                 href={`/stories/articles/${a.slug.current}`}
                 target="_blank"
-                className="font-medium text-[#206FAC] text-[clamp(0.9rem,1.25vw,1rem)] hover:underline"
+                className="font-medium text-brand-blue text-[clamp(0.9rem,1.25vw,1rem)] hover:underline"
               >
                 {a.title}
               </Link>
@@ -84,7 +84,7 @@ export default async function StoriesReportsPage() {
                 <a
                   href={a.pdf.asset.url}
                   download
-                  className="text-[clamp(0.85rem,1.2vw,0.95rem)] text-gray-600 hover:underline whitespace-nowrap"
+                  className="text-[clamp(0.85rem,1.2vw,0.95rem)] text-brand-muted hover:underline whitespace-nowrap"
                 >
                   Download PDF
                 </a>
@@ -95,8 +95,8 @@ export default async function StoriesReportsPage() {
       </section>
 
       {/* ANNUAL REPORTS */}
-      <section className="max-w-5xl mx-auto py-16 px-4 sm:px-6">
-        <h2 className="text-[clamp(1.4rem,2.5vw,1.75rem)] font-semibold text-[#206FAC] mb-6">
+      <section className="max-w-5xl mx-auto section-y-lg px-4 sm:px-6">
+        <h2 className="text-heading-3 mb-6">
           Annual Reports
         </h2>
 
@@ -106,7 +106,7 @@ export default async function StoriesReportsPage() {
               key={r._id}
               className="border p-4 sm:p-5 rounded-xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
             >
-              <span className="font-medium text-[#206FAC] text-[clamp(0.9rem,1.25vw,1rem)]">
+              <span className="font-medium text-brand-blue text-[clamp(0.9rem,1.25vw,1rem)]">
                 {r.title} ({r.year})
               </span>
 
@@ -114,7 +114,7 @@ export default async function StoriesReportsPage() {
                 href={r.pdf.asset.url}
                 target="_blank"
                 download
-                className="text-[clamp(0.85rem,1.2vw,0.95rem)] text-gray-600 hover:underline whitespace-nowrap"
+                className="text-[clamp(0.85rem,1.2vw,0.95rem)] text-brand-muted hover:underline whitespace-nowrap"
               >
                 View / Download
               </a>

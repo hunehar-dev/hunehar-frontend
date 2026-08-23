@@ -4,7 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, Heart, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -20,7 +21,7 @@ const navLinks = [
     ],
   },
   { href: "/stories", label: "Stories & Reports" },
-  { href: "/contact", label: "Contact Us" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -33,73 +34,78 @@ export default function Navbar() {
   };
 
   return (
-    <header className="bg-white/80 shadow-sm border-b border-gray-200 sticky top-0 z-50 backdrop-blur-md">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[clamp(3rem,5vw,4rem)]">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md">
+      <div className="container-brand">
+        <div className="flex items-center justify-between h-[72px] lg:h-20 gap-6">
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center space-x-2"
+            className="flex-none"
             onClick={() => setIsMenuOpen(false)}
           >
             <Image
               src="/images/logopng.png"
-              alt="Hunehar Logo"
-              width={150}
-              height={50}
+              alt="Hunehar"
+              width={130}
+              height={44}
+              className="w-[110px] lg:w-[130px] h-auto"
               priority
             />
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center space-x-[clamp(1.75rem,1.5vw,1.5rem)]">
-            {navLinks.map((link) => (
-              <div key={link.label} className="relative group">
-                <Link
-                  href={link.href}
-                  className={`flex items-center space-x-1 text-gray-600 hover:text-[#206FAC] transition-colors duration-300 font-medium pb-1 text-[clamp(0.875rem,1vw,1rem)] ${
-                    (pathname.startsWith(link.href) && link.href !== "/") ||
-                    pathname === link.href
-                      ? "text-[#206FAC]"
-                      : ""
-                  }`}
-                >
-                  <span>{link.label}</span>
+          <nav
+            aria-label="Main"
+            className="hidden lg:flex items-center gap-7 xl:gap-8"
+          >
+            {navLinks.map((link) => {
+              const isActive =
+                (pathname.startsWith(link.href) && link.href !== "/") ||
+                pathname === link.href;
+
+              return (
+                <div key={link.label} className="relative group">
+                  <Link
+                    href={link.href}
+                    className={`flex items-center gap-1 text-[0.9375rem] font-medium transition-colors ${
+                      isActive
+                        ? "text-brand-blue"
+                        : "text-brand-muted hover:text-brand-blue-dark"
+                    }`}
+                  >
+                    <span>{link.label}</span>
+                    {link.sublinks && (
+                      <ChevronDown className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180" />
+                    )}
+                  </Link>
                   {link.sublinks && (
-                    <ChevronDown className="h-3 w-3 transition-transform duration-300 group-hover:rotate-180" />
-                  )}
-                </Link>
-                {link.sublinks && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-44 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
-                    <div className="py-1">
-                      {link.sublinks.map((sublink) => (
-                        <Link
-                          key={sublink.href}
-                          href={sublink.href}
-                          className="block px-3 py-1 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#206FAC] transition-colors"
-                        >
-                          {sublink.label}
-                        </Link>
-                      ))}
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300">
+                      <div className="w-48 bg-white rounded-2xl shadow-lg ring-1 ring-black/5 py-2">
+                        {link.sublinks.map((sublink) => (
+                          <Link
+                            key={sublink.href}
+                            href={sublink.href}
+                            className="block mx-1.5 px-3.5 py-2 rounded-lg text-[0.875rem] text-brand-muted hover:text-brand-blue hover:bg-brand-bg transition-colors"
+                          >
+                            {sublink.label}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                )}
-              </div>
-            ))}
+                  )}
+                </div>
+              );
+            })}
           </nav>
 
           {/* Donate & Mobile Menu Button */}
-          <div className="flex items-center space-x-2">
-            <Link
-              href="/get-involved/donate"
-              className="hidden md:inline-flex items-center space-x-1 bg-[#206FAC] hover:bg-red-400 text-white px-[clamp(0.75rem,1vw,1rem)] py-[clamp(0.4rem,0.8vw,0.6rem)] rounded-full font-semibold text-[clamp(0.75rem,0.9vw,0.875rem)] transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
-            >
-              <Heart className="h-3 w-4.5" />
-              <span>Donate Now</span>
-            </Link>
+          <div className="flex items-center gap-2.5 flex-none">
+            <Button asChild variant="brand" size="brand-sm" className="hidden md:inline-flex">
+              <Link href="/get-involved/donate">Donate</Link>
+            </Button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-1.5 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors"
+              className="lg:hidden flex items-center justify-center w-11 h-11 rounded-[10px] bg-brand-bg text-brand-navy"
               aria-label="Toggle menu"
               aria-expanded={isMenuOpen}
             >
@@ -114,40 +120,38 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-            isMenuOpen
-              ? "max-h-screen py-3 border-t border-gray-200"
-              : "max-h-0"
+          className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isMenuOpen ? "max-h-[36rem] pb-5" : "max-h-0"
           }`}
         >
-          <div className="flex flex-col space-y-1">
+          <div className="flex flex-col gap-0.5 pt-1">
             {navLinks.map((link) => (
               <div key={link.label}>
                 {link.sublinks ? (
                   <>
                     <button
                       onClick={() => handleMobileDropdown(link.label)}
-                      className="w-full flex justify-between items-center text-left py-2 px-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md"
+                      className="w-full flex justify-between items-center py-3 px-0.5 text-[1.0625rem] font-medium text-brand-navy"
                     >
                       <span>{link.label}</span>
                       <ChevronDown
-                        className={`h-4 w-4 transition-transform duration-300 ${
+                        className={`h-4 w-4 text-brand-muted transition-transform duration-300 ${
                           openDropdown === link.label ? "rotate-180" : ""
                         }`}
                       />
                     </button>
                     <div
-                      className={`overflow-hidden transition-all duration-300 ease-in-out pl-3 ${
-                        openDropdown === link.label ? "max-h-60" : "max-h-0"
+                      className={`overflow-hidden transition-all duration-300 ease-in-out pl-3 border-l border-brand-border ${
+                        openDropdown === link.label ? "max-h-40" : "max-h-0"
                       }`}
                     >
-                      <div className="flex flex-col space-y-1 py-1 border-l border-gray-200">
+                      <div className="flex flex-col gap-0.5 py-1">
                         {link.sublinks.map((sublink) => (
                           <Link
                             key={sublink.href}
                             href={sublink.href}
                             onClick={() => setIsMenuOpen(false)}
-                            className="block py-1 px-3 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md text-sm"
+                            className="block py-2 px-2 text-[0.9375rem] text-brand-muted"
                           >
                             {sublink.label}
                           </Link>
@@ -159,23 +163,18 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="block py-2 px-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md"
+                    className="block py-3 px-0.5 text-[1.0625rem] font-medium text-brand-navy"
                   >
                     {link.label}
                   </Link>
                 )}
               </div>
             ))}
-            <div className="pt-2 pb-3">
-              <Link
-                href="/donate"
-                onClick={() => setIsMenuOpen(false)}
-                className="inline-flex items-center justify-center w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-semibold text-sm transition-colors"
-              >
-                <Heart className="h-4 w-4 mr-2" />
-                Donate Now
+            <Button asChild variant="brand" size="brand-sm" className="mt-3 w-full">
+              <Link href="/get-involved/donate" onClick={() => setIsMenuOpen(false)}>
+                Donate
               </Link>
-            </div>
+            </Button>
           </div>
         </div>
       </div>

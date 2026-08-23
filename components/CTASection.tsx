@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 export default function CTASection() {
   const [email, setEmail] = useState("");
@@ -16,15 +17,17 @@ export default function CTASection() {
 
     try {
       setLoading(true);
-     const res = await fetch("https://hunehar-backend-production.up.railway.app/api/v1/newsletter/subscribe", {
-      method: "POST",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json"
-      },
-       body: JSON.stringify({ email }),
-    });
-
+      const res = await fetch(
+        "https://hunehar-backend-production.up.railway.app/api/v1/newsletter/subscribe",
+        {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
+      );
 
       const data = await res.json();
 
@@ -43,57 +46,54 @@ export default function CTASection() {
   };
 
   return (
-    <section className="py-12 bg-gradient-to-br from-[#1a2c44] via-[#4074AD] to-[#0d1b2a] text-white relative overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="container-brand py-16 sm:py-20 lg:py-28">
+      <div className="rounded-2xl lg:rounded-[28px] bg-brand-navy-soft px-6 py-16 sm:px-10 sm:py-20 lg:px-14 lg:py-24 text-white">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto"
+          className="text-center max-w-2xl mx-auto"
         >
-          <h2 className="text-[clamp(1.75rem,3vw,2.25rem)] font-bold mb-4">
-            Subscribe to our Newsletter
+          <h2 className="text-[clamp(1.7rem,6vw,2.2rem)] lg:text-[clamp(2.1rem,3.2vw,2.9rem)] font-bold leading-[1.1] tracking-tight mb-5 text-balance">
+            Subscribe to our newsletter
           </h2>
 
-          <p className="text-[0.95rem] text-blue-100 mb-8 leading-relaxed">
+          <p className="text-[1.0625rem] leading-[1.7] text-brand-mist mb-8 sm:mb-10">
             Stay updated with our latest news, impact stories, and ways to get
             involved in our mission.
           </p>
 
           {/* Email form */}
-          <div className="max-w-md mx-auto mb-8">
+          <div className="max-w-md mx-auto mb-8 sm:mb-10">
             <div className="flex flex-col sm:flex-row gap-3">
               <input
                 type="email"
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-white text-gray-900 flex-1 h-11 px-4 py-2 text-[0.95rem] rounded-md outline-none w-full"
+                className="bg-white text-brand-navy flex-1 h-[52px] px-5 text-[0.9375rem] rounded-full outline-none w-full placeholder:text-[#8095A3]"
               />
 
-              <button
+              <Button
+                variant="brand"
                 onClick={handleSubscribe}
                 disabled={loading}
-                className="bg-orange-500 hover:bg-orange-600 disabled:opacity-60 text-white h-11 px-6 sm:px-4 text-[0.95rem] sm:text-[0.85rem] font-semibold rounded-md transition-colors w-full sm:w-auto hover:cursor-pointer"
+                className="h-[52px] px-7 text-[0.9375rem] w-full sm:w-auto"
               >
-                {loading ? "Subscribing..." : "Subscribe"}
-              </button>
+                {loading ? "Subscribing…" : "Subscribe"}
+              </Button>
             </div>
           </div>
 
           {/* Secondary CTAs */}
-          <div className="flex flex-wrap gap-3 justify-center">
-            <Link href="/get-involved/donate">
-              <span className="inline-block bg-white text-blue-900 hover:bg-green-300 px-6 py-2.5 text-[0.95rem] font-semibold rounded-md transition-colors">
-                Make a Donation
-              </span>
-            </Link>
-            <Link href="/get-involved/volunteer">
-              <span className="inline-block border border-white text-white hover:bg-pink-300 hover:text-blue-900 px-6 py-2.5 text-[0.95rem] font-semibold rounded-md transition-colors">
-                Become a Volunteer
-              </span>
-            </Link>
+          <div className="flex flex-wrap gap-3.5 justify-center">
+            <Button asChild variant="brand-light" size="brand-lg">
+              <Link href="/get-involved/donate">Make a donation</Link>
+            </Button>
+            <Button asChild variant="brand-ghost" size="brand-lg">
+              <Link href="/get-involved/volunteer">Become a volunteer</Link>
+            </Button>
           </div>
         </motion.div>
       </div>

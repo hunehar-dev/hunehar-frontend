@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function OurSchoolPage() {
   return (
-    <main className="bg-white text-[#0a0a0a]">
+    <main className="bg-white text-brand-navy">
       <Navbar />
 
       {/* HERO */}
@@ -35,35 +35,35 @@ export default function OurSchoolPage() {
         }}
       >
         <div className="absolute inset-0 bg-black/50" />
-        <h1 className="relative z-10 text-[clamp(2rem,5vw,3.5rem)] font-bold text-white">
+        <h1 className="relative z-10 text-heading-1">
           Our School
         </h1>
       </section>
 
       {/* VP MESSAGE */}
-      <section className="py-20 px-4 sm:px-6 max-w-4xl mx-auto">
-        <h2 className="text-[clamp(1.4rem,2.5vw,1.75rem)] font-semibold text-[#206FAC] mb-8 text-center">
+      <section className="section-y-lg px-4 sm:px-6 max-w-4xl mx-auto">
+        <h2 className="text-heading-3 mb-8 text-center">
           Message from the Vice Principal
         </h2>
 
-        <div className="bg-[#f6fafd] p-6 sm:p-10 rounded-2xl shadow-sm border">
-          <p className="leading-relaxed text-muted-foreground mb-6 text-[clamp(0.9rem,1.25vw,1rem)]">
+        <div className="bg-brand-bg p-6 sm:p-10 rounded-2xl shadow-sm border">
+          <p className="leading-relaxed text-brand-muted mb-6 text-[clamp(0.9rem,1.25vw,1rem)]">
             I began my journey with Hunehar in early 2022 as a teacher and now proudly serve as the Vice Principal of Hunehar School. Driven by my passion for education and a commitment to empowering underprivileged children, I fully embraced Hunehar’s mission to provide quality education and foster holistic development. Over the past years, I have collaborated with a dedicated team to create a nurturing learning environment where students can thrive.
           </p>
 
-          <p className="leading-relaxed text-muted-foreground mb-6 text-[clamp(0.9rem,1.25vw,1rem)]">
+          <p className="leading-relaxed text-brand-muted mb-6 text-[clamp(0.9rem,1.25vw,1rem)]">
             As Vice Principal, my focus is on enhancing educational standards, introducing innovative teaching methods, supporting teacher development, and strengthening community engagement. I firmly believe that every child deserves access to quality education and the opportunity to reach their full potential.
           </p>
 
-          <p className="leading-relaxed text-muted-foreground mb-8 text-[clamp(0.9rem,1.25vw,1rem)]">
+          <p className="leading-relaxed text-brand-muted mb-8 text-[clamp(0.9rem,1.25vw,1rem)]">
             Looking ahead, I am excited about Hunehar’s future and the positive changes we can bring to our community by working with its committed team to empower children through education and help them build brighter futures.
           </p>
 
           <div className="mt-6">
-            <p className="text-2xl text-[#206FAC] font-[cursive]">
+            <p className="text-2xl text-brand-blue font-[cursive]">
               Aleena Naeem
             </p>
-            <p className="text-[clamp(0.9rem,1.25vw,1rem)] text-muted-foreground">
+            <p className="text-[clamp(0.9rem,1.25vw,1rem)] text-brand-muted">
               Vice Principal, Hunehar Welfare School
             </p>
           </div>
@@ -71,12 +71,12 @@ export default function OurSchoolPage() {
       </section>
 
       {/* FACILITIES */}
-      <section className="py-20 px-4 sm:px-6 max-w-5xl mx-auto">
-        <h2 className="text-[clamp(1.4rem,2.5vw,1.75rem)] font-semibold text-[#206FAC] mb-10 text-center">
+      <section className="section-y-lg px-4 sm:px-6 max-w-5xl mx-auto">
+        <h2 className="text-heading-3 mb-10 text-center">
           Facilities & Curriculum
         </h2>
 
-        <div className="bg-white border rounded-2xl p-6 sm:p-10 shadow-sm text-[clamp(0.9rem,1.25vw,1rem)] text-muted-foreground">
+        <div className="bg-white border rounded-2xl p-6 sm:p-10 shadow-sm text-[clamp(0.9rem,1.25vw,1rem)] text-brand-muted">
           <p className="leading-relaxed mb-6">
             Hunehar Welfare School follows Pakistan’s Single National Curriculum (SNC), ensuring that our students receive standardized, quality education aligned with national academic requirements. The curriculum emphasizes:
           </p>
@@ -91,37 +91,37 @@ export default function OurSchoolPage() {
       </section>
 
       {/* SCHOOL AT A GLANCE */}
-      <section className="py-24 px-4 sm:px-6 bg-[#f7fbff]">
+      <section className="section-y-lg px-4 sm:px-6 bg-brand-bg">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-[clamp(1.4rem,2.5vw,1.75rem)] font-semibold text-[#206FAC] mb-4">
+          <h2 className="text-heading-3 mb-4">
             School at a Glance
           </h2>
 
-          <p className="text-[clamp(0.9rem,1.25vw,1rem)] text-muted-foreground max-w-3xl mx-auto mb-14">
+          <p className="text-[clamp(0.9rem,1.25vw,1rem)] text-brand-muted max-w-3xl mx-auto mb-14">
             In the academic year 2025, Hunehar Welfare School continued to provide structured, accessible education through a balanced classroom environment and committed teaching staff.
           </p>
 
           {/* PRIMARY STATS */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 mb-16 text-[clamp(0.9rem,1.25vw,1rem)]">
             <div>
-              <p className="text-4xl sm:text-[clamp(2rem,4vw,3rem)] font-semibold text-[#206FAC]">153</p>
+              <p className="text-4xl sm:text-[clamp(2rem,4vw,3rem)] font-semibold text-brand-blue">153</p>
               <p className="mt-2">Students Enrolled</p>
             </div>
 
             <div>
-              <p className="text-4xl sm:text-[clamp(2rem,4vw,3rem)] font-semibold text-[#206FAC]">10</p>
+              <p className="text-4xl sm:text-[clamp(2rem,4vw,3rem)] font-semibold text-brand-blue">10</p>
               <p className="mt-2">Dedicated Teachers</p>
             </div>
 
             <div>
-              <p className="text-4xl sm:text-[clamp(2rem,4vw,3rem)] font-semibold text-[#206FAC]">15 : 1</p>
+              <p className="text-4xl sm:text-[clamp(2rem,4vw,3rem)] font-semibold text-brand-blue">15 : 1</p>
               <p className="mt-2">Student-Teacher Ratio</p>
             </div>
           </div>
 
           {/* GENDER PIE */}
           <div className="bg-white rounded-3xl py-10 px-5 shadow-sm max-w-3xl mx-auto">
-            <h3 className="text-[clamp(1.4rem,2.5vw,1.75rem)] font-semibold text-[#206FAC] mb-6">
+            <h3 className="text-heading-3 mb-6">
               Gender Distribution
             </h3>
 
@@ -130,16 +130,16 @@ export default function OurSchoolPage() {
                 <GenderChart />
               </div>
 
-              <div className="flex gap-8 mt-6 text-[clamp(0.9rem,1.25vw,1rem)] text-muted-foreground">
+              <div className="flex gap-8 mt-6 text-[clamp(0.9rem,1.25vw,1rem)] text-brand-muted">
                 <span>
                   <strong className="text-[#f79dc6]">75</strong> Girls
                 </span>
                 <span>
-                  <strong className="text-[#206FAC]">78</strong> Boys
+                  <strong className="text-brand-blue">78</strong> Boys
                 </span>
               </div>
 
-              <p className="mt-6 max-w-xl text-[clamp(0.9rem,1.25vw,1rem)] text-muted-foreground">
+              <p className="mt-6 max-w-xl text-[clamp(0.9rem,1.25vw,1rem)] text-brand-muted">
                 This balanced ratio allows teachers to provide individual attention and maintain a supportive learning atmosphere for every child.
               </p>
             </div>
@@ -151,8 +151,8 @@ export default function OurSchoolPage() {
       <SchoolGallery />
 
       {/* UMAIMA */}
-      <section className="py-24 px-4 sm:px-6 max-w-5xl mx-auto">
-        <h2 className="text-[clamp(1.4rem,2.5vw,1.75rem)] font-semibold text-[#206FAC] mb-10 text-center">
+      <section className="section-y-lg px-4 sm:px-6 max-w-5xl mx-auto">
+        <h2 className="text-heading-3 mb-10 text-center">
           Meet Umaima Iqbal
         </h2>
 
@@ -169,7 +169,7 @@ export default function OurSchoolPage() {
           </div>
 
           {/* TEXT */}
-          <div className="md:w-1/2 w-full text-muted-foreground text-[clamp(0.9rem,1.25vw,1rem)]">
+          <div className="md:w-1/2 w-full text-brand-muted text-[clamp(0.9rem,1.25vw,1rem)]">
             <p className="leading-relaxed mb-4">
               Umaima joined Hunehar in Class 4, at a time when access to education was uncertain for her family. From those early years, Hunehar supported her and her siblings, becoming a steady presence in their lives.
             </p>
@@ -186,7 +186,7 @@ export default function OurSchoolPage() {
               As she takes this new step, Hunehar continues to support her by providing a laptop for her studies and offering her a part-time role within the organization.
             </p>
 
-            <p className="font-medium text-[#206FAC] mt-6">
+            <p className="font-medium text-brand-blue mt-6">
               Now both a university student and a member of the Hunehar team, Umaima’s journey reflects what steady support, trust, and care can nurture over time.
             </p>
           </div>

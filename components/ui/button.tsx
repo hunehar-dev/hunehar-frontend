@@ -20,12 +20,22 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
+        brand:
+          "rounded-full font-semibold bg-brand-orange text-white shadow-none hover:bg-brand-orange-dark focus-visible:ring-brand-orange/40",
+        "brand-blue":
+          "rounded-full font-semibold bg-brand-blue text-white shadow-none hover:opacity-90 focus-visible:ring-brand-blue/40",
+        "brand-ghost":
+          "rounded-full font-semibold bg-white/10 text-white ring-1 ring-white/25 shadow-none hover:bg-white/20 focus-visible:ring-white/50",
+        "brand-light":
+          "rounded-full font-semibold bg-white text-brand-navy shadow-none hover:bg-brand-border focus-visible:ring-brand-navy/30",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
         sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",
+        "brand-sm": "px-6 py-3 text-[0.9375rem]",
+        "brand-lg": "px-8 py-[17px] text-[1.0625rem]",
       },
     },
     defaultVariants: {

@@ -2,9 +2,18 @@
 
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { ArrowRight } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { Button } from "@/components/ui/button";
 
-export default function ShareButton() {
+interface ShareButtonProps {
+  /** "button" renders the original filled pill button. "link" renders an
+   * inline text link with an arrow, matching the donate page's action-link
+   * style. */
+  variant?: "button" | "link";
+}
+
+export default function ShareButton({ variant = "button" }: ShareButtonProps) {
   const isMobile = useIsMobile();
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -52,12 +61,19 @@ https://hunehar.org`;
 
   return (
     <>
-      <button
-        onClick={handleShare}
-        className="text-sm font-medium text-white bg-[#206FAC] px-5 py-2 rounded-full hover:opacity-90 transition"
-      >
-        Share Our Mission
-      </button>
+      {variant === "link" ? (
+        <button
+          onClick={handleShare}
+          className="mt-auto self-start inline-flex items-center gap-2 text-[0.9375rem] font-semibold text-brand-blue hover:text-brand-blue-dark transition-colors"
+        >
+          Share our mission
+          <ArrowRight className="w-4 h-4" aria-hidden="true" />
+        </button>
+      ) : (
+        <Button onClick={handleShare} variant="brand-blue" className="px-5">
+          Share Our Mission
+        </Button>
+      )}
 
       {open &&
         createPortal(
@@ -69,27 +85,24 @@ https://hunehar.org`;
               className="bg-white rounded-2xl max-w-md w-full p-6 shadow-xl relative"
               onClick={(e) => e.stopPropagation()} // prevent closing on modal click
             >
-              <h4 className="text-lg font-semibold text-[#206FAC] mb-3">
+              <h4 className="text-lg font-semibold text-brand-blue mb-3">
                 Share Hunehar’s Mission
               </h4>
 
               <textarea
                 readOnly
                 value={shareText}
-                className="w-full h-32 text-sm text-gray-700 border rounded-lg p-3 resize-none focus:outline-none"
+                className="w-full h-32 text-sm text-brand-navy border border-brand-border rounded-lg p-3 resize-none outline-none focus:ring-2 focus:ring-brand-blue/50"
               />
 
               <div className="flex items-center justify-between mt-4">
-                <button
-                  onClick={handleCopy}
-                  className="text-sm px-4 py-2 rounded-full bg-[#206FAC] text-white hover:opacity-90 transition"
-                >
+                <Button onClick={handleCopy} variant="brand-blue">
                   {copied ? "Copied!" : "Copy Text"}
-                </button>
+                </Button>
 
                 <button
                   onClick={() => setOpen(false)}
-                  className="text-sm text-gray-500 hover:text-gray-700 transition"
+                  className="text-sm text-brand-muted hover:text-brand-navy transition"
                 >
                   Close
                 </button>
