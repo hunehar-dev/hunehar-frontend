@@ -43,17 +43,17 @@ export default function DonateFAQAccordion() {
   ];
 
   return (
-    <Accordion type="single" collapsible className="space-y-4">
+    <Accordion type="single" collapsible>
       {faqs.map((faq, index) => (
         <AccordionItem
           key={index}
           value={`item-${index}`}
-          className="bg-white border border-brand-border rounded-xl px-5"
+          className="border-b-0 border-t border-brand-border"
         >
-          <AccordionTrigger className="text-left text-brand-navy text-[1.0625rem] font-semibold py-4 sm:py-5">
+          <AccordionTrigger className="text-left text-brand-navy text-[1.0625rem] font-semibold py-6 gap-5 hover:no-underline [&>svg]:w-5 [&>svg]:h-5 [&>svg]:text-brand-blue">
             {faq.question}
           </AccordionTrigger>
-          <AccordionContent className="text-brand-muted text-[0.95rem] leading-relaxed pb-4 sm:pb-5">
+          <AccordionContent className="text-base leading-[1.7] text-brand-muted max-w-[44em] pb-[26px] pt-0">
             {faq.answer}
           </AccordionContent>
         </AccordionItem>
