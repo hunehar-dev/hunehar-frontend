@@ -1,56 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  COVERS,
+  FREQUENCIES,
+  ONCE_COVERS,
+  formatAmount,
+  type FreqId,
+} from "@/lib/donate-data";
 
-const DONATION_FORM =
-  "https://docs.google.com/forms/d/e/1FAIpQLSeCWO6Um1U3qPad2phOSCsTT4IymqiLGY4KOmWXwjPkOf0EFA/viewform";
+interface DonateHeroWidgetProps {
+  /** Opens the sponsorship sign-up (recurring plans) or the one-time flow. */
+  onStart: (freq: FreqId) => void;
+}
 
-type FreqId = "monthly" | "quarterly" | "annually" | "once";
-
-const FREQUENCIES: {
-  id: FreqId;
-  label: string;
-  amount: string;
-  note: string;
-  cta: string;
-}[] = [
-  {
-    id: "monthly",
-    label: "Monthly",
-    amount: "Rs. 3,000",
-    note: "≈ USD 15 · GBP 13 · CAD 22 per month",
-    cta: "Sponsor monthly",
-  },
-  {
-    id: "quarterly",
-    label: "Quarterly",
-    amount: "Rs. 12,000",
-    note: "Three months of a child’s education, paid at once.",
-    cta: "Sponsor quarterly",
-  },
-  {
-    id: "annually",
-    label: "Yearly",
-    amount: "Rs. 36,000",
-    note: "A full year of a child’s education.",
-    cta: "Sponsor for a year",
-  },
-  {
-    id: "once",
-    label: "One-time",
-    amount: "You choose",
-    note: "Goes towards infrastructure and long-term projects.",
-    cta: "Give once",
-  },
-];
-
-const COVERS = ["Tuition", "Uniforms", "Stationery", "School bags", "Lunch"];
-const ONCE_COVERS = ["Infrastructure", "Long-term projects"];
-
-export default function DonateHeroWidget() {
+export default function DonateHeroWidget({ onStart }: DonateHeroWidgetProps) {
   const [freq, setFreq] = useState<FreqId>("monthly");
   const [customAmount, setCustomAmount] = useState("");
 
@@ -61,11 +27,6 @@ export default function DonateHeroWidget() {
       ? `Rs. ${customAmount}`
       : "You choose"
     : current.amount;
-
-  const handleCustomAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const digits = e.target.value.replace(/[^0-9]/g, "").slice(0, 9);
-    setCustomAmount(digits ? Number(digits).toLocaleString("en-US") : "");
-  };
 
   return (
     <div className="bg-brand-bg rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:sticky lg:top-24">
@@ -115,7 +76,7 @@ export default function DonateHeroWidget() {
             inputMode="numeric"
             placeholder="5,000"
             value={customAmount}
-            onChange={handleCustomAmount}
+            onChange={(e) => setCustomAmount(formatAmount(e.target.value))}
             className="w-full h-14 px-[18px] rounded-2xl border-0 bg-white text-brand-navy text-lg font-semibold outline-none ring-1 ring-inset ring-[#DDE5EA] focus:ring-2 focus:ring-brand-blue transition-shadow"
           />
         </div>
@@ -136,14 +97,12 @@ export default function DonateHeroWidget() {
       </ul>
 
       <Button
-        asChild
         variant="brand"
-        className="w-full rounded-2xl py-[18px] text-[17px] gap-2.5"
+        onClick={() => onStart(freq)}
+        className="w-full rounded-2xl py-[18px] h-auto text-[17px] gap-2.5"
       >
-        <Link href={DONATION_FORM} target="_blank">
-          {current.cta}
-          <ArrowRight className="w-[18px] h-[18px]" aria-hidden="true" />
-        </Link>
+        {current.cta}
+        <ArrowRight className="w-[18px] h-[18px]" aria-hidden="true" />
       </Button>
       <p className="mt-3.5 text-center text-[13px] text-brand-muted">
         Or{" "}
