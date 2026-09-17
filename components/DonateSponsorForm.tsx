@@ -14,9 +14,9 @@ import {
 import {
   FieldLabel,
   FieldPair,
+  SelectField,
   StepList,
   inputClass,
-  selectClass,
   textareaClass,
 } from "@/components/DonateFormControls";
 
@@ -225,18 +225,12 @@ export default function DonateSponsorForm({
                 <FieldLabel htmlFor="sp-count">
                   How many students would you like to sponsor?
                 </FieldLabel>
-                <select
+                <SelectField
                   id="sp-count"
                   value={count}
-                  onChange={(e) => setCount(e.target.value)}
-                  className={selectClass()}
-                >
-                  {STUDENT_COUNTS.map((c) => (
-                    <option key={c} value={c}>
-                      {c}
-                    </option>
-                  ))}
-                </select>
+                  onChange={setCount}
+                  options={STUDENT_COUNTS}
+                />
               </div>
 
               <div>

@@ -1,9 +1,6 @@
 export const DONATION_FORM =
   "https://docs.google.com/forms/d/e/1FAIpQLSeCWO6Um1U3qPad2phOSCsTT4IymqiLGY4KOmWXwjPkOf0EFA/viewform";
 
-export const VOLUNTEER_FORM =
-  "https://docs.google.com/forms/d/1q-mQQ9f4WHZ0JitQ4M3vrRuDs7qx3xSJPG554Lp--wU/viewform";
-
 export type FreqId = "monthly" | "quarterly" | "annually" | "once";
 export type PlanId = Exclude<FreqId, "once">;
 
@@ -165,8 +162,7 @@ export const SPONSOR_STEPS = [
   "You start your plan and receive updates, report cards, and the annual magazine.",
 ];
 
-export const isValidEmail = (value: string) =>
-  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+export { isValidEmail } from "@/lib/utils";
 
 /** Digits only, grouped with thousands separators — used by every amount field. */
 export const formatAmount = (value: string) => {
