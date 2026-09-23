@@ -1,3 +1,5 @@
+export const SPONSOR_ENDPOINT = "/api/v1/sponsors/sponsor-application";
+
 export const DONATION_FORM =
   "https://docs.google.com/forms/d/e/1FAIpQLSeCWO6Um1U3qPad2phOSCsTT4IymqiLGY4KOmWXwjPkOf0EFA/viewform";
 
