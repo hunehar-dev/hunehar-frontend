@@ -13,9 +13,9 @@ import {
 import {
   FieldLabel,
   FieldPair,
+  SelectField,
   StepList,
   inputClass,
-  selectClass,
   textareaClass,
 } from "@/components/DonateFormControls";
 
@@ -237,18 +237,12 @@ export default function DonateOneTimeForm({
                   <FieldLabel htmlFor="ot-method" required>
                     How you paid
                   </FieldLabel>
-                  <select
+                  <SelectField
                     id="ot-method"
                     value={method}
-                    onChange={(e) => setMethod(e.target.value)}
-                    className={selectClass()}
-                  >
-                    {PAYMENT_METHODS.map((m) => (
-                      <option key={m} value={m}>
-                        {m}
-                      </option>
-                    ))}
-                  </select>
+                    onChange={setMethod}
+                    options={PAYMENT_METHODS}
+                  />
                 </div>
                 <div>
                   <FieldLabel htmlFor="ot-date">Date of payment</FieldLabel>

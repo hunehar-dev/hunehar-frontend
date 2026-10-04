@@ -1,22 +1,24 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   FREQUENCIES,
+  SPONSOR_ENDPOINT,
   SPONSOR_PLANS,
   SPONSOR_STEPS,
   STUDENT_COUNTS,
   isValidEmail,
   type PlanId,
 } from "@/lib/donate-data";
+import { apiUrl } from "@/lib/api";
 import {
   FieldLabel,
   FieldPair,
+  SelectField,
   StepList,
   inputClass,
-  selectClass,
   textareaClass,
 } from "@/components/DonateFormControls";
 
@@ -42,13 +44,16 @@ export default function DonateSponsorForm({
   const [updates, setUpdates] = useState(true);
   const [error, setError] = useState("");
   const [touched, setTouched] = useState(false);
+  const [sending, setSending] = useState(false);
   const [done, setDone] = useState<Submitted | null>(null);
 
   const selectedPlan = SPONSOR_PLANS.find((p) => p.id === plan)!;
   const planNote = FREQUENCIES.find((f) => f.id === plan)?.note;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (sending) return;
+
     let problem = "";
     if (!name.trim()) problem = "Please enter your full name.";
     else if (!isValidEmail(email))
@@ -64,14 +69,46 @@ export default function DonateSponsorForm({
       return;
     }
 
-    // TODO: post these details to a sponsorship intake endpoint before launch.
-    setError("");
-    setDone({
-      name: name.trim().split(" ")[0],
-      email: email.trim(),
-      plan: selectedPlan.adjective,
-    });
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    try {
+      setSending(true);
+      setError("");
+
+      const res = await fetch(apiUrl(SPONSOR_ENDPOINT), {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: name.trim(),
+          email: email.trim(),
+          phone: phone.trim(),
+          city: city.trim(),
+          plan,
+          studentCount: count,
+          message: message.trim(),
+          updatesOptIn: updates,
+        }),
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        throw new Error(data.message || "Something went wrong");
+      }
+
+      setDone({
+        name: name.trim().split(" ")[0],
+        email: email.trim(),
+        plan: selectedPlan.adjective,
+      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (err) {
+      console.error("Sponsor sign-up error:", err);
+      setError(
+        "We couldn’t submit your details just now. Please try again, or email us at info@hunehar.org."
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -225,18 +262,12 @@ export default function DonateSponsorForm({
                 <FieldLabel htmlFor="sp-count">
                   How many students would you like to sponsor?
                 </FieldLabel>
-                <select
+                <SelectField
                   id="sp-count"
                   value={count}
-                  onChange={(e) => setCount(e.target.value)}
-                  className={selectClass()}
-                >
-                  {STUDENT_COUNTS.map((c) => (
-                    <option key={c} value={c}>
-                      {c}
-                    </option>
-                  ))}
-                </select>
+                  onChange={setCount}
+                  options={STUDENT_COUNTS}
+                />
               </div>
 
               <div>
@@ -276,10 +307,18 @@ export default function DonateSponsorForm({
                 type="submit"
                 variant="brand"
                 size="brand-lg"
+                disabled={sending}
                 className="self-start h-auto gap-2.5"
               >
-                Create my sponsor profile
-                <ArrowRight className="w-[18px] h-[18px]" aria-hidden="true" />
+                {sending ? "Sending your details…" : "Create my sponsor profile"}
+                {sending ? (
+                  <Loader2
+                    className="w-[18px] h-[18px] animate-spin"
+                    aria-hidden="true"
+                  />
+                ) : (
+                  <ArrowRight className="w-[18px] h-[18px]" aria-hidden="true" />
+                )}
               </Button>
             </form>
 

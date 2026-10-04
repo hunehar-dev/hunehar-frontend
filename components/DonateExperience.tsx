@@ -12,7 +12,6 @@ import DonateSponsorForm from "@/components/DonateSponsorForm";
 import {
   BANKS,
   TRUST_POINTS,
-  VOLUNTEER_FORM,
   WAYS,
   type FreqId,
   type PlanId,
@@ -219,7 +218,7 @@ export default function DonateExperience() {
               publications, social media, liaison and research.
             </p>
             <Button asChild variant="brand-light" size="brand-lg">
-              <Link href={VOLUNTEER_FORM} target="_blank">
+              <Link href="/get-involved/volunteer#apply">
                 Apply to volunteer
               </Link>
             </Button>
