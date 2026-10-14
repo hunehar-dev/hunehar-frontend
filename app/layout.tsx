@@ -18,14 +18,15 @@ export const viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Hunehar | Non Profit Charity Organisation",
+    default: "Hunehar Foundation | Non Profit Charity Organisation",
     template: "%s | Hunehar",
   },
 
   description:
-    "Hunehar is a non-profit charity organisation dedicated to empowering underprivileged communities through education, welfare initiatives, and social development since 2012.",
+    "Hunehar Foundation is a non-profit charity organisation dedicated to empowering underprivileged communities through education, welfare initiatives, and social development since 2012.",
 
   keywords: [
+    "Hunehar Foundation",
     "Hunehar",
     "Hunehar NGO",
     "non profit charity organisation",
@@ -36,24 +37,24 @@ export const metadata: Metadata = {
   ],
 
   openGraph: {
-    title: "Hunehar | Non Profit Charity Organisation",
+    title: "Hunehar Foundation | Non Profit Charity Organisation",
     description:
       "Empowering lives through education, compassion, and community-driven welfare initiatives.",
     url: "https://www.hunehar.org",
-    siteName: "Hunehar",
+    siteName: "Hunehar Foundation",
     images: [
       {
         url: "/images/favicon.png",
         width: 1200,
         height: 630,
-        alt: "Hunehar Non Profit Charity Organisation",
+        alt: "Hunehar Foundation Non Profit Charity Organisation",
       },
     ],
     type: "website",
   },
 
   icons: {
-    icon: "/images/favicon.png",
+    icon: "/images/hunehar-logo-blue.png",
   },
 };
 
