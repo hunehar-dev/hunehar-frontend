@@ -435,7 +435,7 @@ const ContactPage = () => {
                           Call Us
                         </h4>
                         <p className="text-sm text-brand-muted leading-relaxed">
-                          0341 0510902, 0336 5426276
+                          +92 311 9267664
                         </p>
                       </div>
                     </div>

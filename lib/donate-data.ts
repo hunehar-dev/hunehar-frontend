@@ -114,6 +114,14 @@ export const BANKS = [
   {
     title: "Bank Account (Local Donors)",
     rows: [
+      { label: "Account title", value: "Hunehar Foundation" },
+      { label: "IBAN", value: "PK95UNIL0109000375202548" },
+      { label: "Bank", value: "United Bank Limited (UBL)" },
+    ],
+  },
+  {
+    title: "Bank Account (Local Donors)",
+    rows: [
       { label: "Account title", value: "Hunehar" },
       { label: "Account number", value: "06015529096100" },
       { label: "Bank", value: "Sindh Bank, Blue Area Branch" },
@@ -125,15 +133,6 @@ export const BANKS = [
       { label: "Account title", value: "Hunehar" },
       { label: "IBAN", value: "PK69SIND00060155290296100" },
       { label: "Bank", value: "Sindh Bank, Blue Area Branch" },
-    ],
-  },
-  {
-    title: "EasyPaisa (Local Donors)",
-    rows: [
-      { label: "Account title", value: "Mian Waqar Ud Din" },
-      { label: "CNIC", value: "17301-123850-5" },
-      { label: "Phone", value: "0300 8508250" },
-      { label: "Email", value: "info@hunehar.org" },
     ],
   },
 ];

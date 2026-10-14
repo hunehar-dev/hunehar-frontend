@@ -195,6 +195,7 @@ export default function Impact() {
           </Button>
         </div>
       </section>
+      <Footer />
     </main>
   );
 }

@@ -78,7 +78,7 @@ export default function Footer() {
             <div>
               <span className="text-brand-navy font-medium text-sm">Call:</span>
               <p className="text-brand-muted text-sm leading-relaxed">
-                0341 0510902 <br /> 0336 5426276
+                +92 311 9267664
               </p>
             </div>
             <div>
