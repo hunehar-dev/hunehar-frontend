@@ -44,7 +44,7 @@ export default function Navbar() {
             onClick={() => setIsMenuOpen(false)}
           >
             <Image
-              src="/images/hunehar-logo-blue.png"
+              src="/images/hunehar-logo-new.png"
               alt="Hunehar"
               width={130}
               height={44}

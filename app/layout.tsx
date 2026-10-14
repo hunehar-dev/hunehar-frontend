@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: "Hunehar Foundation",
     images: [
       {
-        url: "/images/favicon.png",
+        url: "/images/hunehar-logo-new.png",
         width: 1200,
         height: 630,
         alt: "Hunehar Foundation Non Profit Charity Organisation",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: "/images/hunehar-logo-blue.png",
+    icon: "/images/hunehar-logo-new.png",
   },
 };
 

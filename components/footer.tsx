@@ -46,7 +46,7 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-4">
             <Link href="/" className="flex-none">
               <Image
-                src="/images/hunehar-logo-blue.png"
+                src="/images/hunehar-logo-new.png"
                 alt="Hunehar"
                 width={130}
                 height={44}
