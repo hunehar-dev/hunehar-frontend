@@ -35,7 +35,7 @@ export default function IntroductionSection() {
             viewport={{ once: true }}
             className="max-w-xl lg:order-2 order-1"
           >
-            <h2 className="text-heading-2 mb-6 text-balance">
+            <h2 className="text-heading-2 mb-6 text-balance text-brand-blue">
               Eradicating illiteracy, one step at a time
             </h2>
             <p className="text-[1.0625rem] leading-[1.7] text-brand-muted mb-8 text-pretty">

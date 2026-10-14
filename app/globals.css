@@ -184,7 +184,7 @@
   }
 
   .text-heading-2 {
-    @apply text-[clamp(1.7rem,6vw,2.2rem)] lg:text-[clamp(2.1rem,3.2vw,2.9rem)] font-bold leading-[1.1] tracking-tight text-brand-navy;
+    @apply text-[clamp(1.7rem,6vw,2.2rem)] lg:text-[clamp(2.1rem,3.2vw,2.9rem)] font-bold leading-[1.1] tracking-tight text-brand-blue;
   }
 
   .text-heading-3 {

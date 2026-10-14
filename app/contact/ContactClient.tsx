@@ -456,27 +456,6 @@ const ContactPage = () => {
             </div>
           </div>
         </section>
-        <section className="bg-brand-navy-soft text-white">
-          <div className="container-brand py-16 sm:py-20 text-center">
-            <HandHeart
-              className="mx-auto h-16 w-16 text-brand-orange mb-6"
-              strokeWidth={1.5}
-            />
-            <h2 className="text-[clamp(1.75rem,3.5vw,2.25rem)] font-bold mb-4 tracking-tight">
-              Make a Difference Today!
-            </h2>
-            <p className="max-w-3xl mx-auto mb-10 text-sm md:text-base text-brand-mist leading-relaxed">
-              Your contribution breaks the cycle of poverty and empowers
-              children to dream, learn, and thrive. Every donation, no matter
-              the size, can change a child’s life.
-            </p>
-            <Button asChild variant="brand" size="brand-lg">
-              <Link href="/get-involved/donate">
-                Donate Now and Make a Child Smile
-              </Link>
-            </Button>
-          </div>
-        </section>
         <Footer />
       </main>
     </>

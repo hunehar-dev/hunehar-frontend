@@ -7,7 +7,7 @@ export default function WhyExist() {
   return (
     <section className="py-16 sm:py-20 lg:py-28 bg-brand-bg">
       <div className="container-brand">
-        <h2 className="text-heading-2 text-center mb-12 sm:mb-16 text-balance">
+        <h2 className="text-heading-2 text-center mb-12 sm:mb-16 text-balance text-brand-blue">
           Why we exist
         </h2>
 
@@ -66,11 +66,11 @@ export default function WhyExist() {
             className="space-y-6"
           >
             <div>
-              <h3 className="text-2xl lg:text-[2rem] font-bold leading-[1.12] tracking-tight text-brand-navy mb-4">
-                Our solution: Hunehar
+              <h3 className="text-2xl lg:text-[2rem] font-bold leading-[1.12] tracking-tight text-brand-blue mb-4">
+                Our Solution: Hunehar
               </h3>
               <p className="text-[1.0625rem] leading-[1.7] text-brand-muted mb-6">
-                Hunehar provides{" "}
+                Hunehar Foundation provides{" "}
                 <strong className="text-brand-navy font-semibold">
                   free, quality education
                 </strong>{" "}
