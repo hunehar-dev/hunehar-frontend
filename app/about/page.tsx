@@ -348,10 +348,10 @@ export default function About() {
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
               {[
                 {
-                  name: "Haniya Ali",
+                  name: "Aqib Irfan",
                   role: "Director HR",
-                  img: "/images/about/Haniya.webp",
-                  link: "https://www.linkedin.com/in/haniya-ali-503722226",
+                  img: "/images/about/aqib-irfan.webp",
+                  link: "https://www.linkedin.com/in/aqib-irfan-b77b43284",
                 },
                 {
                   name: "Fareha Meraj",
@@ -367,25 +367,13 @@ export default function About() {
                 },
                 {
                   name: "Muhammad Sanauallah",
-                  role: "Director Publications",
+                  role: "Director Media & Communications",
                   img: "/images/about/Muhammad.webp",
                   link: "https://www.linkedin.com/in/muhammad-bin-sanaullah/",
                 },
                 {
-                  name: "Wardah Muzammil",
-                  role: "Director Philanthropy",
-                  img: "/images/about/Wardah.webp",
-                  link: "https://linkedin.com/in/director2-link",
-                },
-                {
-                  name: "Sumaima Ilyas",
-                  role: "Director Social Media Relations",
-                  img: "/images/about/sumaima.webp",
-                  link: "https://www.linkedin.com/in/sumaima-ilyas-1a7618285",
-                },
-                {
                   name: "Rameen Bajwa",
-                  role: "Director R&D",
+                  role: "Director Innovation & Outreach",
                   img: "/images/about/rameen.webp",
                   link: "https://www.linkedin.com/in/rameen-bajwa-88135725a/",
                 },
@@ -423,10 +411,10 @@ export default function About() {
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
               {[
                 {
-                  name: "Aqib Irfan",
+                  name: "Iqra Mazar",
                   role: "Assistant Director HR",
-                  img: "/images/about/aqib-irfan.webp",
-                  link: "https://www.linkedin.com/in/aqib-irfan-b77b43284",
+                  //img: "/images/about/aqib-irfan.webp",
+                  //link: "https://www.linkedin.com/in/aqib-irfan-b77b43284",
                 },
                 {
                   name: "Alina Khan",
@@ -436,24 +424,19 @@ export default function About() {
                 },
                 {
                   name: "Syeda Farheen Masroor",
-                  role: "Assistant Director Publications",
+                  role: "Assistant Director Media & Communications",
                   img: "/images/about/Syeda.webp",
                   link: "https://linkedin.com/in/syeda-farheen-masroor-b9a5b6285",
                 },
                 {
-                  name: "Faqaha Asif",
-                  role: "Assistant Director Philanthropy",
-                  img: "/images/about/faqaha.webp",
-                },
-                {
-                  name: "Malala Khan",
-                  role: "Assistant Director Social Media Relations",
-                  img: "/images/about/Malala.webp",
-                  link: "https://www.linkedin.com/in/malala-khan-4a1138242",
+                  name: "Khadija",
+                  role: "Assistant Director Media & Communications",
+                  //img: "/images/about/Syeda.webp",
+                  //link: "https://linkedin.com/in/syeda-farheen-masroor-b9a5b6285",
                 },
                 {
                   name: "Ali Kashif",
-                  role: "Assistant Director R&D",
+                  role: "Assistant Director Innovation & Outreach",
                   img: "/images/about/ali-kashif.webp",
                   link: "https://www.linkedin.com/in/ali-kashif-262150241/",
                 },
