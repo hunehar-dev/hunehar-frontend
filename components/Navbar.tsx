@@ -44,11 +44,11 @@ export default function Navbar() {
             onClick={() => setIsMenuOpen(false)}
           >
             <Image
-              src="/images/logopng.png"
+              src="/images/hunehar-logo-blue.png"
               alt="Hunehar"
               width={130}
               height={44}
-              className="w-[110px] lg:w-[130px] h-auto"
+              className="w-[100px] lg:w-[115px] h-auto"
               priority
             />
           </Link>

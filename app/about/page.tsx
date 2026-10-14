@@ -429,10 +429,10 @@ export default function About() {
                   link: "https://linkedin.com/in/syeda-farheen-masroor-b9a5b6285",
                 },
                 {
-                  name: "Khadija",
+                  name: "Khadija Batool",
                   role: "Assistant Director Media & Communications",
-                  //img: "/images/about/Syeda.webp",
-                  //link: "https://linkedin.com/in/syeda-farheen-masroor-b9a5b6285",
+                  img: "/images/about/khadija-batool.webp",
+                  link: "https://www.linkedin.com/in/-khadijabatool/",
                 },
                 {
                   name: "Ali Kashif",

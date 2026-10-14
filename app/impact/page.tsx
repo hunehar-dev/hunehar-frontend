@@ -91,18 +91,26 @@ export default function Impact() {
       <Navbar />
 
       {/* HERO */}
+      
       <section className="container-brand pt-12 sm:pt-16 lg:pt-24 pb-10 sm:pb-14 lg:pb-16">
-        <h1 className="text-[clamp(2.2rem,8vw,3.1rem)] lg:text-[clamp(3.2rem,5vw,4.6rem)] font-bold leading-[1.05] tracking-tight mb-6">
-          Bigger than the classroom
-        </h1>
-        <p className="text-[1.0625rem] lg:text-[1.1875rem] leading-[1.75] text-brand-muted max-w-[38em] text-pretty">
-          We started Hunehar because we believe quality education shouldn’t
-          have a price tag, especially for the kids here in Islamabad. But as
-          we grew, we realized our mission was bigger than the classroom.
-          Today, we’re just as focused on empowering parents and
-          strengthening our community as we are on teaching math or science.
-        </p>
+        {/* REMOVED container-brand from this div */}
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-brand-blue text-center">
+          <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4">
+            Bigger than the classroom
+          </h1>
+          
+          {/* Test with a standard responsive utility. (e.g., text-base on mobile, text-xl on desktop) */}
+          <p className="text-base md:text-xl max-w-3xl leading-relaxed text-brand-muted">
+            We started Hunehar because we believe quality education shouldn’t
+            have a price tag, especially for the kids here in Islamabad. But as
+            we grew, we realized our mission was bigger than the classroom.
+            Today, we’re just as focused on empowering parents and
+            strengthening our community as we are on teaching math or science.
+          </p>
+        </div>
       </section>
+
+      
 
       {/* HERO IMAGE */}
       <section className="container-brand pb-16 sm:pb-20 lg:pb-28">

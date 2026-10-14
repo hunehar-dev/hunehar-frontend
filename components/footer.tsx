@@ -39,14 +39,14 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-bg border-t border-brand-border">
+    <footer className="bg-brand-border border-t border-brand-border">
       <div className="container-brand section-y">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Logo + tagline */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-4">
             <Link href="/" className="flex-none">
               <Image
-                src="/images/logopng.png"
+                src="/images/hunehar-logo-blue.png"
                 alt="Hunehar"
                 width={130}
                 height={44}
