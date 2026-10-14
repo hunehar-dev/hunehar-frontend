@@ -23,7 +23,6 @@ import {
   START_OPTIONS,
   VOLUNTEER_ENDPOINT,
   VOLUNTEER_STEPS,
-  WORK_MODES,
   departmentName,
   type DepartmentId,
 } from "@/lib/volunteer-data";
@@ -47,7 +46,6 @@ export default function VolunteerApplicationForm({
   const [institution, setInstitution] = useState("");
   const [status, setStatus] = useState(CURRENT_STATUSES[1]);
   const [commitment, setCommitment] = useState(COMMITMENTS[0]);
-  const [workMode, setWorkMode] = useState(WORK_MODES[2]);
   const [start, setStart] = useState(START_OPTIONS[0]);
   const [availability, setAvailability] = useState<string[]>([]);
   const [motivation, setMotivation] = useState("");
@@ -68,7 +66,7 @@ export default function VolunteerApplicationForm({
     }
     if (departments.length >= MAX_DEPARTMENTS) {
       setError(
-        `You can shortlist up to ${MAX_DEPARTMENTS} departments — remove one to add another.`
+        `You can shortlist up to ${MAX_DEPARTMENTS} departments, remove one to add another.`
       );
       return;
     }
@@ -89,7 +87,7 @@ export default function VolunteerApplicationForm({
     if (!name.trim()) problem = "Please enter your full name.";
     else if (!isValidEmail(email))
       problem =
-        "Please enter a valid email address — this is where we’ll send your application update.";
+        "Please enter a valid email address, this is where we’ll send your application update.";
     else if (!phone.trim())
       problem =
         "Please enter a phone or WhatsApp number so our HR team can reach you.";
@@ -98,7 +96,7 @@ export default function VolunteerApplicationForm({
       problem = "Please pick at least one department you’d like to join.";
     else if (motivation.trim().length < 20)
       problem =
-        "Tell us a little more about why you want to volunteer — a couple of sentences is plenty.";
+        "Tell us a little more about why you want to volunteer, a couple of sentences is plenty.";
     else if (!consent)
       problem = "Please confirm that our team can contact you about this application.";
 
@@ -128,7 +126,6 @@ export default function VolunteerApplicationForm({
           departments: chosen,
           primaryDepartment: chosen[0],
           weeklyCommitment: commitment,
-          workMode,
           availability,
           startAvailability: start,
           motivation: motivation.trim(),
@@ -204,8 +201,7 @@ export default function VolunteerApplicationForm({
       </h2>
       <p className="text-[1.0625rem] lg:text-[1.1875rem] leading-[1.7] text-brand-muted max-w-[34em] mb-8 sm:mb-12 text-pretty">
         Tell us about yourself and pick the departments you’d like to work with.
-        Our HR team reviews every application and gets back to you within a week
-        — no prior experience needed.
+        Our HR team reviews every application and gets back to you within a week, no prior experience needed.
       </p>
 
       <div className="grid lg:grid-cols-[1.25fr_0.75fr] gap-10 lg:gap-16 items-start">
@@ -367,15 +363,6 @@ export default function VolunteerApplicationForm({
                 options={COMMITMENTS}
               />
             </div>
-            <div>
-              <FieldLabel htmlFor="vol-mode">How you’d like to work</FieldLabel>
-              <SelectField
-                id="vol-mode"
-                value={workMode}
-                onChange={setWorkMode}
-                options={WORK_MODES}
-              />
-            </div>
           </FieldPair>
 
           <div>
@@ -526,7 +513,7 @@ export default function VolunteerApplicationForm({
             </ol>
           ) : (
             <p className="text-[0.9375rem] leading-[1.6] text-brand-muted mb-7">
-              No department picked yet — choose up to {MAX_DEPARTMENTS} from the
+              No department picked yet, choose up to {MAX_DEPARTMENTS} from the
               list and they’ll appear here in order of preference.
             </p>
           )}

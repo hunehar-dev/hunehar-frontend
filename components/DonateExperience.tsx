@@ -60,18 +60,17 @@ export default function DonateExperience() {
 
   return (
     <>
-      {/* HERO — headline + trust points, sticky donation widget */}
       <section className="container-brand pt-12 sm:pt-16 lg:pt-24 pb-16 sm:pb-20 lg:pb-28">
         <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-16 items-start">
           <div>
-            <h1 className="text-[clamp(2.2rem,8vw,3.1rem)] lg:text-[clamp(3.2rem,5vw,4.6rem)] font-bold leading-[1.05] tracking-tight mb-6 max-w-[16em] text-balance">
+            <h1 className="text-[clamp(2.2rem,8vw,3.1rem)] lg:text-[clamp(3.2rem,5vw,4.6rem)] font-bold leading-[1.05] tracking-tight mb-6 max-w-[16em] text-balance text-[#39414d]">
               Rs. 3,000 a month keeps one child in{" "}
               <span className="text-brand-blue">school</span>
             </h1>
             <p className="text-[1.0625rem] lg:text-[1.1875rem] leading-[1.7] text-brand-muted max-w-[32em] mb-8 text-pretty">
               At Hunehar, every child’s education is supported by sponsors
               around the world. Your contribution provides tuition, uniforms,
-              stationery, school bags, and lunch - helping children stay in
+              stationery, school bags, helping children stay in
               school and reach their full potential.
             </p>
             <ul className="list-none p-0 m-0 flex flex-col gap-4">

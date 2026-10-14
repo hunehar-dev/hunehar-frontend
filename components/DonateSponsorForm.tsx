@@ -58,7 +58,7 @@ export default function DonateSponsorForm({
     if (!name.trim()) problem = "Please enter your full name.";
     else if (!isValidEmail(email))
       problem =
-        "Please enter a valid email address — this is where we’ll send your student’s details.";
+        "Please enter a valid email address, this is where we’ll send your student’s details.";
     else if (!phone.trim())
       problem =
         "Please enter a phone or WhatsApp number so our team can reach you.";
@@ -158,7 +158,7 @@ export default function DonateSponsorForm({
           <p className="text-[1.0625rem] lg:text-[1.1875rem] leading-[1.7] text-brand-muted max-w-[34em] mb-8 sm:mb-12 text-pretty">
             Tell us a little about yourself and pick a plan. Our team will assign
             you a student and email you their details along with the payment
-            instructions — no payment needed yet.
+            instructions.
           </p>
 
           <div className="grid lg:grid-cols-[1.25fr_0.75fr] gap-10 lg:gap-16 items-start">

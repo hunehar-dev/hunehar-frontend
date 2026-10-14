@@ -49,7 +49,7 @@ export const FREQUENCIES: {
   },
 ];
 
-export const COVERS = ["Tuition", "Uniforms", "Stationery", "School bags", "Lunch"];
+export const COVERS = ["Tuition", "Uniforms", "Stationery", "School bags"];
 export const ONCE_COVERS = ["Infrastructure", "Long-term projects"];
 
 export const SPONSOR_PLANS: {

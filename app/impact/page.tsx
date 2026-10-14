@@ -36,7 +36,7 @@ const PROGRAMS = [
       "Educational trips and exhibitions",
     ],
     images: [
-      { src: "/images/impact/HuneharSportsDay2.webp", alt: "Sports day", span: true },
+      { src: "/images/impact/HuneharSportsDay2.webp", alt: "Sports day" },
       { src: "/images/impact/plant-trees-Hunehar.webp", alt: "Tree planting activity" },
       { src: "/images/impact/Hunehar-Field-Trip.webp", alt: "Educational field trip" },
     ],
@@ -64,7 +64,7 @@ const PROGRAMS = [
       "Eid clothes and gifts distribution",
     ],
     images: [
-      { src: "/images/impact/Ramadan-Ration-Drive2.webp", alt: "Ramadan ration drive", span: true },
+      { src: "/images/impact/Ramadan-Ration-Drive2.webp", alt: "Ramadan ration drive" },
       { src: "/images/impact/Hunehar-Annual-Iftar-Dinner.webp", alt: "Annual iftar dinner" },
       { src: "/images/impact/ramadan-iftar.webp", alt: "Iftar with the community" },
     ],
@@ -90,17 +90,18 @@ export default function Impact() {
     <main className="bg-white text-brand-navy">
       <Navbar />
 
-      {/* HERO */}
-      
-      <section className="container-brand pt-12 sm:pt-16 lg:pt-24 pb-10 sm:pb-14 lg:pb-16">
-        {/* REMOVED container-brand from this div */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-brand-blue text-center">
-          <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4">
-            Bigger than the classroom
-          </h1>
-          
-          {/* Test with a standard responsive utility. (e.g., text-base on mobile, text-xl on desktop) */}
-          <p className="text-base md:text-xl max-w-3xl leading-relaxed text-brand-muted">
+      <section
+        className="relative bg-cover bg-center h-[60vh]"
+        style={{
+          backgroundImage: "url('/images/impact/Hunehar-Students.webp')",
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-brand-navy-soft/60"></div>
+        <div className="relative z-10 container-brand flex flex-col items-center justify-center h-full text-white text-center">
+          <h1 className="text-heading-1 mb-4">Bigger than the classroom</h1>
+
+          <p className="text-sm md:text-base max-w-3xl leading-relaxed">
             We started Hunehar because we believe quality education shouldn’t
             have a price tag, especially for the kids here in Islamabad. But as
             we grew, we realized our mission was bigger than the classroom.
@@ -109,24 +110,10 @@ export default function Impact() {
           </p>
         </div>
       </section>
-
-      
-
-      {/* HERO IMAGE */}
-      <section className="container-brand pb-16 sm:pb-20 lg:pb-28">
-        <figure className="m-0 rounded-2xl lg:rounded-[28px] overflow-hidden aspect-[4/3] lg:aspect-[21/9] bg-brand-bg">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/impact/Hunehar-Students.webp"
-            alt="Hunehar students"
-            className="w-full h-full object-cover block"
-          />
-        </figure>
-      </section>
-
       {/* PROGRAMS */}
       {PROGRAMS.map((program, i) => {
         const isReversed = i % 2 !== 0;
+        const totalImages = program.images.length;
 
         return (
           <section
@@ -135,8 +122,10 @@ export default function Impact() {
           >
             <div className="container-brand section-y-lg">
               <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-                <div className={isReversed ? "lg:order-1" : "lg:order-2"}>
-                  <h2 className="text-2xl lg:text-[2rem] font-bold leading-[1.12] tracking-tight mb-6">
+                
+                {/* Content Side */}
+                <div className={isReversed ? "lg:order-2" : "lg:order-1"}>
+                  <h2 className="text-2xl lg:text-[2rem] font-bold leading-[1.12] tracking-tight mb-6 text-brand-blue">
                     {program.title}
                   </h2>
                   <ul className="list-none m-0 p-0 flex flex-col gap-3.5">
@@ -151,28 +140,44 @@ export default function Impact() {
                     ))}
                   </ul>
                 </div>
+
+                {/* Dynamic Image Grid Side */}
                 <div
-                  className={`grid grid-cols-2 gap-4 lg:gap-6 ${
-                    isReversed ? "lg:order-2" : "lg:order-1"
+                  className={`grid grid-cols-2 gap-4 lg:gap-5 ${
+                    isReversed ? "lg:order-1" : "lg:order-2"
                   }`}
                 >
-                  {program.images.map((image) => (
-                    <figure
-                      key={image.src}
-                      className={`m-0 overflow-hidden rounded-[20px] aspect-square bg-brand-border ${
-                        image.span ? "col-span-2" : ""
-                      }`}
-                    >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        loading="lazy"
-                        className="w-full h-full object-cover block"
-                      />
-                    </figure>
-                  ))}
+                  {program.images.map((image, index) => {
+                    let layoutClasses = "aspect-square";
+
+                    // Custom layouts tailored for exactly 3 images to look balanced
+                    if (totalImages === 3) {
+                      if (index === 0) {
+                        // The primary image takes full height of the container side
+                        layoutClasses = "row-span-2 h-full aspect-[3/4] lg:aspect-auto";
+                      } else {
+                        // The remaining two stacked images align nicely on the right
+                        layoutClasses = "aspect-[4/3] lg:aspect-square";
+                      }
+                    }
+
+                    return (
+                      <figure
+                        key={image.src}
+                        className={`m-0 overflow-hidden rounded-[20px] bg-brand-border ${layoutClasses}`}
+                      >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          loading="lazy"
+                          className="w-full h-full object-cover block"
+                        />
+                      </figure>
+                    );
+                  })}
                 </div>
+
               </div>
             </div>
           </section>
@@ -181,25 +186,15 @@ export default function Impact() {
 
       {/* CTA */}
       <section className="container-brand py-16 sm:py-20 lg:py-28 text-center">
-        <h2 className="text-heading-2 max-w-[24em] mx-auto mb-8 text-balance">
+        <h2 className="text-[clamp(1.7rem,6vw,2.2rem)] lg:text-[clamp(2.1rem,3.2vw,2.9rem)] font-bold leading-[1.1] tracking-tight text-brand-blue max-w-[24em] mx-auto mb-8 text-balance">
           Contribute to our impact. Every rupee counts.
         </h2>
         <div className="flex flex-wrap gap-3.5 justify-center">
           <Button asChild variant="brand" size="brand-lg">
             <Link href="/get-involved/donate">Sponsor a child</Link>
           </Button>
-          <Button
-            asChild
-            variant="brand-light"
-            size="brand-lg"
-            className="bg-brand-bg hover:bg-brand-border"
-          >
-            <Link href="/get-involved/volunteer">Volunteer</Link>
-          </Button>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }
