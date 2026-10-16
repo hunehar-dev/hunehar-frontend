@@ -413,8 +413,7 @@ export default function About() {
                 {
                   name: "Iqra Mazar",
                   role: "Assistant Director HR",
-                  //img: "/images/about/aqib-irfan.webp",
-                  //link: "https://www.linkedin.com/in/aqib-irfan-b77b43284",
+                  img: "/images/about/iqra-mazar.webp",
                 },
                 {
                   name: "Alina Khan",
@@ -425,7 +424,7 @@ export default function About() {
                 {
                   name: "Syeda Farheen Masroor",
                   role: "Assistant Director Media & Communications",
-                  img: "/images/about/Syeda.webp",
+                  img: "/images/about/syeda-farheen.webp",
                   link: "https://linkedin.com/in/syeda-farheen-masroor-b9a5b6285",
                 },
                 {

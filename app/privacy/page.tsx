@@ -99,7 +99,7 @@ export default function PrivacyPage() {
         </p>
         <ul className="list-disc ml-6 space-y-2 mb-4">
           <li>Email: info@hunehar.org</li>
-          <li>Phone: 0341 0510902 | 0336 5426276</li>
+          <li>Phone: +92 311 9267664</li>
         </ul>
 
         <p className="text-sm text-brand-muted mt-8">
